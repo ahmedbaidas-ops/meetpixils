@@ -1,0 +1,1303 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MeetPixils · Design System v1.0</title>
+    <meta name="description" content="The MeetPixils design system — tokens, components, patterns, motion, and theming for a creative ecosystem serving designers across MENA." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap" />
+    <link rel="stylesheet" href="tokens.css" />
+    <link rel="stylesheet" href="system.css" />
+  </head>
+  <body>
+    <a href="#main" class="skip-link">Skip to content</a>
+
+    <!-- ============== ICON LIBRARY (rounded · modern) ============== -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+      <defs>
+        <symbol id="i-arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+        <symbol id="i-arrow-up-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></symbol>
+        <symbol id="i-chevron-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></symbol>
+        <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></symbol>
+        <symbol id="i-check-circle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></symbol>
+        <symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+        <symbol id="i-spark" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c.6 5 3.4 7.8 8.4 8.4-5 .6-7.8 3.4-8.4 8.4-.6-5-3.4-7.8-8.4-8.4 5-.6 7.8-3.4 8.4-8.4z"/></symbol>
+        <symbol id="i-flame" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c4 0 7-3 7-7 0-4-4-7-3-12-3 1-9 5-9 12 0 4 3 7 5 7z"/><path d="M12 17c1.5 0 2.5-1 2.5-2.5 0-1.5-1.5-2.5-1-4-1 .5-3 2-3 4 0 1.5 1 2.5 1.5 2.5z"/></symbol>
+        <symbol id="i-bolt" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z"/></symbol>
+        <symbol id="i-play" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7-11-7z"/></symbol>
+        <symbol id="i-pause" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M8 5v14M16 5v14"/></symbol>
+        <symbol id="i-cal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol>
+        <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+        <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-7 7-13a7 7 0 1 0-14 0c0 6 7 13 7 13z"/><circle cx="12" cy="9" r="2.5"/></symbol>
+        <symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M3 21c0-3.5 2.5-6 6-6s6 2.5 6 6"/><circle cx="17" cy="9" r="2.5"/><path d="M21 20c0-2.5-1.5-4.5-4-5"/></symbol>
+        <symbol id="i-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-7 8-7s8 3 8 7"/></symbol>
+        <symbol id="i-bookmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4h12v17l-6-4-6 4z"/></symbol>
+        <symbol id="i-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.5-7-10a4.5 4.5 0 0 1 7-3.7A4.5 4.5 0 0 1 19 10c0 5.5-7 10-7 10z"/></symbol>
+        <symbol id="i-star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.9L22 10l-5.5 4.8L18 22l-6-3.5L6 22l1.5-7.2L2 10l7.1-1.1L12 2z"/></symbol>
+        <symbol id="i-trophy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4h10v5a5 5 0 0 1-10 0V4z"/><path d="M17 6h3a3 3 0 0 1-3 5M7 6H4a3 3 0 0 0 3 5"/><path d="M9 14h6l-1 4h-4z M8 21h8"/></symbol>
+        <symbol id="i-award" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="M9 14l-2 7 5-3 5 3-2-7"/></symbol>
+        <symbol id="i-info" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 8h.01"/></symbol>
+        <symbol id="i-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l10 18H2L12 3z"/><path d="M12 10v5M12 18h.01"/></symbol>
+        <symbol id="i-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v12M7 12l5 5 5-5M4 21h16"/></symbol>
+        <symbol id="i-share" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="M8 11l8-4M8 13l8 4"/></symbol>
+        <symbol id="i-sparkles" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v4M12 17v4M5 10h4M15 10h4M7 5l2 2M15 15l2 2M17 5l-2 2M9 15l-2 2"/></symbol>
+        <symbol id="i-graduation" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9l10-5 10 5-10 5L2 9z"/><path d="M6 11v5c0 2 3 3 6 3s6-1 6-3v-5"/></symbol>
+        <symbol id="i-mic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3M9 21h6"/></symbol>
+        <symbol id="i-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></symbol>
+        <symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a13 13 0 0 1 0 18M12 3a13 13 0 0 0 0 18"/></symbol>
+        <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-5-5"/></symbol>
+        <symbol id="i-filter" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h18l-7 9v6l-4-2v-4L3 5z"/></symbol>
+        <symbol id="i-trend-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></symbol>
+        <symbol id="i-doc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l5 5v13H6z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></symbol>
+        <symbol id="i-figma" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3h8a3 3 0 0 1 0 6h-4M12 3v6M8 9h4M8 9a3 3 0 0 0 0 6h4M12 9v6M12 15a3 3 0 1 0 0-6M8 15a3 3 0 0 0 3 3v0a3 3 0 0 0 3-3v0"/></symbol>
+        <symbol id="i-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a4 4 0 0 0 5.6 0l3-3a4 4 0 0 0-5.6-5.6l-1.5 1.5"/><path d="M14 10a4 4 0 0 0-5.6 0l-3 3a4 4 0 0 0 5.6 5.6l1.5-1.5"/></symbol>
+        <symbol id="i-coin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 9h4.5a2 2 0 0 1 0 4H9M9 13h5a2 2 0 0 1 0 4H9M11 7v10"/></symbol>
+        <symbol id="i-circle-dot" viewBox="0 0 12 12" fill="currentColor"><circle cx="6" cy="6" r="3"/></symbol>
+      </defs>
+    </svg>
+
+    <!-- ============== HEADER ============== -->
+    <header class="topbar">
+      <a class="brand" href="../index.html">
+        <span class="brand-mark" aria-hidden="true">✱</span>
+        <span class="brand-name">MeetPixils</span>
+        <span class="brand-divider" aria-hidden="true">/</span>
+        <span class="brand-section">Design System</span>
+      </a>
+      <nav class="topbar-nav" aria-label="Section">
+        <a href="#foundations">Foundations</a>
+        <a href="#components">Components</a>
+        <a href="#patterns">Patterns</a>
+        <a href="#theming">Theming</a>
+        <a href="#a11y">A11y</a>
+      </nav>
+      <div class="topbar-meta">
+        <span class="kbd">v1.0</span>
+        <span class="kbd kbd-mono">EN · AR</span>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- ============== HERO ============== -->
+      <section class="hero">
+        <aside class="hero-meta">
+          <span class="overline">Design System · v1.0 · Apr 2026</span>
+          <ul class="hero-stats">
+            <li><strong>52</strong> routes</li>
+            <li><strong>4</strong> sub-brands</li>
+            <li><strong>2</strong> languages</li>
+            <li><strong>7</strong> token tiers</li>
+          </ul>
+        </aside>
+        <h1 class="hero-title">
+          A design quarterly<br/>
+          that scrolls<br/>
+          like a <em>product film.</em>
+        </h1>
+        <p class="hero-sub">
+          MeetPixils is a creative ecosystem for designers across MENA — Academy, Battle, Experience, Brands. This is the system that holds it together: tokens, components, motion, voice, and the rules for how cream, plum, and orange behave under pressure.
+        </p>
+        <div class="hero-cta">
+          <a href="#foundations" class="btn btn-primary">
+            <svg class="ico"><use href="#i-spark"/></svg>
+            Start with foundations
+          </a>
+          <a href="#components" class="btn btn-default">
+            Jump to components
+            <svg class="ico"><use href="#i-arrow-right"/></svg>
+          </a>
+        </div>
+
+        <!-- floating spec stamps -->
+        <span class="stamp stamp-1">Cream <code>#FFFEEC</code></span>
+        <span class="stamp stamp-2">Plum <code>#310622</code></span>
+        <span class="stamp stamp-3">Orange <code>#EF5229</code></span>
+        <span class="stamp stamp-4">Mixed radius</span>
+      </section>
+
+      <!-- ============== ECOSYSTEM ============== -->
+      <section class="band band-cream" id="ecosystem">
+        <header class="section-head">
+          <span class="num">00 · The ecosystem</span>
+          <h2>One brand, four arms.</h2>
+          <p>The chrome stays cream and orange. Each arm carries its own primary inside its section — never outside.</p>
+        </header>
+
+        <div class="arms">
+          <article class="arm" data-theme="academy">
+            <header><span class="arm-tag">Academy</span><span class="arm-pri">#2A0A82</span></header>
+            <h3>Bootcamps · Workshops · Mentorship</h3>
+            <p>Long-form learning. Curriculum partnerships with universities.</p>
+            <div class="arm-swatch"></div>
+          </article>
+          <article class="arm" data-theme="battle">
+            <header><span class="arm-tag">Battle</span><span class="arm-pri">#2F263B</span></header>
+            <h3>72-hour design hackathons</h3>
+            <p>Brutal-deadline competitions, sponsored briefs, public judging.</p>
+            <div class="arm-swatch"></div>
+          </article>
+          <article class="arm" data-theme="experience">
+            <header><span class="arm-tag">Experience</span><span class="arm-pri">#2EBEEF</span></header>
+            <h3>Events &amp; the annual flagship</h3>
+            <p>Talks, meetups, the conference. Where the ecosystem meets in person.</p>
+            <div class="arm-swatch"></div>
+          </article>
+          <article class="arm">
+            <header><span class="arm-tag">Brands</span><span class="arm-pri">#310622</span></header>
+            <h3>Branding community + case studies</h3>
+            <p>Editorial deep-dives. Stories from studios shaping MENA visual culture.</p>
+            <div class="arm-swatch"></div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ============== FOUNDATIONS ============== -->
+      <section class="band" id="foundations">
+        <header class="section-head">
+          <span class="num">01 · Foundations</span>
+          <h2>Tokens before components.</h2>
+          <p>Three tiers — global palette, semantic role, component alias. Components only consume tier 2. This is the rule.</p>
+        </header>
+
+        <!-- COLOUR -->
+        <section class="sub" id="color">
+          <h3 class="sub-title"><span>01.01</span> Colour</h3>
+
+          <h4 class="row-title">Master palette</h4>
+          <div class="swatch-grid">
+            <div class="swatch" style="background:#FFEEE5;color:#310622"><span class="sw-name">Orange 100</span><span class="sw-hex">#FFEEE5</span></div>
+            <div class="swatch" style="background:#FF7A4F;color:#310622"><span class="sw-name">Orange 300</span><span class="sw-hex">#FF7A4F</span></div>
+            <div class="swatch" style="background:#EF5229;color:#FFFEEC"><span class="sw-name">Orange 500 · Primary</span><span class="sw-hex">#EF5229</span></div>
+            <div class="swatch" style="background:#C73E1B;color:#FFFEEC"><span class="sw-name">Orange 700</span><span class="sw-hex">#C73E1B</span></div>
+            <div class="swatch" style="background:#8C2A12;color:#FFFEEC"><span class="sw-name">Orange 900</span><span class="sw-hex">#8C2A12</span></div>
+            <div class="swatch" style="background:#FFFEEC;color:#310622;border:1px solid var(--border-default)"><span class="sw-name">Cream 100 · Canvas</span><span class="sw-hex">#FFFEEC</span></div>
+            <div class="swatch" style="background:#FAF6D8;color:#310622"><span class="sw-name">Cream 200</span><span class="sw-hex">#FAF6D8</span></div>
+            <div class="swatch" style="background:#F8F4D6;color:#310622"><span class="sw-name">Cream 300</span><span class="sw-hex">#F8F4D6</span></div>
+            <div class="swatch" style="background:#6B3050;color:#FFFEEC"><span class="sw-name">Plum 100</span><span class="sw-hex">#6B3050</span></div>
+            <div class="swatch" style="background:#4A1735;color:#FFFEEC"><span class="sw-name">Plum 300</span><span class="sw-hex">#4A1735</span></div>
+            <div class="swatch" style="background:#310622;color:#FFFEEC"><span class="sw-name">Plum 500 · Ink</span><span class="sw-hex">#310622</span></div>
+            <div class="swatch" style="background:#1F0316;color:#FFFEEC"><span class="sw-name">Plum 700</span><span class="sw-hex">#1F0316</span></div>
+            <div class="swatch" style="background:#0F010A;color:#FFFEEC"><span class="sw-name">Plum 900</span><span class="sw-hex">#0F010A</span></div>
+          </div>
+
+          <h4 class="row-title">Sub-brand pairs</h4>
+          <div class="brand-pairs">
+            <div class="pair" style="--p:#2A0A82;--s:#C3B8FB">
+              <span class="pair-bg"></span><span class="pair-fg"></span>
+              <strong>Academy</strong>
+              <span class="pair-meta">#2A0A82 → #C3B8FB · contrast AA</span>
+            </div>
+            <div class="pair" style="--p:#2F263B;--s:#CCA4FD">
+              <span class="pair-bg"></span><span class="pair-fg"></span>
+              <strong>Battle</strong>
+              <span class="pair-meta">#2F263B → #CCA4FD · contrast AAA</span>
+            </div>
+            <div class="pair" style="--p:#2EBEEF;--s:#CBF2FF">
+              <span class="pair-bg"></span><span class="pair-fg"></span>
+              <strong>Experience</strong>
+              <span class="pair-meta">#2EBEEF → #310622 · text on cyan</span>
+            </div>
+          </div>
+
+          <h4 class="row-title">Status</h4>
+          <div class="status-row">
+            <div class="status s-success"><svg class="ico"><use href="#i-check-circle"/></svg>Success · #2D8F5C</div>
+            <div class="status s-warning"><svg class="ico"><use href="#i-alert"/></svg>Warning · #D89614</div>
+            <div class="status s-error"><svg class="ico"><use href="#i-x"/></svg>Error · #C73E1B</div>
+            <div class="status s-info"><svg class="ico"><use href="#i-info"/></svg>Info · #2EBEEF</div>
+          </div>
+
+          <h4 class="row-title">Semantic tokens · Light theme</h4>
+          <div class="tokens-table">
+            <div class="tt-row"><code>--bg-primary</code><span class="tt-prev" style="background:var(--color-cream-100)"></span><span class="tt-val">cream-100 · canvas</span></div>
+            <div class="tt-row"><code>--bg-secondary</code><span class="tt-prev" style="background:var(--color-cream-300)"></span><span class="tt-val">cream-300 · sections</span></div>
+            <div class="tt-row"><code>--bg-tertiary</code><span class="tt-prev" style="background:rgba(49,6,34,.04)"></span><span class="tt-val">plum 4% · subtle fills</span></div>
+            <div class="tt-row"><code>--bg-inverse</code><span class="tt-prev" style="background:var(--color-plum-500)"></span><span class="tt-val">plum-500 · dark blocks</span></div>
+            <div class="tt-row"><code>--bg-brand</code><span class="tt-prev" style="background:var(--color-orange-500)"></span><span class="tt-val">orange-500 · primary CTAs</span></div>
+            <div class="tt-row"><code>--text-primary</code><span class="tt-prev" style="background:var(--color-plum-500)"></span><span class="tt-val">plum-500 · body ink</span></div>
+            <div class="tt-row"><code>--text-secondary</code><span class="tt-prev" style="background:rgba(49,6,34,.65)"></span><span class="tt-val">plum 65% · meta</span></div>
+            <div class="tt-row"><code>--text-tertiary</code><span class="tt-prev" style="background:rgba(49,6,34,.45)"></span><span class="tt-val">plum 45% · captions</span></div>
+            <div class="tt-row"><code>--border-default</code><span class="tt-prev" style="background:rgba(49,6,34,.12)"></span><span class="tt-val">plum 12% · hairlines</span></div>
+            <div class="tt-row"><code>--border-strong</code><span class="tt-prev" style="background:rgba(49,6,34,.24)"></span><span class="tt-val">plum 24% · dividers</span></div>
+          </div>
+        </section>
+
+        <!-- TYPOGRAPHY -->
+        <section class="sub" id="type">
+          <h3 class="sub-title"><span>01.02</span> Typography</h3>
+
+          <div class="type-stack">
+            <div class="type-row">
+              <div class="type-meta">
+                <span class="mono">--fs-6xl · 96px</span>
+                <span class="mono">Poppins SemiBold · 600</span>
+                <span class="mono">--lh-tight 1.05 · --ls-tight</span>
+              </div>
+              <div class="type-sample" style="font-size:96px;font-weight:600;letter-spacing:-.04em;line-height:1.05">Unleash creative <em>potentials.</em></div>
+            </div>
+            <div class="type-row">
+              <div class="type-meta">
+                <span class="mono">--fs-5xl · 64px</span>
+                <span class="mono">Poppins SemiBold · 600</span>
+                <span class="mono">Display · headlines</span>
+              </div>
+              <div class="type-sample" style="font-size:64px;font-weight:600;letter-spacing:-.025em;line-height:1.05">A bootcamp shaped like a season.</div>
+            </div>
+            <div class="type-row">
+              <div class="type-meta">
+                <span class="mono">--fs-4xl · 44px</span>
+                <span class="mono">Poppins SemiBold · 600</span>
+                <span class="mono">Section heads</span>
+              </div>
+              <div class="type-sample" style="font-size:44px;font-weight:600;letter-spacing:-.025em;line-height:1.1">Apply to MeetAcademy</div>
+            </div>
+            <div class="type-row">
+              <div class="type-meta">
+                <span class="mono">--fs-3xl · 32px</span>
+                <span class="mono">Poppins Medium · 500</span>
+                <span class="mono">Card titles · feature heads</span>
+              </div>
+              <div class="type-sample" style="font-size:32px;font-weight:500;letter-spacing:-.02em;line-height:1.15">72 hours. One brief. One trophy.</div>
+            </div>
+            <div class="type-row">
+              <div class="type-meta">
+                <span class="mono">--fs-xl · 20px</span>
+                <span class="mono">Poppins Regular · 400</span>
+                <span class="mono">Lead paragraph</span>
+              </div>
+              <div class="type-sample" style="font-size:20px;font-weight:400;line-height:1.5">A platform built for designers who need somewhere serious to grow up — and an arena to prove it.</div>
+            </div>
+            <div class="type-row">
+              <div class="type-meta">
+                <span class="mono">--fs-md · 16px</span>
+                <span class="mono">Poppins Regular · 400</span>
+                <span class="mono">Body</span>
+              </div>
+              <div class="type-sample" style="font-size:16px;font-weight:400;line-height:1.65;max-width:60ch">MeetPixils is the entry point for two audiences — designers and partners. The site behaves like a magazine and ships like a product. The chrome stays cream and orange across all four sub-brands; per-arm colour shows up only inside its own section, never in the header, never in the footer.</div>
+            </div>
+            <div class="type-row">
+              <div class="type-meta">
+                <span class="mono">--fs-base · 14px</span>
+                <span class="mono">Poppins Regular · 400</span>
+                <span class="mono">UI default</span>
+              </div>
+              <div class="type-sample" style="font-size:14px;font-weight:400;line-height:1.5">Default UI text — buttons, inputs, list items, secondary copy.</div>
+            </div>
+            <div class="type-row">
+              <div class="type-meta">
+                <span class="mono">--fs-xs · 11px</span>
+                <span class="mono">IBM Plex Mono · 500</span>
+                <span class="mono">Uppercase · 0.12em</span>
+              </div>
+              <div class="type-sample mono" style="font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.12em">Section · 03 of 08 · Battle Detail</div>
+            </div>
+          </div>
+
+          <h4 class="row-title">Arabic — Noto Sans Arabic</h4>
+          <div class="arabic-stack" dir="rtl">
+            <p class="arabic" style="font-size:64px;font-weight:600;line-height:1.15">أطلق العنان لإمكاناتك الإبداعية.</p>
+            <p class="arabic" style="font-size:20px;font-weight:400;line-height:1.65">منصة بُنيت للمصممين الجادين الذين يحتاجون إلى مكان ينمون فيه — وحلبة يُثبتون فيها أنفسهم.</p>
+            <p class="mono small">Note · Arabic is up-sized ~1.05× via <code>--fs-base-multiplier</code>. RTL is first-class — every component uses logical properties.</p>
+          </div>
+        </section>
+
+        <!-- SPACING -->
+        <section class="sub" id="space">
+          <h3 class="sub-title"><span>01.03</span> Spacing scale</h3>
+          <p class="lede">4px base · 13 steps to 128px. Use semantic names in components — never raw px.</p>
+          <div class="space-grid">
+            <div class="space-row"><code>--space-1</code><span class="space-px">4px</span><span class="space-bar" style="width:4px"></span></div>
+            <div class="space-row"><code>--space-2</code><span class="space-px">8px</span><span class="space-bar" style="width:8px"></span></div>
+            <div class="space-row"><code>--space-3</code><span class="space-px">12px</span><span class="space-bar" style="width:12px"></span></div>
+            <div class="space-row"><code>--space-4</code><span class="space-px">16px</span><span class="space-bar" style="width:16px"></span></div>
+            <div class="space-row"><code>--space-5</code><span class="space-px">24px</span><span class="space-bar" style="width:24px"></span></div>
+            <div class="space-row"><code>--space-6</code><span class="space-px">32px</span><span class="space-bar" style="width:32px"></span></div>
+            <div class="space-row"><code>--space-7</code><span class="space-px">40px</span><span class="space-bar" style="width:40px"></span></div>
+            <div class="space-row"><code>--space-8</code><span class="space-px">48px</span><span class="space-bar" style="width:48px"></span></div>
+            <div class="space-row"><code>--space-9</code><span class="space-px">64px</span><span class="space-bar" style="width:64px"></span></div>
+            <div class="space-row"><code>--space-10</code><span class="space-px">80px</span><span class="space-bar" style="width:80px"></span></div>
+            <div class="space-row"><code>--space-11</code><span class="space-px">96px</span><span class="space-bar" style="width:96px"></span></div>
+            <div class="space-row"><code>--space-12</code><span class="space-px">128px</span><span class="space-bar" style="width:128px"></span></div>
+          </div>
+        </section>
+
+        <!-- RADIUS -->
+        <section class="sub" id="radius">
+          <h3 class="sub-title"><span>01.04</span> Radius — mixed, on purpose</h3>
+          <p class="lede">Tiles are sharp. Buttons are pills. Images are 16px. Inputs are 4px. Don't homogenise.</p>
+          <div class="radius-grid">
+            <div class="radius-card"><div class="rdemo" style="border-radius:0"></div><code>--radius-none · 0px</code><span>Tiles, bento, panels</span></div>
+            <div class="radius-card"><div class="rdemo" style="border-radius:4px"></div><code>--radius-xs · 4px</code><span>Inputs, fields</span></div>
+            <div class="radius-card"><div class="rdemo" style="border-radius:8px"></div><code>--radius-sm · 8px</code><span>Toasts, tags</span></div>
+            <div class="radius-card"><div class="rdemo" style="border-radius:12px"></div><code>--radius-md · 12px</code><span>Popovers</span></div>
+            <div class="radius-card"><div class="rdemo" style="border-radius:16px"></div><code>--radius-lg · 16px</code><span>Images, media</span></div>
+            <div class="radius-card"><div class="rdemo" style="border-radius:24px"></div><code>--radius-xl · 24px</code><span>Modals, sheets</span></div>
+            <div class="radius-card"><div class="rdemo" style="border-radius:999px"></div><code>--radius-pill · 999px</code><span>Buttons, badges, chips</span></div>
+          </div>
+        </section>
+
+        <!-- SHADOWS -->
+        <section class="sub" id="shadow">
+          <h3 class="sub-title"><span>01.05</span> Shadows — plum-tinted, never black</h3>
+          <p class="lede">Every shadow uses <code>rgba(49, 6, 34, x)</code>. Black shadows on cream look like dirt. Plum-tinted shadows feel warm.</p>
+          <div class="shadow-grid">
+            <div class="shadow-card"><div class="sdemo" style="box-shadow:var(--shadow-sm)"></div><code>--shadow-sm</code></div>
+            <div class="shadow-card"><div class="sdemo" style="box-shadow:var(--shadow-md)"></div><code>--shadow-md</code></div>
+            <div class="shadow-card"><div class="sdemo" style="box-shadow:var(--shadow-lg)"></div><code>--shadow-lg</code></div>
+            <div class="shadow-card"><div class="sdemo" style="box-shadow:var(--shadow-xl)"></div><code>--shadow-xl</code></div>
+            <div class="shadow-card"><div class="sdemo" style="box-shadow:var(--shadow-focus)"></div><code>--shadow-focus</code></div>
+          </div>
+        </section>
+
+        <!-- MOTION -->
+        <section class="sub" id="motion">
+          <h3 class="sub-title"><span>01.06</span> Motion</h3>
+          <p class="lede">Heavy / immersive · GSAP + Lenis throughout. Hover the squares to feel each duration.</p>
+
+          <div class="motion-grid">
+            <div class="motion-card"><div class="mdemo" data-dur="150"></div><code>--duration-fast · 150ms</code><span>Hover, tap</span></div>
+            <div class="motion-card"><div class="mdemo" data-dur="250"></div><code>--duration-base · 250ms</code><span>Default transitions</span></div>
+            <div class="motion-card"><div class="mdemo" data-dur="400"></div><code>--duration-moderate · 400ms</code><span>Card lifts</span></div>
+            <div class="motion-card"><div class="mdemo" data-dur="600"></div><code>--duration-slow · 600ms</code><span>Page transitions</span></div>
+            <div class="motion-card"><div class="mdemo" data-dur="900"></div><code>--duration-deliberate · 900ms</code><span>Hero reveals</span></div>
+          </div>
+
+          <h4 class="row-title">Easing curves</h4>
+          <div class="ease-grid">
+            <figure class="ease"><svg viewBox="0 0 100 100"><path d="M 0 100 C 16 0 30 70 100 0" stroke="var(--text-primary)" stroke-width="2" fill="none"/></svg><code>--ease-standard</code><span>cubic-bezier(.16, 1, .3, 1)</span></figure>
+            <figure class="ease"><svg viewBox="0 0 100 100"><path d="M 0 100 C 0 100 20 0 100 0" stroke="var(--text-primary)" stroke-width="2" fill="none"/></svg><code>--ease-decelerate</code><span>cubic-bezier(0, 0, .2, 1)</span></figure>
+            <figure class="ease"><svg viewBox="0 0 100 100"><path d="M 0 100 C 40 100 100 100 100 0" stroke="var(--text-primary)" stroke-width="2" fill="none"/></svg><code>--ease-accelerate</code><span>cubic-bezier(.4, 0, 1, 1)</span></figure>
+            <figure class="ease"><svg viewBox="0 0 100 100"><path d="M 0 100 C 40 100 60 0 100 0" stroke="var(--text-primary)" stroke-width="2" fill="none"/></svg><code>--ease-sharp</code><span>cubic-bezier(.4, 0, .6, 1)</span></figure>
+          </div>
+        </section>
+
+        <!-- ICONS -->
+        <section class="sub" id="icons">
+          <h3 class="sub-title"><span>01.07</span> Iconography</h3>
+          <p class="lede">Lucide React baseline · 1.6 stroke · currentColor · sizes 12 / 16 / 20 / 24 / 32. Directional icons mirror in RTL.</p>
+          <div class="icon-grid">
+            <div class="icon-cell"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg><code>arrow-right</code></div>
+            <div class="icon-cell"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg><code>play-circle</code></div>
+            <div class="icon-cell"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg><code>calendar</code></div>
+            <div class="icon-cell"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 22a8 8 0 1 1 16 0"/><circle cx="10" cy="8" r="5"/></svg><code>user</code></div>
+            <div class="icon-cell"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7L9 18l-5-5"/></svg><code>check</code></div>
+            <div class="icon-cell"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><code>search</code></div>
+            <div class="icon-cell"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h0a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51h0a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v0a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg><code>settings</code></div>
+            <div class="icon-cell"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><code>star</code></div>
+          </div>
+        </section>
+      </section>
+
+      <!-- ============== COMPONENTS ============== -->
+      <section class="band band-cream" id="components">
+        <header class="section-head">
+          <span class="num">02 · Components</span>
+          <h2>Atoms first, compose upward.</h2>
+          <p>Built from semantic tokens, themable per-arm, accessible by default. Nothing here uses raw hex.</p>
+        </header>
+
+        <!-- BUTTONS -->
+        <section class="sub" id="buttons">
+          <h3 class="sub-title"><span>02.01</span> Button</h3>
+          <p class="lede">Pill · Poppins Medium 13px · 12/22 padding · optional dot indicator and icon · 44×44 min touch.</p>
+
+          <div class="comp-grid">
+            <div class="comp-cell">
+              <span class="comp-label mono">Primary</span>
+              <button class="btn btn-primary"><svg class="ico"><use href="#i-spark"/></svg>Apply now</button>
+              <button class="btn btn-primary">Continue<svg class="ico"><use href="#i-arrow-right"/></svg></button>
+              <button class="btn btn-primary" disabled><svg class="ico"><use href="#i-spark"/></svg>Disabled</button>
+            </div>
+            <div class="comp-cell">
+              <span class="comp-label mono">Default · plum</span>
+              <button class="btn btn-default"><svg class="ico"><use href="#i-bookmark"/></svg>Submit work</button>
+              <button class="btn btn-default"><svg class="ico"><use href="#i-filter"/></svg>Filter</button>
+              <button class="btn btn-default" disabled>Disabled</button>
+            </div>
+            <div class="comp-cell">
+              <span class="comp-label mono">Outline</span>
+              <button class="btn btn-outline"><svg class="ico"><use href="#i-doc"/></svg>View brief</button>
+              <button class="btn btn-outline">Read more<svg class="ico"><use href="#i-chevron-right"/></svg></button>
+              <button class="btn btn-outline" disabled>Disabled</button>
+            </div>
+            <div class="comp-cell">
+              <span class="comp-label mono">Ghost</span>
+              <button class="btn btn-ghost">Cancel</button>
+              <button class="btn btn-ghost">Skip<svg class="ico"><use href="#i-arrow-right"/></svg></button>
+              <button class="btn btn-ghost" disabled>Disabled</button>
+            </div>
+            <div class="comp-cell">
+              <span class="comp-label mono">Danger</span>
+              <button class="btn btn-danger"><svg class="ico"><use href="#i-x"/></svg>Withdraw</button>
+              <button class="btn btn-danger" disabled>Disabled</button>
+            </div>
+            <div class="comp-cell">
+              <span class="comp-label mono">Icon-only</span>
+              <div style="display:flex;gap:8px;">
+                <button class="btn btn-primary btn-icon" aria-label="Save"><svg class="ico"><use href="#i-bookmark"/></svg></button>
+                <button class="btn btn-default btn-icon" aria-label="Share"><svg class="ico"><use href="#i-share"/></svg></button>
+                <button class="btn btn-outline btn-icon" aria-label="Search"><svg class="ico"><use href="#i-search"/></svg></button>
+                <button class="btn btn-ghost btn-icon" aria-label="More"><svg class="ico"><use href="#i-chevron-right"/></svg></button>
+              </div>
+            </div>
+            <div class="comp-cell">
+              <span class="comp-label mono">Sizes</span>
+              <button class="btn btn-primary btn-sm"><svg class="ico"><use href="#i-spark"/></svg>Small</button>
+              <button class="btn btn-primary"><svg class="ico"><use href="#i-spark"/></svg>Medium</button>
+              <button class="btn btn-primary btn-lg"><svg class="ico"><use href="#i-spark"/></svg>Large</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- INPUTS -->
+        <section class="sub" id="inputs">
+          <h3 class="sub-title"><span>02.02</span> Input · Textarea · Select</h3>
+          <p class="lede">4px radius · 12/14 padding · default → focus shifts border + focus ring · helper / error live below.</p>
+
+          <div class="form-grid">
+            <div class="field">
+              <label>Email <span class="req">*</span></label>
+              <input type="email" placeholder="you@example.com" />
+              <span class="help">We'll only use this for application updates.</span>
+            </div>
+            <div class="field">
+              <label>Full name</label>
+              <input type="text" value="Layan Haddad" />
+            </div>
+            <div class="field is-error">
+              <label>Portfolio URL</label>
+              <input type="url" value="not-a-url" aria-invalid="true" />
+              <span class="err">Please enter a valid URL starting with https://</span>
+            </div>
+            <div class="field">
+              <label>Disabled</label>
+              <input type="text" value="Locked field" disabled />
+            </div>
+            <div class="field field-full">
+              <label>Why this Battle?</label>
+              <textarea rows="3" placeholder="Tell us in 2-3 sentences."></textarea>
+            </div>
+            <div class="field">
+              <label>Track</label>
+              <select>
+                <option>Brand identity</option>
+                <option>Product design</option>
+                <option>Motion</option>
+                <option>Type</option>
+              </select>
+            </div>
+            <div class="field">
+              <label>Experience</label>
+              <select>
+                <option>Junior · 0-2 yrs</option>
+                <option>Mid · 2-5 yrs</option>
+                <option>Senior · 5+ yrs</option>
+              </select>
+            </div>
+          </div>
+        </section>
+
+        <!-- BADGES + TAGS -->
+        <section class="sub" id="badges">
+          <h3 class="sub-title"><span>02.03</span> Badge &amp; Tag</h3>
+          <p class="lede">Badges (pill, mono 10px, uppercase, +0.08em) carry status. Tags (square, 12px, default border) carry filters.</p>
+
+          <h4 class="row-title">Badges</h4>
+          <div class="badge-row">
+            <span class="badge"><svg class="ico"><use href="#i-info"/></svg>Default</span>
+            <span class="badge badge-orange badge-live"><svg class="ico"><use href="#i-flame"/></svg>Live now</span>
+            <span class="badge badge-plum"><svg class="ico"><use href="#i-star"/></svg>Featured</span>
+            <span class="badge badge-success"><svg class="ico"><use href="#i-check"/></svg>Submitted</span>
+            <span class="badge badge-warning"><svg class="ico"><use href="#i-clock"/></svg>Closing soon</span>
+            <span class="badge badge-error"><svg class="ico"><use href="#i-x"/></svg>Closed</span>
+            <span class="badge badge-info"><svg class="ico"><use href="#i-cal"/></svg>Coming up</span>
+            <span class="badge badge-academy"><svg class="ico"><use href="#i-graduation"/></svg>Bootcamp · 8 weeks</span>
+            <span class="badge badge-battle"><svg class="ico"><use href="#i-bolt"/></svg>Battle · 72h</span>
+            <span class="badge badge-experience"><svg class="ico"><use href="#i-mic"/></svg>Event · Hybrid</span>
+          </div>
+
+          <h4 class="row-title">Tags · filter chips</h4>
+          <div class="tag-row">
+            <button class="tag tag-active"><svg class="ico"><use href="#i-globe"/></svg>All · 124</button>
+            <button class="tag"><svg class="ico"><use href="#i-flame"/></svg>Live · 4</button>
+            <button class="tag"><svg class="ico"><use href="#i-cal"/></svg>Upcoming · 9</button>
+            <button class="tag"><svg class="ico"><use href="#i-clock"/></svg>Past · 111</button>
+            <button class="tag">Brand</button>
+            <button class="tag">Product</button>
+            <button class="tag">Motion</button>
+            <button class="tag">Type</button>
+          </div>
+        </section>
+
+        <!-- AVATARS -->
+        <section class="sub" id="avatars">
+          <h3 class="sub-title"><span>02.04</span> Avatar</h3>
+          <p class="lede">Circular · sm 28 / md 40 / lg 64 · cream 2px ring on stack · per-arm gradient variants.</p>
+
+          <div class="avatar-row">
+            <span class="avatar avatar-sm">L</span>
+            <span class="avatar">L</span>
+            <span class="avatar avatar-lg">L</span>
+            <span class="avatar avatar-academy avatar-lg">A</span>
+            <span class="avatar avatar-battle avatar-lg">B</span>
+            <span class="avatar avatar-experience avatar-lg">E</span>
+            <div class="avatar-stack">
+              <span class="avatar">A</span>
+              <span class="avatar avatar-academy">B</span>
+              <span class="avatar avatar-battle">C</span>
+              <span class="avatar avatar-experience">D</span>
+              <span class="avatar avatar-more">+12</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- ALERTS / TOASTS -->
+        <section class="sub" id="alerts">
+          <h3 class="sub-title"><span>02.05</span> Alerts &amp; Toasts</h3>
+          <p class="lede">Square alert blocks for in-page state · pill toasts for ephemeral feedback.</p>
+
+          <div class="alerts">
+            <div class="alert alert-success">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 7L9 18l-5-5"/></svg>
+              <div><strong>Application received.</strong><span>You'll hear from us within 5 working days.</span></div>
+            </div>
+            <div class="alert alert-warning">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2L2 22h20L12 2z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+              <div><strong>Closing in 3 days.</strong><span>The cohort fills on a first-come basis once the priority window closes.</span></div>
+            </div>
+            <div class="alert alert-error">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              <div><strong>Couldn't save your draft.</strong><span>Check your connection and try again — your work is held for 60 minutes.</span></div>
+            </div>
+            <div class="alert alert-info">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+              <div><strong>Single sign-on across arms.</strong><span>One login, badges follow you between Academy, Battle, and Experience.</span></div>
+            </div>
+          </div>
+
+          <div class="toasts">
+            <div class="toast"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 7L9 18l-5-5"/></svg>Saved to portfolio.</div>
+            <div class="toast toast-orange"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg>Battle starts in 4h.</div>
+          </div>
+        </section>
+
+        <!-- CARDS — massive system -->
+        <section class="sub" id="cards">
+          <h3 class="sub-title"><span>02.06</span> Card system · 16 use cases</h3>
+          <p class="lede">Sharp tiles by default · plum-tinted shadows · image radius 16px inside the tile · mono metadata · icon-led footers. Every card uses the same primitives — only the slots change.</p>
+
+          <!-- Group A · Marketing · two states: with image / no image -->
+          <h4 class="row-title">A · Marketing · with image</h4>
+          <div class="card-grid">
+            <!-- 01 · Course / Bootcamp -->
+            <article class="card">
+              <div class="card-media card-img" style="background-image:url('https://picsum.photos/seed/pixils-cohort/640/400')">
+                <span class="card-corner-tag"><svg class="ico"><use href="#i-graduation"/></svg>Cohort 04</span>
+                <div class="card-progress" aria-label="62% full">
+                  <span style="width:62%"></span>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="card-meta">
+                  <span class="badge badge-academy"><svg class="ico"><use href="#i-cal"/></svg>Apply by Jun 12</span>
+                </div>
+                <h4>Brand Identity, end-to-end.</h4>
+                <p>Eight weeks. Live critique. A real identity for a real client.</p>
+                <footer>
+                  <span class="meta-pill"><svg class="ico"><use href="#i-clock"/></svg>8 wks · Amman</span>
+                  <button class="btn btn-primary btn-sm">Apply<svg class="ico"><use href="#i-arrow-right"/></svg></button>
+                </footer>
+              </div>
+            </article>
+
+            <!-- 02 · Battle (live) -->
+            <article class="card card-live">
+              <div class="card-media card-img card-img-dark" style="background-image:url('https://picsum.photos/seed/pixils-battle/640/400')">
+                <span class="card-corner-tag tag-live"><svg class="ico"><use href="#i-flame"/></svg>Live · 8h left</span>
+                <div class="card-countdown mono">07<span>:</span>58<span>:</span>22</div>
+              </div>
+              <div class="card-body">
+                <div class="card-meta">
+                  <span class="badge badge-battle"><svg class="ico"><use href="#i-bolt"/></svg>72-hour battle</span>
+                </div>
+                <h4>The Vending Machine Brief.</h4>
+                <p>One product, one identity, 72 hours, public judging.</p>
+                <footer>
+                  <span class="meta-pill"><svg class="ico"><use href="#i-users"/></svg>312 entries</span>
+                  <button class="btn btn-default btn-sm">Submit<svg class="ico"><use href="#i-arrow-up-right"/></svg></button>
+                </footer>
+              </div>
+            </article>
+
+            <!-- 03 · Event -->
+            <article class="card">
+              <div class="card-media card-img" style="background-image:url('https://picsum.photos/seed/pixils-event/640/400')">
+                <div class="date-block">
+                  <span class="date-month">SEP</span>
+                  <span class="date-day">18</span>
+                  <span class="date-year">'26</span>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="card-meta">
+                  <span class="badge badge-experience"><svg class="ico"><use href="#i-mic"/></svg>Annual flagship</span>
+                </div>
+                <h4>The ecosystem, in one room.</h4>
+                <p>Three days. Twelve speakers. One room in Riyadh.</p>
+                <footer>
+                  <span class="meta-pill"><svg class="ico"><use href="#i-pin"/></svg>Riyadh</span>
+                  <button class="btn btn-primary btn-sm">Tickets</button>
+                </footer>
+              </div>
+            </article>
+
+            <!-- 04 · Case study (editorial) -->
+            <article class="card card-editorial">
+              <div class="card-media card-img" style="background-image:url('https://picsum.photos/seed/pixils-case/640/400')">
+                <span class="card-corner-tag tag-light"><svg class="ico"><use href="#i-doc"/></svg>Case study</span>
+              </div>
+              <div class="card-body">
+                <div class="card-meta">
+                  <span class="badge"><svg class="ico"><use href="#i-figma"/></svg>Studio diary</span>
+                </div>
+                <h4>How Northhaven shipped in nine days.</h4>
+                <p>Cutting scope without cutting the spine.</p>
+                <footer>
+                  <span class="meta-pill"><svg class="ico"><use href="#i-clock"/></svg>14 min read</span>
+                  <button class="btn btn-ghost btn-sm">Read<svg class="ico"><use href="#i-arrow-up-right"/></svg></button>
+                </footer>
+              </div>
+            </article>
+          </div>
+
+          <!-- Same four cards · no-image state -->
+          <h4 class="row-title">A · Marketing · without image</h4>
+          <div class="card-grid">
+            <!-- 01 · Course / Bootcamp · text-only -->
+            <article class="card card-no-media">
+              <div class="card-body">
+                <span class="card-eyebrow"><svg class="ico"><use href="#i-graduation"/></svg>Cohort 04 · Academy</span>
+                <h4>Brand Identity, end-to-end.</h4>
+                <p>Eight weeks. Live critique. A real identity for a real client.</p>
+                <div class="card-progress card-progress-inline" aria-label="62% full">
+                  <span style="width:62%"></span>
+                </div>
+                <footer>
+                  <span class="meta-pill"><svg class="ico"><use href="#i-clock"/></svg>8 wks · Amman</span>
+                  <button class="btn btn-primary btn-sm">Apply<svg class="ico"><use href="#i-arrow-right"/></svg></button>
+                </footer>
+              </div>
+            </article>
+
+            <!-- 02 · Battle · text-only · live -->
+            <article class="card card-no-media card-live">
+              <div class="card-body">
+                <span class="card-eyebrow"><svg class="ico"><use href="#i-bolt"/></svg>Battle · 72-hour</span>
+                <h4>The Vending Machine Brief.</h4>
+                <p>One product, one identity, 72 hours, public judging.</p>
+                <div class="inline-countdown">
+                  <span class="badge badge-orange badge-live"><svg class="ico"><use href="#i-flame"/></svg>Live · 8h left</span>
+                  <span class="mono inline-time">07:58:22</span>
+                </div>
+                <footer>
+                  <span class="meta-pill"><svg class="ico"><use href="#i-users"/></svg>312 entries</span>
+                  <button class="btn btn-default btn-sm">Submit<svg class="ico"><use href="#i-arrow-up-right"/></svg></button>
+                </footer>
+              </div>
+            </article>
+
+            <!-- 03 · Event · text-only -->
+            <article class="card card-no-media">
+              <div class="card-body card-body-event-noimg">
+                <div class="event-noimg-head">
+                  <div class="date-block date-block-flat">
+                    <span class="date-month">SEP</span>
+                    <span class="date-day">18</span>
+                    <span class="date-year">'26</span>
+                  </div>
+                  <div>
+                    <span class="card-eyebrow"><svg class="ico"><use href="#i-mic"/></svg>Annual flagship</span>
+                    <h4>The ecosystem, in one room.</h4>
+                  </div>
+                </div>
+                <p>Three days. Twelve speakers. One room in Riyadh.</p>
+                <footer>
+                  <span class="meta-pill"><svg class="ico"><use href="#i-pin"/></svg>Riyadh</span>
+                  <button class="btn btn-primary btn-sm">Tickets</button>
+                </footer>
+              </div>
+            </article>
+
+            <!-- 04 · Case study · text-only -->
+            <article class="card card-no-media">
+              <div class="card-body">
+                <span class="card-eyebrow"><svg class="ico"><use href="#i-doc"/></svg>Case study · Studio diary</span>
+                <h4>How Northhaven shipped in nine days.</h4>
+                <p>Cutting scope without cutting the spine. The internal calendar that made it possible, the cuts that almost didn't, and the one decision the studio still argues about.</p>
+                <footer>
+                  <span class="meta-pill"><svg class="ico"><use href="#i-clock"/></svg>14 min read</span>
+                  <button class="btn btn-ghost btn-sm">Read<svg class="ico"><use href="#i-arrow-up-right"/></svg></button>
+                </footer>
+              </div>
+            </article>
+          </div>
+
+          <!-- Group B · Person / Mentor / Stat / Quote -->
+          <h4 class="row-title">B · Profile &amp; data · 4 use cases</h4>
+          <div class="card-grid">
+            <!-- 05 · Designer profile -->
+            <article class="card card-profile">
+              <div class="card-cover card-cover-orange"></div>
+              <div class="card-body card-body-profile">
+                <span class="avatar avatar-xl">L</span>
+                <h4>Layan Haddad</h4>
+                <span class="profile-role mono">Senior Brand Designer · Amman</span>
+                <span class="badge badge-battle"><svg class="ico"><use href="#i-trophy"/></svg>Battle winner · '25</span>
+                <footer class="profile-foot">
+                  <span class="meta-pill"><svg class="ico"><use href="#i-users"/></svg>1.2k followers</span>
+                  <button class="btn btn-primary btn-sm"><svg class="ico"><use href="#i-user"/></svg>Follow</button>
+                </footer>
+              </div>
+            </article>
+
+            <!-- 06 · Mentor -->
+            <article class="card card-mentor">
+              <div class="card-body">
+                <div class="mentor-head">
+                  <span class="avatar avatar-lg avatar-academy">M</span>
+                  <div>
+                    <h4>Maryam Al-Sabbagh</h4>
+                    <span class="profile-role mono">Type designer · Beirut</span>
+                  </div>
+                </div>
+                <p>Eighteen years in editorial type. Mentors juniors on Arabic typography.</p>
+                <div class="mentor-stats">
+                  <div><span class="big">4.9</span><span class="mono">rating · 184 sessions</span></div>
+                  <div><span class="big">42</span><span class="mono">mentees · all-time</span></div>
+                </div>
+                <footer>
+                  <span class="meta-pill"><svg class="ico"><use href="#i-coin"/></svg>$120 · 60 min</span>
+                  <button class="btn btn-primary btn-sm"><svg class="ico"><use href="#i-cal"/></svg>Book</button>
+                </footer>
+              </div>
+            </article>
+
+            <!-- 07 · Stat / metric -->
+            <article class="card card-stat">
+              <div class="card-body card-body-stat">
+                <span class="overline">Cohort applications · 7d</span>
+                <div class="stat-num">2,418<sup class="trend-up"><svg class="ico"><use href="#i-trend-up"/></svg>+18%</sup></div>
+                <div class="stat-spark" aria-hidden="true">
+                  <svg viewBox="0 0 200 60" preserveAspectRatio="none"><path d="M0 50 L20 45 L40 48 L60 38 L80 40 L100 30 L120 32 L140 22 L160 25 L180 12 L200 14" fill="none" stroke="var(--color-orange-500)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <span class="mono stat-foot">vs prior period · 2,048</span>
+              </div>
+            </article>
+
+            <!-- 08 · Testimonial / quote -->
+            <article class="card card-quote">
+              <div class="card-body">
+                <span class="quote-mark" aria-hidden="true">"</span>
+                <blockquote>The first studio I've worked with that argued <em>back</em> — and was right.</blockquote>
+                <footer class="quote-foot">
+                  <span class="avatar avatar-md">M</span>
+                  <div>
+                    <strong>Mira Okafor</strong>
+                    <span class="mono">Head of Brand · Northhaven</span>
+                  </div>
+                </footer>
+              </div>
+            </article>
+          </div>
+
+          <!-- Group C · Pricing / Achievement / Resource / Sponsor -->
+          <h4 class="row-title">C · Commerce &amp; recognition · 4 use cases</h4>
+          <div class="card-grid">
+            <!-- 09 · Pricing tier -->
+            <article class="card card-pricing">
+              <div class="card-body">
+                <div class="card-meta">
+                  <span class="badge badge-orange"><svg class="ico"><use href="#i-star"/></svg>Most chosen</span>
+                </div>
+                <h4>Studio</h4>
+                <div class="price"><span class="price-currency">$</span><span class="price-amount">1,800</span><span class="price-period mono">/yr</span></div>
+                <ul class="feat-list">
+                  <li><svg class="ico"><use href="#i-check"/></svg>All bootcamps</li>
+                  <li><svg class="ico"><use href="#i-check"/></svg>2 mentor hours / month</li>
+                  <li><svg class="ico"><use href="#i-check"/></svg>Battle entry waived</li>
+                  <li><svg class="ico"><use href="#i-check"/></svg>Flagship ticket included</li>
+                </ul>
+                <footer><button class="btn btn-primary" style="width:100%;justify-content:center"><svg class="ico"><use href="#i-spark"/></svg>Choose Studio</button></footer>
+              </div>
+            </article>
+
+            <!-- 10 · Achievement / Badge -->
+            <article class="card card-achieve">
+              <div class="card-body card-body-achieve">
+                <div class="achieve-medal">
+                  <svg class="ico-xl" viewBox="0 0 64 64" fill="none">
+                    <circle cx="32" cy="32" r="26" fill="var(--color-orange-500)"/>
+                    <circle cx="32" cy="32" r="20" fill="none" stroke="var(--color-cream-100)" stroke-width="2"/>
+                    <use href="#i-trophy" x="20" y="20" width="24" height="24" stroke="var(--color-cream-100)" stroke-width="2"/>
+                  </svg>
+                </div>
+                <h4>Battle Champion · '26</h4>
+                <p>Awarded for winning <em>The Vending Machine Brief</em> · Apr 2026. Carries +500 ecosystem points.</p>
+                <footer>
+                  <span class="mono">Earned · Apr 14</span>
+                  <button class="btn btn-outline btn-sm"><svg class="ico"><use href="#i-share"/></svg>Share</button>
+                </footer>
+              </div>
+            </article>
+
+            <!-- 11 · Resource / Download -->
+            <article class="card card-resource">
+              <div class="card-body card-body-resource">
+                <div class="res-icon"><svg class="ico"><use href="#i-doc"/></svg></div>
+                <div class="res-text">
+                  <h4>Brand Identity Brief · template</h4>
+                  <p>The exact brief format we use with clients. Notion + PDF + Figma cover.</p>
+                  <span class="mono">PDF · 2.4 MB · 12 pages</span>
+                </div>
+                <button class="btn btn-default btn-icon" aria-label="Download"><svg class="ico"><use href="#i-download"/></svg></button>
+              </div>
+            </article>
+
+            <!-- 12 · Sponsor / Partner -->
+            <article class="card card-sponsor">
+              <div class="card-body">
+                <span class="badge badge-plum"><svg class="ico"><use href="#i-award"/></svg>Title sponsor</span>
+                <div class="sponsor-mark">Northhaven</div>
+                <p>Supporting six battles, two bootcamp scholarships, and the '26 flagship in Riyadh.</p>
+                <div class="sponsor-stats mono">
+                  <span><strong>6</strong> battles</span>
+                  <span><strong>2</strong> bootcamps</span>
+                  <span><strong>1</strong> flagship</span>
+                </div>
+                <footer>
+                  <span class="mono">Since 2024</span>
+                  <button class="btn btn-ghost btn-sm">Read story<svg class="ico"><use href="#i-arrow-right"/></svg></button>
+                </footer>
+              </div>
+            </article>
+          </div>
+
+          <!-- Group D · Feature / CTA / Empty / Loading -->
+          <h4 class="row-title">D · System states · 4 use cases</h4>
+          <div class="card-grid">
+            <!-- 13 · Feature card (with icon) -->
+            <article class="card card-feature">
+              <div class="card-body">
+                <div class="feat-icon"><svg class="ico"><use href="#i-sparkles"/></svg></div>
+                <h4>Single sign-on across arms</h4>
+                <p>One login. Your work, badges, and applications follow you between Academy, Battle, and Experience.</p>
+                <footer>
+                  <button class="btn btn-ghost btn-sm">Learn more<svg class="ico"><use href="#i-arrow-right"/></svg></button>
+                </footer>
+              </div>
+            </article>
+
+            <!-- 14 · CTA card (gradient) -->
+            <article class="card card-cta">
+              <div class="card-body">
+                <span class="overline">Sponsorship</span>
+                <h4>Brief a battle. Watch 300 designers fight for it.</h4>
+                <p>Six-week setup. Public judging. Your shortlist on day 73.</p>
+                <footer>
+                  <button class="btn btn-primary btn-lg"><svg class="ico"><use href="#i-bolt"/></svg>Sponsor a Battle</button>
+                </footer>
+              </div>
+            </article>
+
+            <!-- 15 · Empty state -->
+            <article class="card card-empty">
+              <div class="card-body card-body-empty">
+                <div class="empty-icon"><svg class="ico"><use href="#i-search"/></svg></div>
+                <h4>No battles match this filter.</h4>
+                <p>Try clearing your filters, or browse the past archive — 111 briefs since 2022.</p>
+                <footer>
+                  <button class="btn btn-outline btn-sm">Clear filters</button>
+                  <button class="btn btn-primary btn-sm">Browse past<svg class="ico"><use href="#i-arrow-right"/></svg></button>
+                </footer>
+              </div>
+            </article>
+
+            <!-- 16 · Loading skeleton -->
+            <article class="card card-skeleton" aria-busy="true" aria-label="Loading">
+              <div class="sk-media"></div>
+              <div class="card-body">
+                <div class="sk-line sk-line-sm"></div>
+                <div class="sk-line sk-line-lg"></div>
+                <div class="sk-line"></div>
+                <div class="sk-line"></div>
+                <footer class="sk-foot">
+                  <div class="sk-line sk-line-sm"></div>
+                  <div class="sk-pill"></div>
+                </footer>
+              </div>
+            </article>
+          </div>
+
+          <!-- Anatomy bar -->
+          <div class="card-anatomy">
+            <span class="overline">Card anatomy</span>
+            <div class="anat-grid">
+              <span><svg class="ico"><use href="#i-circle-dot"/></svg>Sharp tile · 0px radius</span>
+              <span><svg class="ico"><use href="#i-circle-dot"/></svg>Image inside · 16px radius</span>
+              <span><svg class="ico"><use href="#i-circle-dot"/></svg>Plum-tinted shadow</span>
+              <span><svg class="ico"><use href="#i-circle-dot"/></svg>Mono uppercase metadata</span>
+              <span><svg class="ico"><use href="#i-circle-dot"/></svg>Icon-led footers (no dots)</span>
+              <span><svg class="ico"><use href="#i-circle-dot"/></svg>3px lift on hover</span>
+            </div>
+          </div>
+        </section>
+
+      </section>
+
+      <!-- ============== PATTERNS ============== -->
+      <section class="band" id="patterns">
+        <header class="section-head">
+          <span class="num">03 · Patterns</span>
+          <h2>Compositions, not components.</h2>
+          <p>The shapes the system tends to fall into. Editorial bento, mega footer, scroll-image hero, filter bar.</p>
+        </header>
+
+        <!-- BENTO -->
+        <section class="sub" id="bento">
+          <h3 class="sub-title"><span>03.01</span> Editorial bento</h3>
+          <p class="lede">6-column grid · 160px row · mixed sizes, mixed media · sharp tile corners — radius is for images <em>inside</em>, not the tile.</p>
+          <div class="bento">
+            <div class="tile tile-hero">
+              <span class="mono">01 · Ecosystem</span>
+              <h3>Where MENA design grows up.</h3>
+              <a href="#" class="tile-cta">See how it fits →</a>
+            </div>
+            <div class="tile tile-academy" data-theme="academy">
+              <span class="mono">Academy</span>
+              <h4>Bootcamp 04 · open</h4>
+            </div>
+            <div class="tile tile-battle" data-theme="battle">
+              <span class="mono">Battle</span>
+              <h4>72h · Live</h4>
+              <span class="pulse"></span>
+            </div>
+            <div class="tile tile-quote">
+              <blockquote>"The first studio I've worked with that argued back — and was right."</blockquote>
+              <span class="mono">— Mira O · Northhaven</span>
+            </div>
+            <div class="tile tile-image"></div>
+            <div class="tile tile-experience" data-theme="experience">
+              <span class="mono">Experience</span>
+              <h4>Riyadh · Sep '26</h4>
+            </div>
+            <div class="tile tile-stat">
+              <span class="big">312</span>
+              <span class="mono">entries · current battle</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- HEADER PATTERN -->
+        <section class="sub" id="header">
+          <h3 class="sub-title"><span>03.02</span> Global header</h3>
+          <p class="lede">Transparent over hero · cream + 20px backdrop blur once past 100vh · mono uppercase items at 12px.</p>
+
+          <div class="header-demo">
+            <div class="hd-bar">
+              <div class="hd-brand"><span class="brand-mark">✱</span><strong>MeetPixils</strong></div>
+              <nav class="hd-nav">
+                <a>Ecosystem ▾</a><a>Events</a><a>Stories</a><a>Community</a><a>About</a>
+              </nav>
+              <div class="hd-meta">
+                <span class="lang-toggle"><span class="active">EN</span><span>AR</span></span>
+                <a class="link">Login</a>
+                <a class="btn btn-primary btn-sm">Join →</a>
+              </div>
+            </div>
+            <div class="hd-bar hd-bar-scrolled">
+              <div class="hd-brand"><span class="brand-mark">✱</span><strong>MeetPixils</strong></div>
+              <nav class="hd-nav">
+                <a>Ecosystem ▾</a><a>Events</a><a>Stories</a><a>Community</a><a>About</a>
+              </nav>
+              <div class="hd-meta">
+                <span class="lang-toggle"><span class="active">EN</span><span>AR</span></span>
+                <a class="link">Login</a>
+                <a class="btn btn-primary btn-sm">Join →</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- FILTER BAR -->
+        <section class="sub" id="filterbar">
+          <h3 class="sub-title"><span>03.03</span> Filter bar</h3>
+          <div class="filter-demo">
+            <div class="tag-row">
+              <button class="tag tag-active">All · 124</button>
+              <button class="tag">Live · 4</button>
+              <button class="tag">Upcoming · 9</button>
+              <button class="tag">Past · 111</button>
+            </div>
+            <div class="filter-meta mono">Sort · Newest · Track · All · View · Grid</div>
+          </div>
+        </section>
+
+        <!-- FOOTER PREVIEW -->
+        <section class="sub" id="megafooter">
+          <h3 class="sub-title"><span>03.04</span> Mega-footer · sitemap</h3>
+          <p class="lede">Plum bg, cream text. Newsletter ribbon up top, 5-column sitemap below, legal + Discord ribbon at the foot.</p>
+
+          <div class="megafooter">
+            <div class="mf-newsletter">
+              <h3>Hear it first. <em>Quarterly only.</em></h3>
+              <form class="mf-form" onsubmit="event.preventDefault(); this.querySelector('button').textContent='Subscribed ✓';">
+                <input type="email" placeholder="you@studio.co" aria-label="Email"/>
+                <button class="btn btn-primary">Subscribe</button>
+              </form>
+            </div>
+            <div class="mf-grid">
+              <div><span class="mono">Academy</span><a>Bootcamps</a><a>Workshops</a><a>Mentorship</a><a>Universities</a></div>
+              <div><span class="mono">Battle</span><a>Active</a><a>Past briefs</a><a>Sponsor</a><a>Rules</a></div>
+              <div><span class="mono">Experience</span><a>Calendar</a><a>Flagship '26</a><a>Meetups</a><a>Speak</a></div>
+              <div><span class="mono">Brands</span><a>Stories</a><a>Studios</a><a>Submit work</a></div>
+              <div><span class="mono">Hub</span><a>About</a><a>Press</a><a>Careers</a><a>Contact</a></div>
+            </div>
+            <div class="mf-base">
+              <span class="mono">© 2026 MeetPixils · Amman · Riyadh · Cairo</span>
+              <span class="mono">EN · AR</span>
+              <span class="mono">Discord ↗</span>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <!-- ============== THEMING ============== -->
+      <section class="band band-cream" id="theming">
+        <header class="section-head">
+          <span class="num">04 · Theming</span>
+          <h2>Same components. Different weather.</h2>
+          <p>Set <code class="inline">data-theme="academy"</code> on a section wrapper. Every <code class="inline">--bg-brand</code> inside flips. Components don't change — they obey.</p>
+        </header>
+
+        <div class="theme-grid">
+          <div class="theme-zone" data-theme="academy">
+            <span class="overline">data-theme="academy"</span>
+            <h3>Academy · purple cohort</h3>
+            <p>Long-form learning. Cohort culture. Live critique.</p>
+            <div class="theme-actions">
+              <button class="btn btn-primary"><svg class="ico"><use href="#i-graduation"/></svg>Apply to cohort</button>
+              <button class="btn btn-outline">Read curriculum<svg class="ico"><use href="#i-arrow-right"/></svg></button>
+            </div>
+            <span class="badge badge-academy"><svg class="ico"><use href="#i-graduation"/></svg>Bootcamp · 8 wks</span>
+          </div>
+          <div class="theme-zone" data-theme="battle">
+            <span class="overline">data-theme="battle"</span>
+            <h3>Battle · 72-hour arena</h3>
+            <p>Public deadline. Public judging. Public win.</p>
+            <div class="theme-actions">
+              <button class="btn btn-primary"><svg class="ico"><use href="#i-bolt"/></svg>Enter Battle</button>
+              <button class="btn btn-outline">Past briefs<svg class="ico"><use href="#i-arrow-right"/></svg></button>
+            </div>
+            <span class="badge badge-battle badge-live"><svg class="ico"><use href="#i-flame"/></svg>Live · 8h left</span>
+          </div>
+          <div class="theme-zone" data-theme="experience">
+            <span class="overline">data-theme="experience"</span>
+            <h3>Experience · sky-cyan</h3>
+            <p>Meetups, talks, the annual flagship.</p>
+            <div class="theme-actions">
+              <button class="btn btn-primary"><svg class="ico"><use href="#i-mic"/></svg>Get a ticket</button>
+              <button class="btn btn-outline">See speakers<svg class="ico"><use href="#i-arrow-right"/></svg></button>
+            </div>
+            <span class="badge badge-experience"><svg class="ico"><use href="#i-cal"/></svg>Sep 18 · Riyadh</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============== A11Y ============== -->
+      <section class="band" id="a11y">
+        <header class="section-head">
+          <span class="num">05 · Accessibility &amp; bilingual</span>
+          <h2>WCAG 2.2 AA, RTL day-one.</h2>
+          <p>Bilingual is not "add Arabic later." It's a constraint baked into every primitive.</p>
+        </header>
+
+        <div class="a11y-grid">
+          <div class="a11y-card">
+            <span class="overline">Focus state</span>
+            <button class="btn btn-primary focused"><svg class="ico"><use href="#i-target"/></svg>Tab to me</button>
+            <p>Every interactive element shows a 3px orange focus ring at 25% alpha — never a generic browser outline.</p>
+          </div>
+          <div class="a11y-card">
+            <span class="overline">Contrast</span>
+            <div class="contrast-row">
+              <div class="cb cb-pass">AA · 12.4:1<br/><span>plum on cream</span></div>
+              <div class="cb cb-pass">AA · 4.6:1<br/><span>orange on cream</span></div>
+              <div class="cb cb-pass">AAA · 14.1:1<br/><span>cream on plum</span></div>
+            </div>
+          </div>
+          <div class="a11y-card">
+            <span class="overline">Reduced motion</span>
+            <p>All durations collapse to 0.01ms when <code>prefers-reduced-motion</code> is set. Hero scroll-image becomes static. Reveals snap.</p>
+            <code class="block">@media (prefers-reduced-motion: reduce) { … }</code>
+          </div>
+          <div class="a11y-card a11y-rtl" dir="rtl">
+            <span class="overline">RTL · Arabic</span>
+            <h4>الأكاديمية</h4>
+            <p>اللغة العربية مدعومة منذ اليوم الأول. كل المسافات والحدود تستخدم خصائص منطقية.</p>
+            <button class="btn btn-primary"><svg class="ico"><use href="#i-graduation"/></svg>قدّم الآن</button>
+          </div>
+        </div>
+
+        <div class="a11y-checklist">
+          <h4>Per-component checklist</h4>
+          <ul>
+            <li>Colour contrast ≥ 4.5:1 for text · ≥ 3:1 for UI</li>
+            <li>Visible focus state on every interactive element</li>
+            <li>Touch targets ≥ 44 × 44 on mobile</li>
+            <li>Semantic HTML — <code>&lt;button&gt;</code> not <code>&lt;div onClick&gt;</code></li>
+            <li>Keyboard navigation works (Tab, Enter, Esc)</li>
+            <li>Screen-reader announcements verified in VoiceOver</li>
+            <li><code>prefers-reduced-motion</code> respected</li>
+            <li>RTL layout works — mirrored padding, borders, text alignment</li>
+            <li>Works at 200% zoom without horizontal scroll</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ============== VOICE ============== -->
+      <section class="band band-plum" id="voice">
+        <header class="section-head section-head-light">
+          <span class="num">06 · Voice &amp; copy</span>
+          <h2>Warm. Direct. Built. Never corporate.</h2>
+          <p>Sentences earn their length. We use serif italic only for emphasis, never for whole paragraphs.</p>
+        </header>
+
+        <div class="voice-grid">
+          <div class="voice-card">
+            <span class="overline">Do</span>
+            <ul>
+              <li>"72 hours. One brief. One trophy."</li>
+              <li>"Apply by Jun 12 — cohort fills early."</li>
+              <li>"Ship a real identity for a real client."</li>
+            </ul>
+          </div>
+          <div class="voice-card voice-card-no">
+            <span class="overline">Don't</span>
+            <ul>
+              <li class="strike">"We are excited to announce…"</li>
+              <li class="strike">"Solutions for synergistic creative outcomes."</li>
+              <li class="strike">"Click here to learn more!"</li>
+            </ul>
+          </div>
+          <div class="voice-card">
+            <span class="overline">Tone dials</span>
+            <div class="dials">
+              <div class="dial"><span>Formal</span><span class="bar"><span style="left:18%"></span></span><span>Casual</span></div>
+              <div class="dial"><span>Reserved</span><span class="bar"><span style="left:74%"></span></span><span>Loud</span></div>
+              <div class="dial"><span>Generic</span><span class="bar"><span style="left:88%"></span></span><span>Specific</span></div>
+              <div class="dial"><span>Quiet</span><span class="bar"><span style="left:62%"></span></span><span>Opinionated</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============== LOGOS ============== -->
+      <section class="band" id="logos">
+        <header class="section-head">
+          <span class="num">07 · Lockups</span>
+          <h2>The four logos.</h2>
+          <p>PNG today, transparent SVG soon. Always sit on cream or plum — never on per-arm colour.</p>
+        </header>
+
+        <div class="logo-grid">
+          <figure class="logo-cell">
+            <div class="logo-plate"><img src="../assets/meetpixils-logo.png" alt="MeetPixils logo"/></div>
+            <figcaption><strong>MeetPixils</strong><span>Master ecosystem lockup</span></figcaption>
+          </figure>
+          <figure class="logo-cell">
+            <div class="logo-plate"><img src="../assets/meetacademy-logo.png" alt="MeetAcademy logo"/></div>
+            <figcaption><strong>MeetAcademy</strong><span>Bootcamps · Workshops</span></figcaption>
+          </figure>
+          <figure class="logo-cell">
+            <div class="logo-plate"><img src="../assets/meetbattle-logo.png" alt="MeetBattle logo"/></div>
+            <figcaption><strong>MeetBattle</strong><span>72h hackathons</span></figcaption>
+          </figure>
+          <figure class="logo-cell">
+            <div class="logo-plate"><img src="../assets/meetexperience-logo.png" alt="MeetExperience logo"/></div>
+            <figcaption><strong>MeetExperience</strong><span>Events · Flagship</span></figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- ============== CHANGELOG ============== -->
+      <section class="band band-cream" id="changelog">
+        <header class="section-head">
+          <span class="num">08 · Changelog</span>
+          <h2>What shipped, what's next.</h2>
+        </header>
+
+        <ol class="changelog">
+          <li>
+            <span class="cl-version mono">v1.0</span>
+            <span class="cl-date mono">Apr 2026</span>
+            <div class="cl-body">
+              <strong>Foundation drop.</strong>
+              <p>Tokens (3-tier W3C DTCG), atomic components, motion primitives, mega-footer pattern, four sub-brand themes, RTL pass on every primitive.</p>
+            </div>
+          </li>
+          <li>
+            <span class="cl-version mono">v1.1</span>
+            <span class="cl-date mono">May 2026 · planned</span>
+            <div class="cl-body">
+              <strong>Marketing pages.</strong>
+              <p>Home with scroll-image hero, ecosystem map, four sub-brand hubs, Stories index, About / Press / Contact, mega-footer wired everywhere.</p>
+            </div>
+          </li>
+          <li>
+            <span class="cl-version mono">v1.2</span>
+            <span class="cl-date mono">Jun 2026 · planned</span>
+            <div class="cl-body">
+              <strong>Sub-brand depth.</strong>
+              <p>Bootcamp / Battle / Event / Case-study detail templates, B2B funnels (Sponsor a Battle, Host a Bootcamp, For Universities).</p>
+            </div>
+          </li>
+          <li>
+            <span class="cl-version mono">v1.3</span>
+            <span class="cl-date mono">Jul 2026 · planned</span>
+            <div class="cl-body">
+              <strong>Account system.</strong>
+              <p>Single SSO across arms, dashboard, applications, portfolio, public designer profile. Discord gateway live.</p>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <!-- ============== FOOTER ============== -->
+      <footer class="sysfoot">
+        <div class="sysfoot-top">
+          <div class="sysfoot-brand">
+            <span class="brand-mark">✱</span>
+            <span>MeetPixils · Design System</span>
+          </div>
+          <div class="sysfoot-links">
+            <a href="#foundations">Foundations</a>
+            <a href="#components">Components</a>
+            <a href="#patterns">Patterns</a>
+            <a href="#theming">Theming</a>
+            <a href="#a11y">A11y</a>
+          </div>
+        </div>
+        <div class="sysfoot-bottom mono">
+          <span>v1.0 · Apr 2026</span>
+          <span>Pixilated Studio · Amman</span>
+          <span>If the codebase contradicts this brief, the brief wins.</span>
+        </div>
+      </footer>
+
+    </main>
+
+    <script src="system.js"></script>
+  </body>
+</html>

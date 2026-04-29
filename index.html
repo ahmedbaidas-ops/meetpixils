@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Meet Pixils — A creative studio for the curious</title>
+    <meta name="description" content="Pixils is a creative studio crafting interfaces, brands, and stories that feel alive." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=Bricolage+Grotesque:opsz,wght@12..96,400..800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- ATMOSPHERE -->
+    <div class="sky" aria-hidden="true">
+      <div class="cloud cloud-1"></div>
+      <div class="cloud cloud-2"></div>
+      <div class="cloud cloud-3"></div>
+      <div class="cloud cloud-4"></div>
+      <div class="cloud cloud-5"></div>
+      <div class="cloud cloud-6"></div>
+    </div>
+
+    <!-- BUTTERFLIES -->
+    <svg class="butterfly butterfly-1" viewBox="0 0 80 64" aria-hidden="true">
+      <use href="#butterfly" />
+    </svg>
+    <svg class="butterfly butterfly-2" viewBox="0 0 80 64" aria-hidden="true">
+      <use href="#butterfly" />
+    </svg>
+    <svg class="butterfly butterfly-3" viewBox="0 0 80 64" aria-hidden="true">
+      <use href="#butterfly" />
+    </svg>
+
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+      <defs>
+        <symbol id="butterfly" viewBox="0 0 80 64">
+          <g>
+            <path d="M40 32 C 24 8, 4 8, 4 24 C 4 40, 24 48, 40 32 Z" fill="#ff7a3a"/>
+            <path d="M40 32 C 24 56, 4 56, 4 40 C 4 28, 22 28, 40 32 Z" fill="#ff5b1e"/>
+            <path d="M40 32 C 56 8, 76 8, 76 24 C 76 40, 56 48, 40 32 Z" fill="#ff7a3a"/>
+            <path d="M40 32 C 56 56, 76 56, 76 40 C 76 28, 58 28, 40 32 Z" fill="#ff5b1e"/>
+            <ellipse cx="40" cy="32" rx="2.4" ry="9" fill="#1a1a1a"/>
+            <circle cx="40" cy="22" r="2.6" fill="#1a1a1a"/>
+          </g>
+        </symbol>
+      </defs>
+    </svg>
+
+    <!-- NAV -->
+    <header class="nav">
+      <a class="logo" href="#">
+        <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true">
+          <g fill="#1a1a1a">
+            <path d="M16 0 L18 14 L32 16 L18 18 L16 32 L14 18 L0 16 L14 14 Z"/>
+          </g>
+        </svg>
+        <span>Pixils</span>
+      </a>
+      <nav class="nav-pills" aria-label="Primary">
+        <a href="#studio" class="pill pill-active">Studio</a>
+        <a href="#work" class="pill">Work</a>
+        <a href="#people" class="pill">People</a>
+        <a href="#journal" class="pill">Journal</a>
+      </nav>
+      <a href="#contact" class="btn btn-light">
+        <span class="dot"></span>
+        Say hi
+      </a>
+    </header>
+
+    <!-- HERO -->
+    <main>
+      <section class="hero">
+        <div class="hero-emblem" aria-hidden="true">
+          <svg viewBox="0 0 80 80" width="64" height="64">
+            <circle cx="40" cy="40" r="34" fill="none" stroke="#1a1a1a" stroke-width="2"/>
+            <ellipse cx="40" cy="40" rx="14" ry="34" fill="none" stroke="#1a1a1a" stroke-width="2"/>
+            <ellipse cx="40" cy="40" rx="34" ry="14" fill="none" stroke="#1a1a1a" stroke-width="2"/>
+          </svg>
+        </div>
+
+        <h1 class="hero-title">
+          Meet <span class="ital">Pixils</span>
+        </h1>
+        <p class="hero-sub">
+          A small, ambitious creative studio building interfaces, brands, and stories that feel a little more alive than they probably should.
+        </p>
+
+        <!-- floating pill tags -->
+        <span class="tag tag-1">#design</span>
+        <span class="tag tag-2">#brand</span>
+        <span class="tag tag-3">#interface</span>
+        <span class="tag tag-4">#motion</span>
+        <span class="tag tag-5">#research</span>
+        <span class="tag tag-6">#code</span>
+
+        <div class="hero-cta">
+          <a href="#work" class="btn btn-gradient">
+            See our work
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#reel" class="btn btn-ghost">
+            <span class="play"><svg width="10" height="12" viewBox="0 0 10 12" fill="#fff"><path d="M0 0L10 6L0 12Z"/></svg></span>
+            Watch reel
+          </a>
+        </div>
+      </section>
+
+      <!-- WHY -->
+      <section class="why" id="studio">
+        <div class="why-card why-lead">
+          <h2>Why <span class="muted">Pixils?</span></h2>
+          <p>Studios pitch process. We pitch taste, judgment, and the discipline to ship work we'd actually frame on the wall.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon why-icon-bloom" aria-hidden="true"></div>
+          <h3>Full-bloom craft</h3>
+          <p>Type, motion, copy, code — handled in-house, never sub-contracted. Every pixel is signed.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon why-icon-spark" aria-hidden="true"></div>
+          <h3>Warm, not corporate</h3>
+          <p>We treat your product like a living thing — opinionated, friendly, a little weird in the right places.</p>
+        </div>
+      </section>
+
+      <!-- TICKER -->
+      <div class="ticker" aria-hidden="true">
+        <div class="ticker-track">
+          <span>Design that breathes</span><span>✦</span>
+          <span>Type with a pulse</span><span>✦</span>
+          <span>Brands with a backbone</span><span>✦</span>
+          <span>Interfaces you'd hug</span><span>✦</span>
+          <span>Stories with a spine</span><span>✦</span>
+          <span>Design that breathes</span><span>✦</span>
+          <span>Type with a pulse</span><span>✦</span>
+          <span>Brands with a backbone</span><span>✦</span>
+          <span>Interfaces you'd hug</span><span>✦</span>
+          <span>Stories with a spine</span><span>✦</span>
+        </div>
+      </div>
+
+      <!-- SERVICES -->
+      <section class="services" id="work">
+        <header class="section-head">
+          <span class="eyebrow">Services · 06</span>
+          <h2>Things we're <em>good</em> at.</h2>
+          <p>Six disciplines, one studio. Pick the ones you need — we'll quietly do the rest.</p>
+        </header>
+
+        <div class="services-grid">
+          <article class="service">
+            <span class="service-num">01</span>
+            <h3>Brand identity</h3>
+            <p>Logos, systems, voice, type. The whole face of the thing — built to age.</p>
+            <ul><li>Visual identity</li><li>Naming &amp; voice</li><li>Guidelines</li></ul>
+          </article>
+          <article class="service service-hl">
+            <span class="service-num">02</span>
+            <h3>Product design</h3>
+            <p>Interfaces and flows that are quietly clever — the kind users don't notice because nothing's in the way.</p>
+            <ul><li>UX &amp; UI</li><li>Design systems</li><li>Prototyping</li></ul>
+          </article>
+          <article class="service">
+            <span class="service-num">03</span>
+            <h3>Motion &amp; 3D</h3>
+            <p>Loading states, hero reels, scroll experiences. We make the page feel like it's breathing.</p>
+            <ul><li>UI motion</li><li>3D &amp; render</li><li>Reels &amp; loops</li></ul>
+          </article>
+          <article class="service">
+            <span class="service-num">04</span>
+            <h3>Web &amp; code</h3>
+            <p>Hand-built sites. Lenis, GSAP, three.js when it earns its weight. Lighthouse 95+ as table stakes.</p>
+            <ul><li>Marketing sites</li><li>Webflow / Next</li><li>Shaders &amp; WebGL</li></ul>
+          </article>
+          <article class="service">
+            <span class="service-num">05</span>
+            <h3>Research</h3>
+            <p>Interviews, audits, journey maps. Real users, real findings — never the kind that just confirm the brief.</p>
+            <ul><li>Discovery</li><li>Heuristic audits</li><li>Usability testing</li></ul>
+          </article>
+          <article class="service">
+            <span class="service-num">06</span>
+            <h3>Strategy</h3>
+            <p>Positioning, narrative, roadmap. Where the brand stands today, and where it's allowed to go.</p>
+            <ul><li>Positioning</li><li>Narrative</li><li>Go-to-market</li></ul>
+          </article>
+        </div>
+      </section>
+
+      <!-- SHOWCASE — surreal nature meets product -->
+      <section class="showcase" id="reel">
+        <div class="showcase-grid">
+          <figure class="card card-tall">
+            <div class="card-img card-grass-chair"></div>
+            <figcaption>
+              <span class="case-tag">Case · Bloom Furniture</span>
+              <h3>Soft objects, hard problems</h3>
+              <p>Brand and e-commerce for a sofa company that grows in fields.</p>
+            </figcaption>
+          </figure>
+
+          <div class="showcase-side">
+            <figure class="card">
+              <div class="card-img card-grass-sofa"></div>
+              <figcaption>
+                <span class="case-tag">Case · Verdant</span>
+                <h3>A landing page that grows</h3>
+                <p>An immersive scroll story for a climate-tech series A.</p>
+              </figcaption>
+            </figure>
+
+            <figure class="card card-quote">
+              <blockquote>
+                "The only studio I've worked with that argued <em>back</em> — and was right."
+              </blockquote>
+              <figcaption>
+                <strong>Mira Okafor</strong>
+                <span>Head of Brand · Northhaven</span>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- PEOPLE -->
+      <section class="people" id="people">
+        <header class="section-head section-head-light">
+          <span class="eyebrow">The studio · 07</span>
+          <h2>Seven people, one room.</h2>
+          <p>No project managers, no juniors-in-the-back. The people you meet are the ones who do the work.</p>
+        </header>
+
+        <div class="people-grid">
+          <div class="person"><div class="avatar a1"></div><strong>Aya N.</strong><span>Creative Director</span></div>
+          <div class="person"><div class="avatar a2"></div><strong>Theo R.</strong><span>Brand Designer</span></div>
+          <div class="person"><div class="avatar a3"></div><strong>Mira S.</strong><span>Product Lead</span></div>
+          <div class="person"><div class="avatar a4"></div><strong>Jules K.</strong><span>Motion &amp; 3D</span></div>
+          <div class="person"><div class="avatar a5"></div><strong>Sana P.</strong><span>UX Research</span></div>
+          <div class="person"><div class="avatar a6"></div><strong>Ren D.</strong><span>Engineering</span></div>
+          <div class="person"><div class="avatar a7"></div><strong>Iris L.</strong><span>Strategy &amp; Words</span></div>
+        </div>
+      </section>
+
+      <!-- LOGOS -->
+      <section class="logos">
+        <p class="logos-label">Trusted by curious teams</p>
+        <div class="logos-row">
+          <span>NORTHHAVEN</span><span>verdant</span><span>BLOOM&amp;CO</span><span>Lumen</span><span>FIELDNOTE</span><span>orbital</span>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="cta" id="contact">
+        <div class="cta-inner">
+          <h2>Got a project that <em>deserves</em> a little weather?</h2>
+          <p>We take on a handful of clients each quarter. Tell us what you're building — we'll write back within a day.</p>
+          <form class="cta-form" onsubmit="event.preventDefault(); this.querySelector('button').textContent='Sent ✓';">
+            <input type="email" placeholder="you@company.com" aria-label="Email" required />
+            <button type="submit" class="btn btn-gradient">Start a conversation</button>
+          </form>
+          <div class="cta-meta">
+            <span>hello@pixils.studio</span>
+            <span>·</span>
+            <span>Lisbon · Brooklyn · Remote</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="footer">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <svg viewBox="0 0 32 32" width="22" height="22" aria-hidden="true">
+              <path d="M16 0 L18 14 L32 16 L18 18 L16 32 L14 18 L0 16 L14 14 Z" fill="#fff"/>
+            </svg>
+            <span>Pixils</span>
+          </div>
+          <nav class="footer-nav" aria-label="Footer">
+            <a href="#studio">Studio</a>
+            <a href="#work">Work</a>
+            <a href="#people">People</a>
+            <a href="#journal">Journal</a>
+            <a href="#contact">Contact</a>
+          </nav>
+        </div>
+        <div class="footer-bottom">
+          <span>© 2026 Pixils Studio</span>
+          <span>Designed in the cloud, shipped on the ground.</span>
+        </div>
+      </footer>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
