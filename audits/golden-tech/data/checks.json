@@ -1,0 +1,822 @@
+[
+ {
+  "id": "C01",
+  "area": "Homepage & landing",
+  "check": "States what the store sells and why buy here",
+  "weight": 2,
+  "status": "Partial",
+  "points": 0.5,
+  "evidence": "Title 'Home of Laptop & Computers in KSA'; meta copy in broken English",
+  "finding": "F28"
+ },
+ {
+  "id": "C02",
+  "area": "Homepage & landing",
+  "check": "Category and brand entry points",
+  "weight": 2,
+  "status": "Pass",
+  "points": 1,
+  "evidence": "New Arrivals, Shop by brand, PC Gaming tiers linked",
+  "finding": ""
+ },
+ {
+  "id": "C03",
+  "area": "Homepage & landing",
+  "check": "One clear destination for offers",
+  "weight": 2,
+  "status": "Fail",
+  "points": 0,
+  "evidence": "8+ offer pages, duplicate titles",
+  "finding": "F15"
+ },
+ {
+  "id": "C04",
+  "area": "Homepage & landing",
+  "check": "Featured deals are credible",
+  "weight": 1,
+  "status": "Partial",
+  "points": 0.5,
+  "evidence": "Deal of the day at -4%",
+  "finding": "F16"
+ },
+ {
+  "id": "C05",
+  "area": "Homepage & landing",
+  "check": "Paid traffic lands on an intent-matched page",
+  "weight": 2,
+  "status": "Fail",
+  "points": 0,
+  "evidence": "Google Ads click opens the homepage",
+  "finding": "F14"
+ },
+ {
+  "id": "C06",
+  "area": "Homepage & landing",
+  "check": "No public test or duplicate homepages",
+  "weight": 1,
+  "status": "Fail",
+  "points": 0,
+  "evidence": "'Golden EN Home Page Demo' indexed",
+  "finding": "F25"
+ },
+ {
+  "id": "C07",
+  "area": "Homepage & landing",
+  "check": "Above-the-fold hierarchy on mobile",
+  "weight": 2,
+  "status": "Not verified",
+  "points": null,
+  "evidence": "Needs a live screenshot",
+  "finding": ""
+ },
+ {
+  "id": "C08",
+  "area": "Navigation & IA",
+  "check": "Top level organised by product type",
+  "weight": 2,
+  "status": "Pass",
+  "points": 1,
+  "evidence": "Laptops, Desktops, PC Gaming, Monitors, Apple, Accessories, Printers",
+  "finding": ""
+ },
+ {
+  "id": "C09",
+  "area": "Navigation & IA",
+  "check": "Paths by need or budget (study, gaming, work, create)",
+  "weight": 2,
+  "status": "Partial",
+  "points": 0.5,
+  "evidence": "Gaming and Business exist; no student, creator or price-band paths",
+  "finding": "F17"
+ },
+ {
+  "id": "C10",
+  "area": "Navigation & IA",
+  "check": "Category labels match their contents",
+  "weight": 2,
+  "status": "Fail",
+  "points": 0,
+  "evidence": "'Gaming' lists peripherals",
+  "finding": "F18"
+ },
+ {
+  "id": "C11",
+  "area": "Navigation & IA",
+  "check": "No dead-end or single-product categories",
+  "weight": 1,
+  "status": "Fail",
+  "points": 0,
+  "evidence": "Servers holds one product",
+  "finding": "F18"
+ },
+ {
+  "id": "C12",
+  "area": "Navigation & IA",
+  "check": "One canonical path per category",
+  "weight": 1,
+  "status": "Fail",
+  "points": 0,
+  "evidence": "Duplicate Microsoft and PC Gaming paths",
+  "finding": "F18"
+ },
+ {
+  "id": "C13",
+  "area": "Navigation & IA",
+  "check": "Consistent shop-by-brand",
+  "weight": 1,
+  "status": "Partial",
+  "points": 0.5,
+  "evidence": "Exists, but under three URL patterns",
+  "finding": "F18"
+ },
+ {
+  "id": "C14",
+  "area": "Navigation & IA",
+  "check": "Business / bulk-buying path",
+  "weight": 2,
+  "status": "Fail",
+  "points": 0,
+  "evidence": "No quote or corporate page",
+  "finding": "F32"
+ },
+ {
+  "id": "C15",
+  "area": "Navigation & IA",
+  "check": "Mobile menu usability",
+  "weight": 2,
+  "status": "Not verified",
+  "points": null,
+  "evidence": "Needs a live session",
+  "finding": ""
+ },
+ {
+  "id": "C16",
+  "area": "Search",
+  "check": "Search result pages kept out of Google",
+  "weight": 1,
+  "status": "Fail",
+  "points": 0,
+  "evidence": "/catalogsearch/result/ indexed",
+  "finding": "F26"
+ },
+ {
+  "id": "C17",
+  "area": "Search",
+  "check": "Retired products send shoppers to the successor",
+  "weight": 2,
+  "status": "Partial",
+  "points": 0.5,
+  "evidence": "Retired URL lands on generic search results",
+  "finding": "F26"
+ },
+ {
+  "id": "C18",
+  "area": "Search",
+  "check": "Autocomplete with products and categories",
+  "weight": 3,
+  "status": "Not verified",
+  "points": null,
+  "evidence": "Needs a live session",
+  "finding": ""
+ },
+ {
+  "id": "C19",
+  "area": "Search",
+  "check": "Model-number and part-number matching",
+  "weight": 3,
+  "status": "Not verified",
+  "points": null,
+  "evidence": "Needs a live session",
+  "finding": ""
+ },
+ {
+  "id": "C20",
+  "area": "Search",
+  "check": "Typo and Arabic↔English tolerance (لابتوب / laptop)",
+  "weight": 2,
+  "status": "Not verified",
+  "points": null,
+  "evidence": "Needs a live session",
+  "finding": ""
+ },
+ {
+  "id": "C21",
+  "area": "Category pages",
+  "check": "Filters for key specs (CPU, GPU, RAM, storage)",
+  "weight": 3,
+  "status": "Pass",
+  "points": 1,
+  "evidence": "Processor, RAM, storage, graphics and display filters on gaming listings",
+  "finding": ""
+ },
+ {
+  "id": "C22",
+  "area": "Category pages",
+  "check": "Spec filters can be combined",
+  "weight": 2,
+  "status": "Fail",
+  "points": 0,
+  "evidence": "Refresh rate, panel and resolution are separate pages",
+  "finding": "F19"
+ },
+ {
+  "id": "C23",
+  "area": "Category pages",
+  "check": "Useful price filter",
+  "weight": 2,
+  "status": "Fail",
+  "points": 0,
+  "evidence": "Two buckets: 0–10,000 and 10,000–20,000",
+  "finding": "F19"
+ },
+ {
+  "id": "C24",
+  "area": "Category pages",
+  "check": "Sort by price, rating, newest and best-selling",
+  "weight": 3,
+  "status": "Fail",
+  "points": 0,
+  "evidence": "Only Position, Best Sellers, Most Viewed, wishlist count found",
+  "finding": "F20"
+ },
+ {
+  "id": "C25",
+  "area": "Category pages",
+  "check": "Cards show price, saving and VAT status",
+  "weight": 2,
+  "status": "Pass",
+  "points": 1,
+  "evidence": "Special / regular price, % badge, 'Tax included'",
+  "finding": ""
+ },
+ {
+  "id": "C26",
+  "area": "Category pages",
+  "check": "Scannable card titles with key specs",
+  "weight": 2,
+  "status": "Fail",
+  "points": 0,
+  "evidence": "115–140 character spec strings",
+  "finding": "F21"
+ },
+ {
+  "id": "C27",
+  "area": "Category pages",
+  "check": "Stock status and out-of-stock handling",
+  "weight": 1,
+  "status": "Partial",
+  "points": 0.5,
+  "evidence": "'Not available' shown; out-of-stock items mixed into results",
+  "finding": ""
+ },
+ {
+  "id": "C28",
+  "area": "Category pages",
+  "check": "Ratings on cards",
+  "weight": 1,
+  "status": "Partial",
+  "points": 0.5,
+  "evidence": "Shown, but 0–2 reviews per product",
+  "finding": "F22"
+ },
+ {
+  "id": "C29",
+  "area": "Category pages",
+  "check": "Compare and wishlist from the listing",
+  "weight": 1,
+  "status": "Pass",
+  "points": 1,
+  "evidence": "'Wish List / Compare' on cards",
+  "finding": ""
+ },
+ {
+  "id": "C30",
+  "area": "Product page",
+  "check": "Structured spec sheet",
+  "weight": 3,
+  "status": "Pass",
+  "points": 1,
+  "evidence": "'Label: value' attribute lines (warranty, model number, display)",
+  "finding": ""
+ },
+ {
+  "id": "C31",
+  "area": "Product page",
+  "check": "Price shown with VAT status",
+  "weight": 2,
+  "status": "Pass",
+  "points": 1,
+  "evidence": "'Tax included' / 'شاملة الضريبة'",
+  "finding": ""
+ },
+ {
+  "id": "C32",
+  "area": "Product page",
+  "check": "Price matches listings and the other language",
+  "weight": 3,
+  "status": "Fail",
+  "points": 0,
+  "evidence": "EN 6,899 vs AR 5,299 for the same SKU",
+  "finding": "F03"
+ },
+ {
+  "id": "C33",
+  "area": "Product page",
+  "check": "Delivery promise matches the policy",
+  "weight": 3,
+  "status": "Fail",
+  "points": 0,
+  "evidence": "'24 hours Riyadh' vs '3 to 7 working days'",
+  "finding": "F02"
+ },
+ {
+  "id": "C34",
+  "area": "Product page",
+  "check": "Delivery shown as a date",
+  "weight": 2,
+  "status": "Fail",
+  "points": 0,
+  "evidence": "Shown as a range of days",
+  "finding": "F23"
+ },
+ {
+  "id": "C35",
+  "area": "Product page",
+  "check": "Warranty length and provider stated",
+  "weight": 2,
+  "status": "Pass",
+  "points": 1,
+  "evidence": "'24 Months Warranty by Samsung / Apple / Golden Tech'",
+  "finding": ""
+ },
+ {
+  "id": "C36",
+  "area": "Product page",
+  "check": "Instalment price shown",
+  "weight": 2,
+  "status": "Partial",
+  "points": 0.5,
+  "evidence": "Tabby / Tamara tables, but fee wording conflicts",
+  "finding": "F10"
+ },
+ {
+  "id": "C37",
+  "area": "Product page",
+  "check": "Customer reviews",
+  "weight": 3,
+  "status": "Fail",
+  "points": 0,
+  "evidence": "0–2 reviews per product",
+  "finding": "F22"
+ },
+ {
+  "id": "C38",
+  "area": "Product page",
+  "check": "Stock status",
+  "weight": 1,
+  "status": "Pass",
+  "points": 1,
+  "evidence": "'In stock' / 'Not available'",
+  "finding": ""
+ },
+ {
+  "id": "C39",
+  "area": "Product page",
+  "check": "Specs accurate and consistent",
+  "weight": 2,
+  "status": "Partial",
+  "points": 0.5,
+  "evidence": "4K vs FHD conflict; wrong model in URL",
+  "finding": "F24"
+ },
+ {
+  "id": "C40",
+  "area": "Product page",
+  "check": "Image gallery, zoom and in-scale images",
+  "weight": 2,
+  "status": "Not verified",
+  "points": null,
+  "evidence": "Needs a live session",
+  "finding": ""
+ },
+ {
+  "id": "C41",
+  "area": "Product page",
+  "check": "Accessory cross-sell and protection plans",
+  "weight": 1,
+  "status": "Not verified",
+  "points": null,
+  "evidence": "None found in the index",
+  "finding": "F23"
+ },
+ {
+  "id": "C42",
+  "area": "Cart & checkout",
+  "check": "Guest checkout",
+  "weight": 3,
+  "status": "Fail",
+  "points": 0,
+  "evidence": "Registration required",
+  "finding": "F04"
+ },
+ {
+  "id": "C43",
+  "area": "Cart & checkout",
+  "check": "Phone verification placed late in the flow",
+  "weight": 2,
+  "status": "Fail",
+  "points": 0,
+  "evidence": "SMS code at sign-up, before buying",
+  "finding": "F04"
+ },
+ {
+  "id": "C44",
+  "area": "Cart & checkout",
+  "check": "Total cost known before checkout",
+  "weight": 3,
+  "status": "Fail",
+  "points": 0,
+  "evidence": "Three delivery-fee rules",
+  "finding": "F01"
+ },
+ {
+  "id": "C45",
+  "area": "Cart & checkout",
+  "check": "mada and cards",
+  "weight": 2,
+  "status": "Pass",
+  "points": 1,
+  "evidence": "Visa, Mastercard, mada with no extra fee",
+  "finding": ""
+ },
+ {
+  "id": "C46",
+  "area": "Cart & checkout",
+  "check": "Apple Pay / wallet",
+  "weight": 2,
+  "status": "Fail",
+  "points": 0,
+  "evidence": "Not on the payment methods page",
+  "finding": "F11"
+ },
+ {
+  "id": "C47",
+  "area": "Cart & checkout",
+  "check": "Buy now, pay later at checkout",
+  "weight": 2,
+  "status": "Pass",
+  "points": 1,
+  "evidence": "Tabby merchant page; Tamara tables on products",
+  "finding": ""
+ },
+ {
+  "id": "C48",
+  "area": "Cart & checkout",
+  "check": "Cash on delivery with fee shown upfront",
+  "weight": 1,
+  "status": "Partial",
+  "points": 0.5,
+  "evidence": "COD +20 SAR, disclosed only in the Terms",
+  "finding": "F12"
+ },
+ {
+  "id": "C49",
+  "area": "Cart & checkout",
+  "check": "Showroom pickup option",
+  "weight": 2,
+  "status": "Partial",
+  "points": 0.5,
+  "evidence": "'Click and Collect' in FAQ; no checkout option found",
+  "finding": "F13"
+ },
+ {
+  "id": "C50",
+  "area": "Cart & checkout",
+  "check": "National Address (short address) capture",
+  "weight": 2,
+  "status": "Not verified",
+  "points": null,
+  "evidence": "No field found in the index",
+  "finding": "F39"
+ },
+ {
+  "id": "C51",
+  "area": "Cart & checkout",
+  "check": "Order review before payment",
+  "weight": 1,
+  "status": "Pass",
+  "points": 1,
+  "evidence": "FAQ: review step before completing the purchase",
+  "finding": ""
+ },
+ {
+  "id": "C52",
+  "area": "Cart & checkout",
+  "check": "Inline validation and clear errors",
+  "weight": 2,
+  "status": "Not verified",
+  "points": null,
+  "evidence": "Needs a live session",
+  "finding": ""
+ },
+ {
+  "id": "C53",
+  "area": "Delivery, returns & payments",
+  "check": "Delivers to all regions of KSA",
+  "weight": 1,
+  "status": "Pass",
+  "points": 1,
+  "evidence": "FAQ: delivery covers all regions",
+  "finding": ""
+ },
+ {
+  "id": "C54",
+  "area": "Delivery, returns & payments",
+  "check": "One delivery fee rule",
+  "weight": 3,
+  "status": "Fail",
+  "points": 0,
+  "evidence": "20 SAR / 10 SAR under 200 / free",
+  "finding": "F01"
+ },
+ {
+  "id": "C55",
+  "area": "Delivery, returns & payments",
+  "check": "One delivery time promise",
+  "weight": 3,
+  "status": "Fail",
+  "points": 0,
+  "evidence": "Same-day to 10 working days",
+  "finding": "F02"
+ },
+ {
+  "id": "C56",
+  "area": "Delivery, returns & payments",
+  "check": "Competitive speed in Riyadh (1–2 days)",
+  "weight": 2,
+  "status": "Partial",
+  "points": 0.5,
+  "evidence": "'24 hours' on products, '3–7 working days' in Terms",
+  "finding": "F02"
+ },
+ {
+  "id": "C57",
+  "area": "Delivery, returns & payments",
+  "check": "Change-of-mind return window of 14+ days",
+  "weight": 2,
+  "status": "Fail",
+  "points": 0,
+  "evidence": "7 days, defects only",
+  "finding": "F06"
+ },
+ {
+  "id": "C58",
+  "area": "Delivery, returns & payments",
+  "check": "Accessories and instalment orders returnable",
+  "weight": 1,
+  "status": "Fail",
+  "points": 0,
+  "evidence": "Both excluded",
+  "finding": "F06"
+ },
+ {
+  "id": "C59",
+  "area": "Delivery, returns & payments",
+  "check": "Refund timing stated once",
+  "weight": 1,
+  "status": "Fail",
+  "points": 0,
+  "evidence": "1–5 vs 3–30 days",
+  "finding": "F07"
+ },
+ {
+  "id": "C60",
+  "area": "Delivery, returns & payments",
+  "check": "Self-service returns and cancellation",
+  "weight": 2,
+  "status": "Fail",
+  "points": 0,
+  "evidence": "Phone or email only; 59 SAR cancel fee after shipping",
+  "finding": "F31"
+ },
+ {
+  "id": "C61",
+  "area": "Delivery, returns & payments",
+  "check": "Payment options breadth",
+  "weight": 2,
+  "status": "Pass",
+  "points": 1,
+  "evidence": "mada, cards, card instalments, Tabby/Tamara, COD",
+  "finding": ""
+ },
+ {
+  "id": "C62",
+  "area": "Delivery, returns & payments",
+  "check": "Payment page lists every option",
+  "weight": 1,
+  "status": "Fail",
+  "points": 0,
+  "evidence": "BNPL providers missing",
+  "finding": "F10"
+ },
+ {
+  "id": "C63",
+  "area": "Delivery, returns & payments",
+  "check": "Warranty length stated",
+  "weight": 1,
+  "status": "Pass",
+  "points": 1,
+  "evidence": "Two years via the brand agent",
+  "finding": ""
+ },
+ {
+  "id": "C64",
+  "area": "Delivery, returns & payments",
+  "check": "Store owns the warranty claim",
+  "weight": 2,
+  "status": "Fail",
+  "points": 0,
+  "evidence": "'not considered the responsibility of The Golden Technology'",
+  "finding": "F09"
+ },
+ {
+  "id": "C65",
+  "area": "Trust & support",
+  "check": "CR and VAT numbers shown",
+  "weight": 2,
+  "status": "Pass",
+  "points": 1,
+  "evidence": "CR 1010276436, VAT 311258900400003 in the footer",
+  "finding": ""
+ },
+ {
+  "id": "C66",
+  "area": "Trust & support",
+  "check": "Business Platform (SBC) authentication shown",
+  "weight": 2,
+  "status": "Not verified",
+  "points": null,
+  "evidence": "No badge found in the index",
+  "finding": "F29"
+ },
+ {
+  "id": "C67",
+  "area": "Trust & support",
+  "check": "Showroom address and opening hours",
+  "weight": 1,
+  "status": "Pass",
+  "points": 1,
+  "evidence": "Olaya computer market, Sat–Thu 9am–10pm",
+  "finding": ""
+ },
+ {
+  "id": "C68",
+  "area": "Trust & support",
+  "check": "Contact details consistent",
+  "weight": 1,
+  "status": "Fail",
+  "points": 0,
+  "evidence": "Two sets of landline hours, two emails",
+  "finding": "F30"
+ },
+ {
+  "id": "C69",
+  "area": "Trust & support",
+  "check": "WhatsApp or live chat",
+  "weight": 2,
+  "status": "Fail",
+  "points": 0,
+  "evidence": "None on the site",
+  "finding": "F30"
+ },
+ {
+  "id": "C70",
+  "area": "Trust & support",
+  "check": "On-site review volume",
+  "weight": 2,
+  "status": "Fail",
+  "points": 0,
+  "evidence": "0–2 reviews per product",
+  "finding": "F22"
+ },
+ {
+  "id": "C71",
+  "area": "Trust & support",
+  "check": "Off-site reputation",
+  "weight": 1,
+  "status": "Pass",
+  "points": 1,
+  "evidence": "4.5–4.8 on arabplaces, Cybo, magicpin",
+  "finding": ""
+ },
+ {
+  "id": "C72",
+  "area": "Trust & support",
+  "check": "Professional legal copy and one entity name",
+  "weight": 2,
+  "status": "Fail",
+  "points": 0,
+  "evidence": "'Technology gold'; 'foundation' vs 'Trading Company'",
+  "finding": "F08"
+ },
+ {
+  "id": "C73",
+  "area": "Trust & support",
+  "check": "Named brand authorisations",
+  "weight": 1,
+  "status": "Fail",
+  "points": 0,
+  "evidence": "'authorized distributors' with no brand named",
+  "finding": "F29"
+ },
+ {
+  "id": "C74",
+  "area": "Trust & support",
+  "check": "Order tracking",
+  "weight": 2,
+  "status": "Not verified",
+  "points": null,
+  "evidence": "No tracking page found in the index",
+  "finding": "F31"
+ },
+ {
+  "id": "C75",
+  "area": "Content & localisation",
+  "check": "Full Arabic store",
+  "weight": 2,
+  "status": "Pass",
+  "points": 1,
+  "evidence": "Complete /ar/ store view",
+  "finding": ""
+ },
+ {
+  "id": "C76",
+  "area": "Content & localisation",
+  "check": "English and Arabic kept separate (hreflang, titles)",
+  "weight": 2,
+  "status": "Fail",
+  "points": 0,
+  "evidence": "Arabic titles on /en/ URLs; Arabic posts under /en/blog/",
+  "finding": "F27"
+ },
+ {
+  "id": "C77",
+  "area": "Content & localisation",
+  "check": "Native-quality English",
+  "weight": 2,
+  "status": "Fail",
+  "points": 0,
+  "evidence": "'Shop best Gaming laptop with in KSA'",
+  "finding": "F28"
+ },
+ {
+  "id": "C78",
+  "area": "Content & localisation",
+  "check": "Consistent brand and product naming",
+  "weight": 1,
+  "status": "Fail",
+  "points": 0,
+  "evidence": "Store named four ways; 'Asus' vs 'اسوس'",
+  "finding": "F27"
+ },
+ {
+  "id": "C79",
+  "area": "Content & localisation",
+  "check": "Customer-facing page titles; no test pages",
+  "weight": 2,
+  "status": "Fail",
+  "points": 0,
+  "evidence": "'FAQ EN', 'Category Test'",
+  "finding": "F25"
+ },
+ {
+  "id": "C80",
+  "area": "Content & localisation",
+  "check": "VAT label in both languages",
+  "weight": 1,
+  "status": "Pass",
+  "points": 1,
+  "evidence": "'Tax included' / 'شاملة الضريبة'",
+  "finding": ""
+ },
+ {
+  "id": "C81",
+  "area": "Content & localisation",
+  "check": "Buying guides",
+  "weight": 1,
+  "status": "Partial",
+  "points": 0.5,
+  "evidence": "Blog exists; no posts after Aug 2025",
+  "finding": ""
+ },
+ {
+  "id": "C82",
+  "area": "Content & localisation",
+  "check": "New Saudi Riyal symbol",
+  "weight": 1,
+  "status": "Not verified",
+  "points": null,
+  "evidence": "Not found in the index",
+  "finding": "F37"
+ }
+]

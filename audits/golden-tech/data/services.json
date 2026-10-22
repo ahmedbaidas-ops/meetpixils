@@ -1,0 +1,137 @@
+[
+ {
+  "service": "Policy & trust rewrite",
+  "scope": "One delivery, returns, refund and warranty policy in Arabic and English; trust bar; SBC badge; legal entity cleanup",
+  "fixes": "F01, F02, F06, F07, F29",
+  "phase": "Quick wins",
+  "start_week": 0,
+  "weeks": 3,
+  "outcome": "Fewer 'extra costs' and 'returns policy' abandons"
+ },
+ {
+  "service": "Catalogue & price QA",
+  "scope": "Single price source for both languages, sanity rules, title schema, spec validation, retire old SKUs",
+  "fixes": "F03, F05, F21, F24, F34",
+  "phase": "Quick wins",
+  "start_week": 0,
+  "weeks": 4,
+  "outcome": "Zero price mismatches across pages"
+ },
+ {
+  "service": "SEO & content hygiene",
+  "scope": "Remove test pages, noindex search, fix hreflang/canonicals, rewrite titles",
+  "fixes": "F25, F26, F27",
+  "phase": "Quick wins",
+  "start_week": 1,
+  "weeks": 3,
+  "outcome": "Clean index; EN/AR served correctly"
+ },
+ {
+  "service": "Campaign landing pages",
+  "scope": "Intent-matched landing pages for each Google Ads campaign",
+  "fixes": "F14",
+  "phase": "Quick wins",
+  "start_week": 1,
+  "weeks": 3,
+  "outcome": "Lower cost per order on paid search"
+ },
+ {
+  "service": "Bilingual UX writing",
+  "scope": "Microcopy and legal copy pass, Arabic as source",
+  "fixes": "F08, F16, F28, F36",
+  "phase": "Quick wins",
+  "start_week": 2,
+  "weeks": 4,
+  "outcome": "Native-quality copy in both languages"
+ },
+ {
+  "service": "Checkout optimisation",
+  "scope": "Guest checkout, late OTP, Apple Pay, instalment widget, short-address field, pickup, fees shown upfront",
+  "fixes": "F04, F10, F11, F12, F13, F39",
+  "phase": "Core",
+  "start_week": 4,
+  "weeks": 6,
+  "outcome": "Checkout completion rate"
+ },
+ {
+  "service": "Product page redesign",
+  "scope": "Key-spec summary, dated delivery, warranty row, bundles, protection plan, review module",
+  "fixes": "F22, F23",
+  "phase": "Core",
+  "start_week": 5,
+  "weeks": 6,
+  "outcome": "Add-to-cart rate and order value"
+ },
+ {
+  "service": "Category & search UX",
+  "scope": "Faceted filters, full sort, spec chips, search tuning with model-number match",
+  "fixes": "F19, F20",
+  "phase": "Core",
+  "start_week": 5,
+  "weeks": 5,
+  "outcome": "Search-to-order and filter use"
+ },
+ {
+  "service": "Navigation & IA redesign",
+  "scope": "Card sort + tree test with Saudi shoppers; shop-by-need menu; one offers hub",
+  "fixes": "F15, F17, F18",
+  "phase": "Core",
+  "start_week": 4,
+  "weeks": 5,
+  "outcome": "Findability (tree-test success rate)"
+ },
+ {
+  "service": "Design system & UI kit",
+  "scope": "Tokenised, RTL-first component library for buttons, cards, price, badges, forms",
+  "fixes": "F35, F37",
+  "phase": "Core",
+  "start_week": 6,
+  "weeks": 6,
+  "outcome": "Consistent UI; faster releases"
+ },
+ {
+  "service": "Retention & CRM",
+  "scope": "WhatsApp Business, order tracking, review requests, loyalty refresh",
+  "fixes": "F22, F30, F31, F38",
+  "phase": "Growth",
+  "start_week": 10,
+  "weeks": 6,
+  "outcome": "Repeat purchase and review volume"
+ },
+ {
+  "service": "Service design",
+  "scope": "Store-owned warranty concierge and returns portal",
+  "fixes": "F09, F06",
+  "phase": "Growth",
+  "start_week": 10,
+  "weeks": 6,
+  "outcome": "Fewer support calls; higher trust"
+ },
+ {
+  "service": "B2B quote portal",
+  "scope": "Business hub: quotes, bulk pricing, VAT invoices, PO",
+  "fixes": "F32",
+  "phase": "Growth",
+  "start_week": 12,
+  "weeks": 6,
+  "outcome": "Qualified B2B leads"
+ },
+ {
+  "service": "PC builder",
+  "scope": "Guided gaming-PC builder with compatibility check and instalment pricing",
+  "fixes": "F33",
+  "phase": "Growth",
+  "start_week": 14,
+  "weeks": 8,
+  "outcome": "Differentiation vs eXtra, Jarir, Amazon, noon"
+ },
+ {
+  "service": "Validation sprint",
+  "scope": "Live audit capture, moderated tests with 5–8 Saudi shoppers, analytics and heatmap setup",
+  "fixes": "All 'Verify live' items",
+  "phase": "Quick wins",
+  "start_week": 0,
+  "weeks": 2,
+  "outcome": "Confirmed scores and baseline metrics"
+ }
+]

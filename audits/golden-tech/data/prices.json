@@ -1,0 +1,44 @@
+[
+ {
+  "product": "MacBook Air 13\" M4 16/256 (MW123)",
+  "store": "Golden Tech",
+  "price": 4199,
+  "url": "https://goldentech.com.sa/en/laptop-apple-macbook-air-13-inch-m4-chip-mw123aba.html"
+ },
+ {
+  "product": "MacBook Air 13\" M4 16/256 (MW123)",
+  "store": "Jarir",
+  "price": 3999,
+  "url": "https://www.jarir.com/sa-en/apple-macbook-air-laptops-654285.html"
+ },
+ {
+  "product": "MacBook Air 13\" M4 16/256 (MW123)",
+  "store": "eXtra",
+  "price": 3824,
+  "url": "https://www.extra.com/ar-sa/computer/laptops/macbook/apple-macbook-air-m4-16gb-256gb-ssd-13-inch-8-core-gpu-midnight/p/100396506"
+ },
+ {
+  "product": "ASUS ROG Strix G16 G614PR",
+  "store": "Golden Tech",
+  "price": 9799,
+  "url": "https://goldentech.com.sa/en/laptop-asus-rog-strix-g16-g614pr-gaming-golden-technology.html"
+ },
+ {
+  "product": "ASUS ROG Strix G16 G614PR",
+  "store": "Microless",
+  "price": 9686.78,
+  "url": "https://saudi.microless.com/product/asus-rog-strix-g16-g614pr-gaming-laptop-16-wuxga-ips-165hz-display-amd-ryzen-9-8940hx-32gb-ram-1tb-ssd-geforce-rtx-5070-ti-12gb-gpu-english-arabic-k-b-win11-eclipse-gray-90nr0nj7-m000e0/"
+ },
+ {
+  "product": "Samsung Odyssey OLED G6 500Hz",
+  "store": "Golden Tech",
+  "price": 3199,
+  "url": "https://goldentech.com.sa/ar/samsung-odyssey-oled-g6-gaming-monitor-27-inch-2k-qhd-2560x1440-hdr10-oled-panel-technology-0-03ms-response-time-500hz.html"
+ },
+ {
+  "product": "Samsung Odyssey OLED G6 500Hz",
+  "store": "Samsung KSA",
+  "price": 3249,
+  "url": "https://www.samsung.com/sa_en/monitors/gaming/odyssey-oled-g6-g60sf-27-inch-500hz-oled-qhd-ls27fg602smxue/"
+ }
+]

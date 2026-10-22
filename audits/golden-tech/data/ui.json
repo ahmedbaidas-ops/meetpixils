@@ -1,0 +1,137 @@
+[
+ {
+  "component": "Primary button (Add to Cart / Buy Now)",
+  "observed": "Two purchase buttons on product pages: 'Add to Cart' and 'Buy Now'",
+  "issue": "Two purchase actions; which one leads visually is unverified",
+  "standard": "One filled primary (Add to cart), one outlined secondary (Buy now); 48px height; sticky on mobile with white space around it",
+  "status": "Needs screenshot",
+  "priority": 3,
+  "priority_label": "High"
+ },
+ {
+  "component": "Price box",
+  "observed": "'Special Price 2299 Regular Price 2499 -8% Tax included Save 200'",
+  "issue": "The same saving said four ways; no currency on English prices",
+  "standard": "Price in the display face, struck-through was-price, one saving chip, 'VAT included' caption, Riyal symbol",
+  "status": "Verified from text",
+  "priority": 2,
+  "priority_label": "Medium"
+ },
+ {
+  "component": "Discount badge",
+  "observed": "'-8%', '-61%' on cards",
+  "issue": "Big percentages on small savings (-4% deal of the day) weaken the signal",
+  "standard": "Show a badge only above a threshold (e.g. 10%); same position on every card",
+  "status": "Verified from text",
+  "priority": 1,
+  "priority_label": "Low"
+ },
+ {
+  "component": "Product card",
+  "observed": "Image, 115–140 character title, price box, Wish List, Compare",
+  "issue": "Title dominates; no spec chips, rating or instalment line",
+  "standard": "Brand + model on two lines, 4 spec chips, rating, 'from SAR X/month', one icon row for wishlist and compare",
+  "status": "Verified from text",
+  "priority": 3,
+  "priority_label": "High"
+ },
+ {
+  "component": "Instalment widget",
+  "observed": "Tamara tables on some products; '4 interest-free payments' on others",
+  "issue": "Two widgets, two fee messages",
+  "standard": "One widget, one line ('4 payments of SAR X, 0% fees with Tabby'), details in a sheet",
+  "status": "Verified from text",
+  "priority": 3,
+  "priority_label": "High"
+ },
+ {
+  "component": "Filters (layered nav)",
+  "observed": "Brand, processor, RAM, storage, graphics, display, two price buckets",
+  "issue": "Counts run into words ('91items'); storage sorted as text; no slider",
+  "standard": "Chips for applied filters, number formatting, price slider, sorted values, tooltip for jargon",
+  "status": "Verified from text",
+  "priority": 2,
+  "priority_label": "Medium"
+ },
+ {
+  "component": "Sort control",
+  "observed": "Position, Best Sellers, Most Viewed, wishlist; 'Set Descending Direction'",
+  "issue": "Missing price sort; Magento wording",
+  "standard": "Price ↑, Price ↓, Newest, Top rated, Best selling",
+  "status": "Verified from text",
+  "priority": 3,
+  "priority_label": "High"
+ },
+ {
+  "component": "Delivery message",
+  "observed": "'Riyadh within 24 hours, other cities 3–6 working days'",
+  "issue": "Conflicts with the Terms; range not a date",
+  "standard": "Date block with cut-off and city picker, from one setting",
+  "status": "Verified from text",
+  "priority": 3,
+  "priority_label": "High"
+ },
+ {
+  "component": "Warranty label",
+  "observed": "'24 Months Warranty by Samsung / Apple / Golden Tech'",
+  "issue": "Good start; claim process not explained",
+  "standard": "Warranty row with provider logo and a 'How claims work' link",
+  "status": "Verified from text",
+  "priority": 1,
+  "priority_label": "Low"
+ },
+ {
+  "component": "Sign-up form + OTP",
+  "observed": "4-digit SMS code, 30-second resend timer, password strength meter",
+  "issue": "Gate before purchase; 'Click to the button below' copy",
+  "standard": "Phone-first guest flow; OTP at payment; autofill one-time code",
+  "status": "Verified from text",
+  "priority": 3,
+  "priority_label": "High"
+ },
+ {
+  "component": "Search box",
+  "observed": "Magento default results page",
+  "issue": "Autocomplete and Arabic/English synonyms unverified",
+  "standard": "Instant results with images, categories and model-number match",
+  "status": "Needs screenshot",
+  "priority": 2,
+  "priority_label": "Medium"
+ },
+ {
+  "component": "Tabs (Best Sellers / Most Viewed)",
+  "observed": "Used on category and offer pages",
+  "issue": "Unclear how they differ from sort",
+  "standard": "Merge into sort or curated rails",
+  "status": "Verified from text",
+  "priority": 1,
+  "priority_label": "Low"
+ },
+ {
+  "component": "Typography & colour tokens",
+  "observed": "Not visible from the index",
+  "issue": "Contrast, type scale and button colours unknown",
+  "standard": "Token audit: contrast ≥4.5:1 text, ≥3:1 UI; Arabic face at ~1.05–1.1× Latin size",
+  "status": "Needs screenshot",
+  "priority": 2,
+  "priority_label": "Medium"
+ },
+ {
+  "component": "RTL mirroring",
+  "observed": "Full /ar/ store view",
+  "issue": "Mirrored icons, numerals and mixed-script titles unverified",
+  "standard": "Mirror directional icons only; Western digits; LTR isolation for model numbers",
+  "status": "Needs screenshot",
+  "priority": 2,
+  "priority_label": "Medium"
+ },
+ {
+  "component": "Tap targets & focus states",
+  "observed": "Not visible from the index",
+  "issue": "Unknown",
+  "standard": "Targets ≥ 7×7 mm (~44px); visible focus ring on every control",
+  "status": "Needs screenshot",
+  "priority": 2,
+  "priority_label": "Medium"
+ }
+]

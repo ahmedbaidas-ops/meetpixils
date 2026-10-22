@@ -1,0 +1,102 @@
+[
+ {
+  "order": 1,
+  "stage": "Discover",
+  "touchpoint": "Google Ads, Instagram (14K), X, Tasheel 5% offer",
+  "persona": "All",
+  "sentiment": 0,
+  "now": "Ads open the homepage; the shopper's search intent is lost",
+  "fix": "Campaign landing pages that match the ad",
+  "findings": "F14"
+ },
+ {
+  "order": 2,
+  "stage": "Land",
+  "touchpoint": "Homepage",
+  "persona": "All",
+  "sentiment": -1,
+  "now": "Eight offer pages compete; broken English; a demo homepage is public",
+  "fix": "One offers hub, native copy, remove test pages",
+  "findings": "F15, F25, F28"
+ },
+ {
+  "order": 3,
+  "stage": "Find",
+  "touchpoint": "Menu and search",
+  "persona": "Reem, Abdullah",
+  "sentiment": -1,
+  "now": "Menu is brand-first; no 'for study' or 'for business' paths; search pages leak into Google",
+  "fix": "Shop-by-need menu, business hub, search tuning",
+  "findings": "F17, F18, F32, F26"
+ },
+ {
+  "order": 4,
+  "stage": "Browse",
+  "touchpoint": "Category listing",
+  "persona": "Faisal, Sara",
+  "sentiment": 0,
+  "now": "Good spec filters, but no price sort and spec pages can't be combined",
+  "fix": "Faceted filters, full sort set, spec chips on cards",
+  "findings": "F19, F20, F21"
+ },
+ {
+  "order": 5,
+  "stage": "Evaluate",
+  "touchpoint": "Product page",
+  "persona": "All",
+  "sentiment": -1,
+  "now": "Prices differ by page and language; 0–2 reviews; delivery shown as a range",
+  "fix": "Price QA, review engine, dated delivery",
+  "findings": "F03, F22, F23, F24"
+ },
+ {
+  "order": 6,
+  "stage": "Decide",
+  "touchpoint": "Price check vs Jarir, eXtra, Amazon",
+  "persona": "Sara, Faisal",
+  "sentiment": -2,
+  "now": "Three delivery fees, 7-day defects-only returns, instalment fees unclear",
+  "fix": "One policy page set, instalment widget, 14-day returns",
+  "findings": "F01, F02, F06, F10"
+ },
+ {
+  "order": 7,
+  "stage": "Checkout",
+  "touchpoint": "Cart, account and payment",
+  "persona": "All",
+  "sentiment": -2,
+  "now": "Must register and verify by SMS first; no Apple Pay; no address lookup",
+  "fix": "Guest checkout, Apple Pay, short-address field, pickup option",
+  "findings": "F04, F11, F13, F39"
+ },
+ {
+  "order": 8,
+  "stage": "Wait",
+  "touchpoint": "Delivery",
+  "persona": "All",
+  "sentiment": -1,
+  "now": "No tracking page; cancellation by phone only, 59 SAR after dispatch",
+  "fix": "Order status page and WhatsApp updates",
+  "findings": "F31"
+ },
+ {
+  "order": 9,
+  "stage": "Own & support",
+  "touchpoint": "Warranty and repairs",
+  "persona": "Faisal, Abdullah",
+  "sentiment": -2,
+  "now": "Warranty page says the store is not responsible; 79 SAR courier fee",
+  "fix": "Store-owned warranty concierge",
+  "findings": "F09, F08"
+ },
+ {
+  "order": 10,
+  "stage": "Return & rebuy",
+  "touchpoint": "Returns, loyalty, accessories",
+  "persona": "Reem, Sara",
+  "sentiment": -1,
+  "now": "Accessories can't be returned; loyalty is 1% with no stated expiry",
+  "fix": "Returns portal, accessory bundles, clearer loyalty",
+  "findings": "F06, F38"
+ }
+]

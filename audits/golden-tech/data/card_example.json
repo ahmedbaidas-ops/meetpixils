@@ -1,0 +1,25 @@
+[
+ {
+  "id": "today",
+  "label": "Today",
+  "title": "Laptop Asus ROG Strix G614PR Gaming AMD Ryzen 9-8940HX Processor, 32GB Ram, 1TB SSD M.2, NVIDIA GeForce RTX 5070 Ti 12GB,16-inch Display",
+  "price": 9799,
+  "was": 10999,
+  "price_text": "Special Price 9799 Regular Price 10999 -11% Tax included",
+  "delivery": "Riyadh 24 hours, other cities 3-6 business days",
+  "warranty": "24-month ASUS warranty",
+  "url": "https://goldentech.com.sa/en/laptop-asus-rog-strix-g16-g614pr-gaming-golden-technology.html"
+ },
+ {
+  "id": "proposed",
+  "label": "Proposed",
+  "title": "ASUS ROG Strix G16 (G614PR)",
+  "price": 9799,
+  "was": 10999,
+  "price_text": "",
+  "delivery": "Riyadh: tomorrow if ordered by 4pm",
+  "warranty": "2-year ASUS warranty, claims handled by Golden Tech",
+  "url": "https://goldentech.com.sa/en/laptop-asus-rog-strix-g16-g614pr-gaming-golden-technology.html",
+  "chips": "Ryzen 9 8940HX|RTX 5070 Ti 12GB|32GB RAM|1TB SSD|16\" 165Hz"
+ }
+]

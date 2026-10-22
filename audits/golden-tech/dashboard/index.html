@@ -1,0 +1,1301 @@
+<style>
+.gt {
+  --gt-sev4: var(--color-bad);
+  --gt-sev3: var(--color-warn);
+  --gt-sev2: var(--cds-chart-muted);
+  --gt-sev1: color-mix(in srgb, var(--cds-chart-muted) 45%, transparent);
+  --gt-track: color-mix(in srgb, var(--color-fg) 7%, transparent);
+  container-type: inline-size;
+  font-family: var(--font-anthropic-sans);
+  color: var(--color-fg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--cds-gap-lg);
+  max-width: 78rem;
+  margin-inline: auto;
+}
+.gt-head { display: flex; flex-direction: column; gap: var(--cds-gap-sm); }
+.gt-eyebrow { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); letter-spacing: .03em; margin: 0; }
+.gt-title { font-family: var(--font-anthropic-serif); font-weight: 400; font-size: var(--cds-font-size-title); line-height: 1.15; margin: 0; text-wrap: balance; }
+.gt-takeaway { margin: 0; max-width: 70ch; font-size: var(--cds-font-size-body); line-height: 1.55; }
+.gt .gt-takeaway b { font-weight: 600; }
+.gt-caveat { margin: 0; font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); max-width: 80ch; }
+
+.gt-tabs { display: flex; gap: var(--cds-gap-xs); overflow-x: auto; border-bottom: 1px solid var(--color-border-line); scrollbar-width: none; }
+.gt-tabs::-webkit-scrollbar { display: none; }
+.gt-tab { appearance: none; background: none; border: 0; border-bottom: 2px solid transparent; margin-bottom: -1px; padding: var(--cds-pad-sm) var(--cds-pad-md); font: inherit; font-size: var(--cds-font-size-body); color: var(--color-fg-muted); cursor: pointer; white-space: nowrap; }
+.gt-tab:hover { color: var(--color-fg); }
+.gt-tab[aria-selected="true"] { color: var(--color-fg); border-bottom-color: var(--color-fg); font-weight: var(--cds-font-weight-medium); }
+.gt-tab:focus-visible, .gt button:focus-visible, .gt select:focus-visible, .gt input:focus-visible, .gt a:focus-visible { outline: 2px solid var(--color-fg); outline-offset: 2px; }
+
+.gt-page { display: flex; flex-direction: column; gap: var(--cds-gap-lg); }
+.gt-page[hidden] { display: none; }
+.gt-section-title { font-size: var(--cds-font-size-heading); font-weight: var(--cds-font-weight-medium); margin: 0; }
+.gt-intro { margin: 0; color: var(--color-fg-muted); font-size: var(--cds-font-size-body); max-width: 72ch; }
+.gt-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr)); gap: var(--cds-gap-md); }
+.gt-grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr)); gap: var(--cds-gap-md); }
+.gt-card { background: var(--color-panel); border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); padding: var(--cds-pad-lg); display: flex; flex-direction: column; gap: var(--cds-gap-sm); min-width: 0; }
+.gt-card h2, .gt-card h3 { font-size: var(--cds-font-size-heading); font-weight: var(--cds-font-weight-medium); margin: 0; }
+.gt-note { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); margin: 0; }
+
+.gt-kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr)); gap: var(--cds-gap-md); }
+.gt-kpi { background: var(--color-panel); border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); padding: var(--cds-pad-lg); display: flex; flex-direction: column; gap: var(--cds-gap-xs); min-width: 0; }
+.gt-kpi-label { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); }
+.gt-kpi-row { display: flex; align-items: baseline; gap: var(--cds-gap-sm); flex-wrap: wrap; }
+.gt-kpi-num { font-family: var(--font-anthropic-serif); font-weight: 400; font-size: calc(var(--cds-font-size-title) * 1.5); line-height: 1; font-variant-numeric: tabular-nums; min-width: 2ch; }
+.gt-kpi-unit { color: var(--color-fg-muted); font-size: var(--cds-font-size-body); }
+.gt-kpi-sub { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); }
+.gt-bad { color: var(--color-bad); }
+.gt-warn { color: var(--color-warn); }
+.gt-ok { color: var(--color-ok); }
+
+.gt-pill { display: inline-flex; align-items: center; gap: .4em; font-size: var(--cds-font-size-caption); line-height: 1.3; padding: .1rem .55rem; border-radius: 999px; border: 1px solid var(--color-border-line); white-space: nowrap; color: var(--color-fg); }
+.gt-pill::before { content: ""; width: .5rem; height: .5rem; border-radius: 50%; background: var(--gt-dot, var(--cds-chart-muted)); flex: none; }
+.gt-dot-4 { --gt-dot: var(--gt-sev4); }
+.gt-dot-3 { --gt-dot: var(--gt-sev3); }
+.gt-dot-2 { --gt-dot: var(--gt-sev2); }
+.gt-dot-1 { --gt-dot: var(--gt-sev1); }
+.gt-dot-ok { --gt-dot: var(--color-ok); }
+
+/* HTML bar charts */
+.gt-bars { display: flex; flex-direction: column; gap: var(--cds-gap-sm); min-height: 8rem; }
+.gt-bar-row { display: grid; grid-template-columns: minmax(8rem, 13rem) 1fr 3rem; align-items: center; gap: var(--cds-gap-sm); }
+.gt-bar-label { font-size: var(--cds-font-size-caption); line-height: 1.3; min-width: 0; }
+.gt-bar-label small { display: block; color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); }
+.gt-track { position: relative; height: 12px; background: var(--gt-track); border-radius: 999px; overflow: hidden; display: flex; }
+.gt-fill { height: 100%; border-radius: 999px; }
+.gt-seg { height: 100%; }
+.gt-seg + .gt-seg { border-left: 2px solid var(--color-panel); }
+.gt-bar-val { font-variant-numeric: tabular-nums; font-size: var(--cds-font-size-caption); text-align: right; }
+.gt-axis { display: grid; grid-template-columns: minmax(8rem, 13rem) 1fr 3rem; gap: var(--cds-gap-sm); }
+.gt-axis-track { position: relative; height: 1rem; font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); font-variant-numeric: tabular-nums; }
+.gt-axis-track span { position: absolute; transform: translateX(-50%); }
+.gt-axis-track span:first-child { transform: none; }
+.gt-axis-track span:last-child { transform: translateX(-100%); }
+.gt-legend { display: flex; flex-wrap: wrap; gap: var(--cds-gap-sm) var(--cds-gap-md); font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); }
+.gt-legend i { display: inline-block; width: .7rem; height: .7rem; border-radius: 3px; margin-inline-end: .35rem; vertical-align: -1px; }
+
+/* lists */
+.gt-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+.gt-list li { display: grid; grid-template-columns: auto 1fr; gap: var(--cds-gap-xs) var(--cds-gap-sm); padding: var(--cds-pad-sm) 0; border-top: 1px solid var(--color-border-line); }
+.gt-list li:first-child { border-top: 0; }
+.gt-list .gt-li-title { font-weight: var(--cds-font-weight-medium); }
+.gt-list .gt-li-sub { grid-column: 2; font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); }
+.gt-id { font-variant-numeric: tabular-nums; font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); padding-top: .15rem; min-width: 2.2rem; }
+
+/* tables */
+.gt-tablewrap { overflow: auto; max-height: 36rem; border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); }
+.gt-table { width: 100%; border-collapse: collapse; font-size: var(--cds-font-size-caption); line-height: 1.45; }
+.gt-table th { position: sticky; top: 0; z-index: 1; background: var(--color-panel); text-align: left; font-weight: var(--cds-font-weight-medium); padding: var(--cds-pad-sm); border-bottom: 1px solid var(--color-border-line); white-space: nowrap; vertical-align: bottom; }
+.gt-table td { padding: var(--cds-pad-sm); border-bottom: 1px solid var(--color-border-line); vertical-align: top; }
+.gt-table tr:last-child td { border-bottom: 0; }
+.gt-table td.gt-wide { min-width: 16rem; }
+.gt-table td.gt-mid { min-width: 10rem; }
+.gt-table td.gt-num { text-align: right; font-variant-numeric: tabular-nums; }
+.gt-table th button { all: unset; cursor: pointer; }
+.gt-table th button::after { content: " ↕"; color: var(--color-fg-muted); }
+.gt-table th[aria-sort="ascending"] button::after { content: " ↑"; color: var(--color-fg); }
+.gt-table th[aria-sort="descending"] button::after { content: " ↓"; color: var(--color-fg); }
+.gt-table a { color: inherit; }
+.gt-gt-col { background: color-mix(in srgb, var(--color-fg) 4%, transparent); }
+
+.gt-controls { display: flex; flex-wrap: wrap; gap: var(--cds-gap-sm); align-items: center; }
+.gt-controls label { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); display: inline-flex; gap: .4rem; align-items: center; }
+.gt-controls select, .gt-controls input { font: inherit; font-size: var(--cds-font-size-caption); color: var(--color-fg); background: var(--color-bg); border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); padding: .35rem .5rem; min-width: 0; }
+.gt-controls input { width: 14rem; max-width: 100%; }
+.gt-count { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); margin-inline-start: auto; }
+
+/* personas */
+.gt-persona dl { margin: 0; display: grid; gap: var(--cds-gap-xs); }
+.gt-persona dt { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); }
+.gt-persona dd { margin: 0 0 var(--cds-gap-xs); font-size: var(--cds-font-size-caption); line-height: 1.45; }
+.gt-persona .gt-name { font-family: var(--font-anthropic-serif); font-weight: 400; font-size: var(--cds-font-size-heading); }
+.gt-quote { margin: 0; padding-inline-start: var(--cds-pad-sm); border-inline-start: 2px solid var(--color-border-line); font-style: italic; font-size: var(--cds-font-size-caption); }
+.gt-pain { color: var(--color-fg); }
+
+/* charts */
+.gt-chart { position: relative; min-height: 15rem; }
+.gt-chart svg { display: block; overflow: visible; }
+.gt-tip { position: absolute; pointer-events: none; background: var(--cds-surface-popover); border: 1px solid var(--cds-border); border-radius: var(--cds-radius); box-shadow: var(--cds-shadow-popover); padding: var(--cds-pad-xs) var(--cds-pad-sm); font-size: var(--cds-font-size-caption); max-width: 16rem; z-index: 3; }
+.gt-tip b { display: block; color: var(--cds-text-secondary); font-weight: 400; }
+
+/* matrix */
+.gt-matrix { display: grid; grid-template-columns: 2.2rem repeat(3, minmax(0, 1fr)); grid-template-rows: repeat(3, minmax(5.5rem, auto)) auto; gap: 4px; }
+.gt-cell { border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); padding: var(--cds-pad-xs); display: flex; flex-wrap: wrap; align-content: flex-start; gap: 4px; position: relative; min-width: 0; }
+.gt-cell.gt-hot { background: color-mix(in srgb, var(--color-ok) 9%, transparent); }
+.gt-cell-tag { width: 100%; font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); }
+.gt-ylab, .gt-xlab { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); display: flex; align-items: center; justify-content: center; text-align: center; }
+.gt-ylab { writing-mode: vertical-rl; transform: rotate(180deg); }
+.gt-chip { font: inherit; font-size: var(--cds-font-size-caption); font-variant-numeric: tabular-nums; border: 1px solid var(--color-border-line); border-radius: 6px; padding: .05rem .35rem; background: var(--color-bg); color: var(--color-fg); cursor: pointer; display: inline-flex; align-items: center; gap: .3rem; }
+.gt-chip::before { content: ""; width: .45rem; height: .45rem; border-radius: 50%; background: var(--gt-dot, var(--cds-chart-muted)); }
+
+/* gantt */
+.gt-gantt { display: flex; flex-direction: column; gap: 6px; min-height: 10rem; }
+.gt-g-row { display: grid; grid-template-columns: minmax(9rem, 14rem) 1fr; gap: var(--cds-gap-sm); align-items: center; }
+.gt-g-label { font-size: var(--cds-font-size-caption); line-height: 1.25; min-width: 0; }
+.gt-g-label small { color: var(--color-fg-muted); }
+.gt-g-track { position: relative; height: 14px; background: var(--gt-track); border-radius: 999px; }
+.gt-g-bar { position: absolute; top: 0; height: 100%; border-radius: 999px; }
+.gt-g-axis { position: relative; height: 1rem; font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); font-variant-numeric: tabular-nums; }
+.gt-g-axis span { position: absolute; transform: translateX(-50%); white-space: nowrap; }
+
+/* product card mock */
+.gt-mock { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr)); gap: var(--cds-gap-md); }
+.gt-pc { border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); padding: var(--cds-pad-md); display: flex; flex-direction: column; gap: var(--cds-gap-xs); background: var(--color-bg); min-width: 0; }
+.gt-pc-tag { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); text-transform: uppercase; letter-spacing: .06em; }
+.gt-pc-img { aspect-ratio: 16 / 9; max-width: 100%; border-radius: calc(var(--cds-radius) - 2px); background: repeating-linear-gradient(135deg, var(--gt-track) 0 8px, transparent 8px 16px); display: flex; align-items: center; justify-content: center; font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); }
+.gt-pc-title-today { font-size: var(--cds-font-size-caption); line-height: 1.35; }
+.gt-pc-title { font-weight: var(--cds-font-weight-medium); font-size: var(--cds-font-size-body); }
+.gt-pc-chips { display: flex; flex-wrap: wrap; gap: 4px; }
+.gt-pc-chips span { font-size: var(--cds-font-size-caption); border: 1px solid var(--color-border-line); border-radius: 6px; padding: .05rem .4rem; }
+.gt-pc-price { display: flex; align-items: baseline; gap: var(--cds-gap-sm); flex-wrap: wrap; }
+.gt-pc-price strong { font-family: var(--font-anthropic-serif); font-weight: 400; font-size: var(--cds-font-size-title); font-variant-numeric: tabular-nums; }
+.gt-pc-price s { color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); }
+.gt-pc-save { font-size: var(--cds-font-size-caption); color: var(--color-ok); border: 1px solid currentColor; border-radius: 999px; padding: 0 .45rem; }
+.gt-pc-line { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); }
+.gt-pc-legacy { font-size: var(--cds-font-size-caption); font-variant-numeric: tabular-nums; }
+.gt-pc-cta { display: flex; gap: var(--cds-gap-xs); flex-wrap: wrap; }
+.gt-pc-cta span { font-size: var(--cds-font-size-caption); border-radius: 8px; padding: .45rem .8rem; border: 1px solid var(--color-fg); }
+.gt-pc-cta .gt-primary { background: var(--color-fg); color: var(--color-bg); }
+.gt-pc-cta .gt-equal { background: var(--gt-track); border-color: var(--color-border-line); }
+
+.gt-std { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr)); gap: var(--cds-gap-md); }
+.gt-std h3 { font-size: var(--cds-font-size-body); font-weight: var(--cds-font-weight-medium); margin: 0; }
+.gt-std ul { margin: 0; padding-inline-start: 1.1rem; font-size: var(--cds-font-size-caption); line-height: 1.5; display: grid; gap: .25rem; }
+.gt-callout { border: 1px dashed var(--color-border-line); border-radius: var(--cds-radius); padding: var(--cds-pad-md); font-size: var(--cds-font-size-caption); line-height: 1.5; }
+.gt-method ol, .gt-method ul { margin: 0; padding-inline-start: 1.2rem; font-size: var(--cds-font-size-caption); line-height: 1.55; display: grid; gap: .35rem; }
+.gt-bands { display: flex; flex-wrap: wrap; gap: var(--cds-gap-xs); }
+
+.gt-failed { display: flex; align-items: center; justify-content: center; gap: .5rem; color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); min-height: 4rem; }
+.gt-failed::before { content: ""; width: .375rem; height: .375rem; border-radius: 50%; background: var(--color-bad); }
+[data-dash-source-state=empty] { color: transparent; }
+[data-dash-source-state=refreshing] { opacity: .5; transition: opacity var(--cds-dur-slow); }
+
+@container (max-width: 44rem) {
+  .gt-hide-sm { display: none; }
+  .gt-bar-row, .gt-axis { grid-template-columns: minmax(6.5rem, 9rem) 1fr 2.6rem; }
+  .gt-g-row { grid-template-columns: minmax(7rem, 9rem) 1fr; }
+  .gt-kpi-num { font-size: calc(var(--cds-font-size-title) * 1.25); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .gt-fill, .gt-g-bar { transition: width var(--cds-dur-slow) var(--cds-ease-out); }
+}
+</style>
+
+<div class="gt" id="gt">
+  <header class="gt-head" id="top">
+    <p class="gt-eyebrow">goldentech.com.sa · UX &amp; UI audit · Prepared by Pixilated Studio</p>
+    <h1 class="gt-title">Golden Tech UX audit</h1>
+    <p class="gt-takeaway" id="takeaway">
+      Golden Tech scores <b class="gt-v dash-skeleton" data-source="overall" data-field="score" data-row="0">—</b> out of 100, rated
+      <b class="gt-v dash-skeleton" data-source="overall" data-field="band" data-row="0">—</b>.
+      The catalogue is broad and the spec filters work, but shoppers get different answers on price, delivery fee and delivery time depending on the page,
+      returns are limited to defects, and checkout makes them register before they can pay. All
+      <b class="gt-v dash-skeleton" data-source="severity_counts" data-field="n" data-where="severity=4">—</b> critical issues sit in those promises, the same areas behind Baymard's top reasons for abandoned carts.
+    </p>
+    <p class="gt-caveat">Provisional: built from the store's indexed pages, policies and competitor pages. The visual layer and a live checkout walk are pending (see Method).</p>
+  </header>
+
+  <nav class="gt-tabs" role="tablist" aria-label="Audit sections">
+    <button class="gt-tab" role="tab" data-tab="overview" aria-controls="overview" aria-selected="true">Overview</button>
+    <button class="gt-tab" role="tab" data-tab="journey" aria-controls="journey" aria-selected="false">Buyers &amp; journey</button>
+    <button class="gt-tab" role="tab" data-tab="findings" aria-controls="findings" aria-selected="false">Pain points</button>
+    <button class="gt-tab" role="tab" data-tab="scorecard" aria-controls="scorecard" aria-selected="false">Scorecard</button>
+    <button class="gt-tab" role="tab" data-tab="ui" aria-controls="ui" aria-selected="false">UI &amp; design system</button>
+    <button class="gt-tab" role="tab" data-tab="benchmark" aria-controls="benchmark" aria-selected="false">Benchmark</button>
+    <button class="gt-tab" role="tab" data-tab="roadmap" aria-controls="roadmap" aria-selected="false">Fix plan</button>
+    <button class="gt-tab" role="tab" data-tab="method" aria-controls="method" aria-selected="false">Method</button>
+  </nav>
+
+  <div id="gt-pages">
+    <section class="gt-page" id="overview" role="tabpanel" aria-label="Overview">
+      <div class="gt-kpis">
+        <div class="gt-kpi" id="kpi-score">
+          <span class="gt-kpi-label">UX score</span>
+          <div class="gt-kpi-row">
+            <span class="gt-kpi-num gt-v dash-skeleton" id="kpi-score-num" data-source="overall" data-field="score" data-row="0">—</span>
+            <span class="gt-kpi-unit">/ 100</span>
+            <span class="gt-pill gt-dot-4" id="kpi-band"><span class="gt-v dash-skeleton" data-source="overall" data-field="band" data-row="0">—</span></span>
+          </div>
+          <span class="gt-kpi-sub"><span class="gt-v" data-source="overall" data-field="evidenced" data-row="0">—</span> of <span class="gt-v" data-source="overall" data-field="checks" data-row="0">—</span> checks evidenced</span>
+        </div>
+        <div class="gt-kpi" id="kpi-critical">
+          <span class="gt-kpi-label">Critical issues</span>
+          <div class="gt-kpi-row"><span class="gt-kpi-num gt-bad gt-v dash-skeleton" data-source="severity_counts" data-field="n" data-where="severity=4">—</span></div>
+          <span class="gt-kpi-sub">Block or reverse a purchase decision</span>
+        </div>
+        <div class="gt-kpi" id="kpi-major">
+          <span class="gt-kpi-label">Major issues</span>
+          <div class="gt-kpi-row"><span class="gt-kpi-num gt-warn gt-v dash-skeleton" data-source="severity_counts" data-field="n" data-where="severity=3">—</span></div>
+          <span class="gt-kpi-sub">Slow shoppers down or cost trust</span>
+        </div>
+        <div class="gt-kpi" id="kpi-checkout">
+          <span class="gt-kpi-label">Delivery, returns &amp; payments</span>
+          <div class="gt-kpi-row">
+            <span class="gt-kpi-num gt-v dash-skeleton" data-source="area_scores" data-field="score" data-where="area=Delivery%2C returns %26 payments">—</span>
+            <span class="gt-kpi-unit">/ 100</span>
+          </div>
+          <span class="gt-kpi-sub">The promises shoppers weigh before paying</span>
+        </div>
+      </div>
+
+      <div class="gt-grid">
+        <div class="gt-card" id="card-areas">
+          <h2>Score by area</h2>
+          <p class="gt-note">Weighted share of checks passed. Lowest first. Areas with thin evidence are marked.</p>
+          <div class="gt-bars dash-skeleton" id="ov-areas" data-source="area_scores"></div>
+        </div>
+        <div class="gt-card" id="card-issues">
+          <h2>Where the issues sit</h2>
+          <p class="gt-note">Findings per area, by severity.</p>
+          <div class="gt-bars dash-skeleton" id="ov-issues" data-source="area_issues"></div>
+          <div class="gt-legend" aria-hidden="true"><span><i style="background:var(--gt-sev4)"></i>Critical</span><span><i style="background:var(--gt-sev3)"></i>Major</span><span><i style="background:var(--gt-sev2)"></i>Minor</span><span><i style="background:var(--gt-sev1)"></i>Cosmetic</span></div>
+        </div>
+      </div>
+
+      <div class="gt-grid">
+        <div class="gt-card" id="card-critical">
+          <h2>Critical pain points</h2>
+          <p class="gt-note">What a shopper hits, and the fix.</p>
+          <ul class="gt-list dash-skeleton" id="ov-critical"></ul>
+        </div>
+        <div class="gt-card" id="card-proposal">
+          <h2>What Pixilated proposes</h2>
+          <p class="gt-note">Three phases. Quick wins fix the broken promises before any redesign.</p>
+          <div id="ov-phases" class="dash-skeleton"></div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <template id="tpl-journey">
+    <section class="gt-page" id="journey" role="tabpanel" aria-label="Buyers and journey">
+      <div>
+        <h2 class="gt-section-title">Who buys here</h2>
+        <p class="gt-intro">Four buyer types drawn from the catalogue (gaming PCs, business laptops, Apple, accessories), the store's wholesale arm and the Saudi market context. Validate with interviews before design starts.</p>
+      </div>
+      <div class="gt-grid-4 dash-skeleton" id="jr-personas"></div>
+      <div class="gt-card" id="card-sentiment">
+        <h2>Expected shopper sentiment by stage</h2>
+        <p class="gt-note">Expert estimate from the evidence, −2 frustrated to +2 delighted. The dips are where orders are lost.</p>
+        <div class="gt-chart dash-skeleton" id="jr-chart" data-source="journey"></div>
+      </div>
+      <div class="gt-card" id="card-journey">
+        <h2>Touchpoint map</h2>
+        <p class="gt-note">Each stage, what happens today, and the fix. Finding IDs link to Pain points.</p>
+        <div class="gt-tablewrap">
+          <table class="gt-table" id="jr-table" data-source="journey" data-row-key="stage">
+            <thead><tr>
+              <th data-field="stage">Stage</th>
+              <th data-field="touchpoint">Touchpoint</th>
+              <th data-field="persona" class="gt-hide-sm">Most affected</th>
+              <th data-field="now">What happens today</th>
+              <th data-field="fix">Fix</th>
+              <th data-field="findings" class="gt-hide-sm">Findings</th>
+            </tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </template>
+
+  <template id="tpl-findings">
+    <section class="gt-page" id="findings" role="tabpanel" aria-label="Pain points">
+      <div class="gt-grid">
+        <div class="gt-card" id="card-heur">
+          <h2>Issues by usability heuristic</h2>
+          <p class="gt-note">Nielsen's 10 heuristics. Bar colour is the worst severity in that group.</p>
+          <div class="gt-bars dash-skeleton" id="fd-heur" data-source="heuristics"></div>
+        </div>
+        <div class="gt-card" id="card-conf">
+          <h2>How sure we are</h2>
+          <p class="gt-note">"Verified" quotes the store's own pages. "Verify live" needs the live session before it goes in front of the client.</p>
+          <div class="gt-bars dash-skeleton" id="fd-conf" data-source="confidence"></div>
+        </div>
+      </div>
+      <div class="gt-card" id="card-findings">
+        <h2>All pain points</h2>
+        <div class="gt-controls">
+          <label for="fd-sev">Severity
+            <select id="fd-sev"><option value="">All</option><option value="4">Critical</option><option value="3">Major</option><option value="2">Minor</option><option value="1">Cosmetic</option></select>
+          </label>
+          <label for="fd-area">Area <select id="fd-area"><option value="">All areas</option></select></label>
+          <label for="fd-q">Search <input id="fd-q" type="search" placeholder="price, checkout, F04…"></label>
+          <span class="gt-count" id="fd-count"></span>
+        </div>
+        <div class="gt-tablewrap">
+          <table class="gt-table" id="fd-table" data-source="findings" data-row-key="id">
+            <thead><tr>
+              <th data-field="id" aria-sort="none"><button type="button" data-sort="id">ID</button></th>
+              <th data-field="title">Pain point</th>
+              <th data-field="severity_label" aria-sort="descending"><button type="button" data-sort="severity">Severity</button></th>
+              <th data-field="area" aria-sort="none" class="gt-hide-sm"><button type="button" data-sort="area">Area</button></th>
+              <th data-field="evidence">Evidence</th>
+              <th data-field="fix">Fix</th>
+              <th data-field="service" class="gt-hide-sm">Pixilated service</th>
+              <th data-field="confidence" class="gt-hide-sm">Confidence</th>
+            </tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </template>
+
+  <template id="tpl-scorecard">
+    <section class="gt-page" id="scorecard" role="tabpanel" aria-label="Scorecard">
+      <div>
+        <h2 class="gt-section-title">How the score is built</h2>
+        <p class="gt-intro">Each area is scored against weighted checks drawn from Baymard's e-commerce guidelines and Nielsen's heuristics. Pass earns full weight, Partial half, Fail none. Unverified checks are left out of the score and listed for the live session.</p>
+      </div>
+      <div class="gt-card" id="card-areatable">
+        <h2>Areas</h2>
+        <div class="gt-tablewrap">
+          <table class="gt-table" id="sc-areas" data-source="area_scores" data-row-key="area">
+            <thead><tr>
+              <th data-field="area">Area</th>
+              <th data-field="weight">Weight</th>
+              <th data-field="score">Score</th>
+              <th data-field="evidenced">Checks evidenced</th>
+              <th data-field="checks">Checks</th>
+            </tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="gt-card" id="card-checks">
+        <h2>Every check</h2>
+        <div class="gt-controls">
+          <label for="sc-area">Area <select id="sc-area"><option value="">All areas</option></select></label>
+          <label for="sc-status">Result <select id="sc-status"><option value="">All</option><option>Pass</option><option>Partial</option><option>Fail</option><option>Not verified</option></select></label>
+          <span class="gt-count" id="sc-count"></span>
+        </div>
+        <div class="gt-tablewrap">
+          <table class="gt-table" id="sc-checks" data-source="checks" data-row-key="id">
+            <thead><tr>
+              <th data-field="id">ID</th>
+              <th data-field="area" class="gt-hide-sm">Area</th>
+              <th data-field="check">Check</th>
+              <th data-field="weight">Weight</th>
+              <th data-field="status">Result</th>
+              <th data-field="evidence">Evidence</th>
+              <th data-field="finding" class="gt-hide-sm">Finding</th>
+            </tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </template>
+
+  <template id="tpl-ui">
+    <section class="gt-page" id="ui" role="tabpanel" aria-label="UI and design system">
+      <div>
+        <h2 class="gt-section-title">UI and design system</h2>
+        <p class="gt-intro">What the components say and do today, judged from their text and structure, and the standard a Saudi tech retailer should meet.</p>
+      </div>
+      <div class="gt-callout" id="ui-pending">
+        <strong>Visual layer pending.</strong> Colours, type scale, contrast, spacing and tap sizes can't be read from indexed text. Rows marked "Needs screenshot" are confirmed in the live capture (desktop and phone, Arabic and English) before this goes to the client.
+      </div>
+      <div class="gt-card" id="card-mock">
+        <h2>Product card: today vs proposed</h2>
+        <p class="gt-note">Same product, same price. Today's text is quoted from the live listing; the proposed card is illustrative.</p>
+        <div class="gt-mock">
+          <div class="gt-pc" id="pc-today">
+            <span class="gt-pc-tag">Today</span>
+            <div class="gt-pc-img">product image</div>
+            <span class="gt-pc-title-today gt-v dash-skeleton" data-source="card_example" data-field="title" data-where="id=today">—</span>
+            <span class="gt-pc-legacy gt-v dash-skeleton" data-source="card_example" data-field="price_text" data-where="id=today">—</span>
+            <span class="gt-pc-line gt-v" data-source="card_example" data-field="delivery" data-where="id=today">—</span>
+            <div class="gt-pc-cta"><span class="gt-equal">Wish List</span><span class="gt-equal">Compare</span></div>
+          </div>
+          <div class="gt-pc" id="pc-proposed">
+            <span class="gt-pc-tag">Proposed</span>
+            <div class="gt-pc-img">product image</div>
+            <span class="gt-pc-title gt-v dash-skeleton" data-source="card_example" data-field="title" data-where="id=proposed">—</span>
+            <div class="gt-pc-chips" id="pc-chips"></div>
+            <div class="gt-pc-price">
+              <strong><span class="gt-v" data-source="card_example" data-field="price" data-where="id=proposed">—</span> <small>SAR</small></strong>
+              <s>SAR <span class="gt-v" data-source="card_example" data-field="was" data-where="id=proposed">—</span></s>
+              <span class="gt-pc-save">Save <span class="gt-v" data-source="card_monthly" data-field="saving" data-where="id=proposed">—</span></span>
+            </div>
+            <span class="gt-pc-line">or 4 × SAR <span class="gt-v" data-source="card_monthly" data-field="monthly" data-where="id=proposed">—</span> with Tabby · VAT included</span>
+            <span class="gt-pc-line gt-v" data-source="card_example" data-field="delivery" data-where="id=proposed">—</span>
+            <span class="gt-pc-line gt-v" data-source="card_example" data-field="warranty" data-where="id=proposed">—</span>
+            <div class="gt-pc-cta"><span class="gt-primary">Add to cart</span><span>Compare</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="gt-card" id="card-components">
+        <h2>Component audit</h2>
+        <div class="gt-tablewrap">
+          <table class="gt-table" id="ui-table" data-source="ui" data-row-key="component">
+            <thead><tr>
+              <th data-field="component">Component</th>
+              <th data-field="observed" class="gt-hide-sm">What we saw</th>
+              <th data-field="issue">Issue</th>
+              <th data-field="standard">Standard to adopt</th>
+              <th data-field="priority_label">Priority</th>
+              <th data-field="status" class="gt-hide-sm">Evidence</th>
+            </tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="gt-card" id="card-standard">
+        <h2>The tech-retail UI standard we'd build to</h2>
+        <p class="gt-note">From Baymard's product-page, listing and mobile research, WCAG 2.2 and Material's right-to-left rules.</p>
+        <div class="gt-std">
+          <div><h3>Buttons</h3><ul><li>One filled primary per view: Add to cart.</li><li>Secondary actions outlined or as icons.</li><li>Sticky buy bar on phones, with space around it.</li><li>Tap targets at least 7 × 7 mm.</li></ul></div>
+          <div><h3>Product card</h3><ul><li>Brand and model, then four spec chips: CPU, GPU, RAM, storage.</li><li>Price, was-price, one saving chip.</li><li>Monthly instalment line.</li><li>Rating with count.</li></ul></div>
+          <div><h3>Product page</h3><ul><li>Key-spec summary above the fold; grouped, striped spec sheet below.</li><li>Delivery as a date, with cut-off.</li><li>Warranty row: length, provider, how claims work.</li><li>Compatible accessories, not generic picks.</li></ul></div>
+          <div><h3>Price and currency</h3><ul><li>New Saudi Riyal symbol with text fallback.</li><li>"VAT included" as a caption, once.</li><li>Western digits in both languages.</li></ul></div>
+          <div><h3>Arabic and RTL</h3><ul><li>Mirror arrows and progress; never media icons.</li><li>Isolate model numbers (G614PR, i7-13645HX) left-to-right.</li><li>Arabic as the source language for copy.</li></ul></div>
+          <div><h3>Accessibility</h3><ul><li>Text contrast 4.5:1; UI elements 3:1.</li><li>Visible focus on every control.</li><li>Alt text on product and banner images.</li><li>Form labels and error text tied to fields.</li></ul></div>
+        </div>
+      </div>
+    </section>
+  </template>
+
+  <template id="tpl-benchmark">
+    <section class="gt-page" id="benchmark" role="tabpanel" aria-label="Benchmark">
+      <div class="gt-card" id="card-competitors">
+        <h2>Against Saudi electronics leaders</h2>
+        <p class="gt-note">From each retailer's own policy pages. "Behind" means a shopper comparing stores would notice.</p>
+        <div class="gt-tablewrap">
+          <table class="gt-table" id="bm-comp" data-source="competitors" data-row-key="criterion">
+            <thead><tr>
+              <th data-field="criterion">Criterion</th>
+              <th data-field="position">Golden Tech is</th>
+              <th data-field="golden_tech">Golden Tech</th>
+              <th data-field="extra">eXtra</th>
+              <th data-field="jarir">Jarir</th>
+              <th data-field="amazon" class="gt-hide-sm">Amazon.sa</th>
+              <th data-field="noon" class="gt-hide-sm">noon</th>
+            </tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="gt-grid">
+        <div class="gt-card" id="card-prices">
+          <h2>Same product, other stores</h2>
+          <p class="gt-note">Identical model numbers only. SAR, VAT included. A positive gap means Golden Tech costs more.</p>
+          <div class="gt-bars dash-skeleton" id="bm-prices" data-source="prices price_gap"></div>
+        </div>
+        <div class="gt-card" id="card-conflicts">
+          <h2>Same product, different Golden Tech pages</h2>
+          <p class="gt-note">Prices shown for one SKU on different pages or languages. Search snapshots differ in date, so confirm live.</p>
+          <div class="gt-bars dash-skeleton" id="bm-conflicts" data-source="price_conflicts price_spread"></div>
+        </div>
+      </div>
+      <div class="gt-card" id="card-baymard">
+        <h2>What the research says</h2>
+        <p class="gt-note">Baymard Institute and SAMA figures, next to what we found at Golden Tech.</p>
+        <div class="gt-tablewrap">
+          <table class="gt-table" id="bm-bay" data-source="benchmarks" data-row-key="metric">
+            <thead><tr>
+              <th data-field="value">Figure</th>
+              <th data-field="metric">Finding</th>
+              <th data-field="relevance">At Golden Tech</th>
+              <th data-field="topic" class="gt-hide-sm">Topic</th>
+            </tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </template>
+
+  <template id="tpl-roadmap">
+    <section class="gt-page" id="roadmap" role="tabpanel" aria-label="Fix plan">
+      <div class="gt-grid">
+        <div class="gt-card" id="card-matrix">
+          <h2>Impact vs effort</h2>
+          <p class="gt-note">Every finding placed by business impact and build effort. Top-left is where to start. Select an ID to open it.</p>
+          <div class="gt-matrix dash-skeleton" id="rm-matrix" data-source="findings"></div>
+        </div>
+        <div class="gt-card" id="card-gantt">
+          <h2>Delivery plan</h2>
+          <p class="gt-note">Indicative weeks from kick-off. Quick wins run in parallel with research for the redesign.</p>
+          <div class="gt-gantt dash-skeleton" id="rm-gantt" data-source="services"></div>
+          <div class="gt-legend" id="rm-legend" aria-hidden="true"></div>
+        </div>
+      </div>
+      <div class="gt-card" id="card-services">
+        <h2>Pixilated services</h2>
+        <div class="gt-tablewrap">
+          <table class="gt-table" id="rm-services" data-source="services" data-row-key="service">
+            <thead><tr>
+              <th data-field="service">Service</th>
+              <th data-field="phase">Phase</th>
+              <th data-field="scope">What we deliver</th>
+              <th data-field="fixes" class="gt-hide-sm">Fixes</th>
+              <th data-field="weeks">Weeks</th>
+              <th data-field="outcome">Measure of success</th>
+            </tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </template>
+
+  <template id="tpl-method">
+    <section class="gt-page gt-method" id="method" role="tabpanel" aria-label="Method">
+      <div class="gt-grid">
+        <div class="gt-card">
+          <h2>How this audit was done</h2>
+          <ol>
+            <li><strong>Pattern research.</strong> Baymard Institute benchmarks (checkout, product page, listings, search, mobile, accessibility, electronics), NN/g guidance and the practices of Amazon, eXtra, Jarir and noon.</li>
+            <li><strong>Buyer and journey mapping.</strong> Four buyer types and ten stages from discovery to repeat purchase, walked as a cognitive walkthrough.</li>
+            <li><strong>Heuristic evaluation.</strong> Each finding rated on Nielsen's 0–4 severity scale and tagged to one of the 10 heuristics.</li>
+            <li><strong>Guideline scorecard.</strong> Weighted checks per area; area scores rolled into one score by revenue weight.</li>
+            <li><strong>Competitive benchmark.</strong> Policies and identical-SKU prices at eXtra, Jarir, Amazon.sa, noon and Saudi PC specialists.</li>
+          </ol>
+        </div>
+        <div class="gt-card">
+          <h2>Score bands</h2>
+          <p class="gt-note">Pixilated's 0–100 bands, using Baymard-style labels. Baymard does not publish its own score-to-label mapping.</p>
+          <div class="gt-bands">
+            <span class="gt-pill gt-dot-4">Critical · 0–29</span>
+            <span class="gt-pill gt-dot-4">Poor · 30–49</span>
+            <span class="gt-pill gt-dot-3">Fair · 50–69</span>
+            <span class="gt-pill gt-dot-ok">Good · 70–84</span>
+            <span class="gt-pill gt-dot-ok">Excellent · 85–100</span>
+          </div>
+          <p class="gt-note">Area weights follow where revenue is won or lost: product page and checkout weigh most, homepage least. See Scorecard.</p>
+        </div>
+      </div>
+      <div class="gt-grid">
+        <div class="gt-card">
+          <h2>Limits of this version</h2>
+          <ul>
+            <li>No live session yet. The cloud environment couldn't reach the store, so evidence comes from the store's pages as indexed by search engines.</li>
+            <li>Index snapshots differ in date. Price conflicts may be partly timing; each is marked "Verify live".</li>
+            <li>One evaluator. NN/g recommends three to five for a full heuristic evaluation.</li>
+            <li>Visual design (colour, type, spacing, contrast) is not scored yet.</li>
+            <li>Personas and sentiment are expert estimates, to be validated with shoppers.</li>
+          </ul>
+        </div>
+        <div class="gt-card">
+          <h2>Open checks for the live session</h2>
+          <p class="gt-note"><span class="gt-v" data-source="overall" data-field="unverified" data-row="0">—</span> checks need a live walkthrough on desktop and phone, in Arabic and English.</p>
+          <ul class="gt-list dash-skeleton" id="mt-open"></ul>
+        </div>
+      </div>
+    </section>
+  </template>
+</div>
+
+<script>
+(() => {
+  const SEV_LABEL = ['', 'Cosmetic', 'Minor', 'Major', 'Critical'];
+  const PHASES = ['Quick wins', 'Core', 'Growth'];
+  const fmt = d3.format(',.2~f');
+  const enc = (v) => String(v).replace(/%/g, '%25').replace(/&/g, '%26').replace(/=/g, '%3D').replace(/,/g, '%2C');
+  const BAD = ['error', 'connect', 'declined', 'missing'];
+
+  // ---------- calculations ----------
+  dash.calc('area_scores', {
+    inputs: ['checks', 'areas'],
+    title: 'Score by area',
+    description: 'Weighted share of evidenced checks passed in each area: Pass 1, Partial 0.5, Fail 0; unverified checks left out.',
+    fn: (checks, areas) => areas.map((a) => {
+      const all = checks.filter((c) => c.area === a.area);
+      const known = all.filter((c) => c.points !== null && c.points !== undefined && c.points !== '');
+      const w = known.reduce((t, c) => t + Number(c.weight), 0);
+      const e = known.reduce((t, c) => t + Number(c.weight) * Number(c.points), 0);
+      return { area: a.area, order: Number(a.order), weight: Number(a.weight), score: w ? Math.round((100 * e) / w) : null, evidenced: known.length, checks: all.length };
+    }),
+  });
+
+  dash.calc('overall', {
+    inputs: ['area_scores'],
+    title: 'Overall UX score',
+    description: 'Area scores averaged with each area\'s weight; band: Critical <30, Poor <50, Fair <70, Good <85, Excellent 85+.',
+    fn: (area_scores) => {
+      const s = area_scores.filter((a) => a.score !== null);
+      const w = s.reduce((t, a) => t + a.weight, 0);
+      const score = Math.round(s.reduce((t, a) => t + a.score * a.weight, 0) / w);
+      const band = score >= 85 ? 'Excellent' : score >= 70 ? 'Good' : score >= 50 ? 'Fair' : score >= 30 ? 'Poor' : 'Critical';
+      const evidenced = area_scores.reduce((t, a) => t + a.evidenced, 0);
+      const checks = area_scores.reduce((t, a) => t + a.checks, 0);
+      return [{ score, band, evidenced, checks, unverified: checks - evidenced }];
+    },
+  });
+
+  dash.calc('severity_counts', {
+    inputs: ['findings'],
+    title: 'Findings by severity',
+    description: 'Findings counted by Nielsen severity: 4 critical, 3 major, 2 minor, 1 cosmetic.',
+    fn: (findings) => [4, 3, 2, 1].map((s) => ({ severity: s, label: ['', 'Cosmetic', 'Minor', 'Major', 'Critical'][s], n: findings.filter((f) => Number(f.severity) === s).length })),
+  });
+
+  dash.calc('area_issues', {
+    inputs: ['findings', 'areas'],
+    title: 'Findings per area',
+    description: 'Findings counted per area and severity.',
+    fn: (findings, areas) => areas.map((a) => a.area).concat(['UI & design system']).map((name) => {
+      const f = findings.filter((x) => x.area === name);
+      const n = (s) => f.filter((x) => Number(x.severity) === s).length;
+      return { area: name, critical: n(4), major: n(3), minor: n(2), cosmetic: n(1), total: f.length };
+    }).filter((r) => r.total > 0),
+  });
+
+  dash.calc('heuristics', {
+    inputs: ['findings'],
+    title: 'Findings by heuristic',
+    description: 'Findings grouped by Nielsen heuristic, with the worst severity in each group.',
+    fn: (findings) => {
+      const m = {};
+      findings.forEach((f) => {
+        const h = f.heuristic;
+        if (!m[h]) m[h] = { heuristic: h, n: 0, worst: 0 };
+        m[h].n += 1;
+        m[h].worst = Math.max(m[h].worst, Number(f.severity));
+      });
+      return Object.values(m).sort((a, b) => b.n - a.n || b.worst - a.worst);
+    },
+  });
+
+  dash.calc('confidence', {
+    inputs: ['findings'],
+    title: 'Findings by confidence',
+    description: 'Findings quoted from the store\'s pages (Verified) vs those to confirm in a live session.',
+    fn: (findings) => ['Verified', 'Verify live'].map((c) => ({ confidence: c, n: findings.filter((f) => f.confidence === c).length })),
+  });
+
+  dash.calc('price_gap', {
+    inputs: ['prices'],
+    title: 'Golden Tech vs cheapest competitor',
+    description: 'For each identical model, Golden Tech\'s price against the cheapest other store, in percent.',
+    fn: (prices) => [...new Set(prices.map((p) => p.product))].map((p) => {
+      const rows = prices.filter((r) => r.product === p);
+      const gt = rows.find((r) => r.store === 'Golden Tech');
+      const low = rows.filter((r) => r.store !== 'Golden Tech').sort((a, b) => a.price - b.price)[0];
+      return { product: p, golden_tech: gt.price, lowest_store: low.store, lowest: low.price, gap_pct: Math.round((1000 * (gt.price - low.price)) / low.price) / 10 };
+    }),
+  });
+
+  dash.calc('price_spread', {
+    inputs: ['price_conflicts'],
+    title: 'Price spread per product',
+    description: 'Highest minus lowest price shown for one product across Golden Tech pages.',
+    fn: (price_conflicts) => [...new Set(price_conflicts.map((r) => r.product))].map((p) => {
+      const v = price_conflicts.filter((r) => r.product === p).map((r) => r.price);
+      const hi = Math.max(...v);
+      const lo = Math.min(...v);
+      return { product: p, high: hi, low: lo, spread: hi - lo, pages: v.length };
+    }),
+  });
+
+  dash.calc('card_monthly', {
+    inputs: ['card_example'],
+    title: 'Card example maths',
+    description: 'Proposed card: price split into four payments, and the saving against the was-price.',
+    fn: (card_example) => card_example.map((c) => ({ id: c.id, monthly: Math.round((c.price / 4) * 100) / 100, saving: c.was - c.price })),
+  });
+
+  // ---------- helpers ----------
+  const get = (id) => { const d = dash.data(id); return d.status === 'ok' && Array.isArray(d.data) ? d.data : null; };
+  const failedAny = (ids) => ids.some((id) => BAD.includes(dash.data(id).status));
+  const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text !== undefined && text !== null) e.textContent = text; return e; };
+  const mk = (e, src, field, where) => { e.setAttribute('data-source', src); if (field) e.setAttribute('data-field', field); if (where) e.setAttribute('data-where', where); return e; };
+  const show = (v) => (v === null || v === undefined ? '—' : typeof v === 'number' ? fmt(v) : String(v));
+  const scoreColor = (s) => (s === null ? 'var(--cds-chart-muted)' : s < 50 ? 'var(--color-bad)' : s < 70 ? 'var(--color-warn)' : 'var(--color-ok)');
+  const sevColor = (s) => `var(--gt-sev${s})`;
+  const failBox = (box) => { box.classList.remove('dash-skeleton'); box.replaceChildren(el('div', 'gt-failed', 'Failed to load')); };
+  const ready = (box) => box.classList.remove('dash-skeleton');
+
+  function fillMarks(root) {
+    root.querySelectorAll('.gt-v').forEach((e) => {
+      const d = dash.data(e.dataset.source);
+      if (d.status !== 'ok') { if (BAD.includes(d.status)) { e.textContent = '—'; e.classList.remove('dash-skeleton'); } return; }
+      const rows = Array.isArray(d.data) ? d.data : [];
+      let row;
+      if (e.dataset.row !== undefined) row = rows[Number(e.dataset.row)];
+      else if (e.dataset.where) {
+        const conds = e.dataset.where.split('&').map((p) => p.split('=').map((x) => decodeURIComponent(x)));
+        row = rows.find((r) => conds.every(([k, v]) => String(r[k]) === v));
+      }
+      e.textContent = show(row ? row[e.dataset.field] : null);
+      e.classList.remove('dash-skeleton');
+    });
+  }
+
+  function fillTable(table, rows, cols, key) {
+    const tb = table.tBodies[0];
+    tb.replaceChildren(...rows.map((r) => {
+      const tr = el('tr');
+      tr.dataset.key = String(r[key]);
+      cols.forEach((c) => {
+        const td = el('td', c.cls || '');
+        if (c.render) c.render(r, td); else td.textContent = show(r[c.f]);
+        tr.appendChild(td);
+      });
+      return tr;
+    }));
+  }
+
+  const sevPill = (s, text) => el('span', `gt-pill gt-dot-${s}`, text);
+
+  // ---------- overview ----------
+  function drawOverview() {
+    const ov = get('overall');
+    const pill = document.getElementById('kpi-band');
+    if (ov && pill) pill.className = `gt-pill gt-dot-${ov[0].score < 50 ? 4 : ov[0].score < 70 ? 3 : 'ok'}`;
+    const areasBox = document.getElementById('ov-areas');
+    const rows = get('area_scores');
+    if (rows) {
+      ready(areasBox);
+      const sorted = rows.slice().sort((a, b) => (a.score ?? 101) - (b.score ?? 101));
+      const kids = sorted.map((r) => {
+        const row = el('div', 'gt-bar-row');
+        const lab = el('div', 'gt-bar-label');
+        lab.appendChild(mk(el('span', '', r.area), 'area_scores', 'area', `area=${enc(r.area)}`));
+        const thin = r.evidenced / r.checks < 0.6;
+        const sub = el('small');
+        sub.append('Weight ', mk(el('span', '', show(r.weight)), 'area_scores', 'weight', `area=${enc(r.area)}`));
+        if (thin) sub.append(' · thin evidence');
+        lab.appendChild(sub);
+        const track = el('div', 'gt-track');
+        const fill = el('div', 'gt-fill');
+        fill.style.width = `${r.score ?? 0}%`;
+        fill.style.background = scoreColor(r.score);
+        if (thin) fill.style.opacity = '.55';
+        track.appendChild(fill);
+        const val = mk(el('div', 'gt-bar-val', show(r.score)), 'area_scores', 'score', `area=${enc(r.area)}`);
+        row.append(lab, track, val);
+        return row;
+      });
+      const axis = el('div', 'gt-axis');
+      const at = el('div', 'gt-axis-track');
+      [0, 50, 100].forEach((t) => { const s = el('span', '', String(t)); s.style.left = `${t}%`; at.appendChild(s); });
+      axis.append(el('div'), at, el('div'));
+      areasBox.replaceChildren(...kids, axis);
+    } else if (failedAny(['area_scores', 'checks', 'areas'])) failBox(areasBox);
+
+    const issuesBox = document.getElementById('ov-issues');
+    const ai = get('area_issues');
+    if (ai) {
+      ready(issuesBox);
+      const max = Math.max(...ai.map((r) => r.total));
+      const sorted = ai.slice().sort((a, b) => b.critical - a.critical || b.total - a.total);
+      issuesBox.replaceChildren(...sorted.map((r) => {
+        const row = el('div', 'gt-bar-row');
+        const lab = mk(el('div', 'gt-bar-label', r.area), 'area_issues', 'area', `area=${enc(r.area)}`);
+        const track = el('div', 'gt-track');
+        track.style.background = 'transparent';
+        [['critical', 4], ['major', 3], ['minor', 2], ['cosmetic', 1]].forEach(([k, s]) => {
+          if (!r[k]) return;
+          const seg = mk(el('div', 'gt-seg'), 'area_issues', k, `area=${enc(r.area)}`);
+          seg.style.width = `${(100 * r[k]) / max}%`;
+          seg.style.background = sevColor(s);
+          seg.setAttribute('aria-label', `${r[k]} ${SEV_LABEL[s].toLowerCase()}`);
+          track.appendChild(seg);
+        });
+        track.firstChild && (track.firstChild.style.borderRadius = '999px 0 0 999px');
+        track.lastChild && (track.lastChild.style.borderRadius = track.childNodes.length === 1 ? '999px' : '0 999px 999px 0');
+        const val = mk(el('div', 'gt-bar-val', show(r.total)), 'area_issues', 'total', `area=${enc(r.area)}`);
+        row.append(lab, track, val);
+        return row;
+      }));
+    } else if (failedAny(['area_issues', 'findings'])) failBox(issuesBox);
+
+    const critBox = document.getElementById('ov-critical');
+    const f = get('findings');
+    if (f) {
+      ready(critBox);
+      critBox.replaceChildren(...f.filter((x) => Number(x.severity) === 4).map((x) => {
+        const li = el('li');
+        const id = el('button', 'gt-chip gt-dot-4');
+        id.type = 'button';
+        id.appendChild(mk(el('span', '', x.id), 'findings', 'id', `id=${enc(x.id)}`));
+        id.addEventListener('click', () => openFinding(x.id));
+        li.append(id, mk(el('span', 'gt-li-title', x.title), 'findings', 'title', `id=${enc(x.id)}`), mk(el('span', 'gt-li-sub', x.fix), 'findings', 'fix', `id=${enc(x.id)}`));
+        return li;
+      }));
+    } else if (failedAny(['findings'])) failBox(critBox);
+
+    const phBox = document.getElementById('ov-phases');
+    const sv = get('services');
+    if (sv) {
+      ready(phBox);
+      const ul = el('ul', 'gt-list');
+      PHASES.forEach((p, i) => {
+        const li = el('li');
+        li.append(el('span', 'gt-id', String(i + 1)));
+        li.append(el('span', 'gt-li-title', p));
+        const sub = el('span', 'gt-li-sub');
+        sv.filter((s) => s.phase === p).forEach((s, j) => {
+          if (j) sub.append(' · ');
+          sub.append(mk(el('span', '', s.service), 'services', 'service', `service=${enc(s.service)}`));
+        });
+        li.append(sub);
+        ul.appendChild(li);
+      });
+      phBox.replaceChildren(ul);
+    } else if (failedAny(['services'])) failBox(phBox);
+  }
+
+  // ---------- journey ----------
+  function drawJourney() {
+    const pBox = document.getElementById('jr-personas');
+    const ps = get('personas');
+    if (ps) {
+      ready(pBox);
+      pBox.replaceChildren(...ps.map((p) => {
+        const w = `id=${enc(p.id)}`;
+        const c = el('div', 'gt-card gt-persona');
+        const head = el('div');
+        head.append(mk(el('div', 'gt-name', p.name), 'personas', 'name', w));
+        head.append(mk(el('div', 'gt-note', p.segment), 'personas', 'segment', w));
+        const meta = el('div', 'gt-note');
+        meta.append(mk(el('span', '', p.age), 'personas', 'age', w), ' · ', mk(el('span', '', p.city), 'personas', 'city', w), ' · ', mk(el('span', '', p.share), 'personas', 'share', w));
+        head.append(meta);
+        const dl = el('dl');
+        [['Goal', 'goal'], ['Buys', 'buys'], ['Needs from the store', 'musthaves'], ['Where Golden Tech loses them', 'pain']].forEach(([t, k]) => {
+          dl.append(el('dt', '', t), mk(el('dd', k === 'pain' ? 'gt-pain' : '', p[k]), 'personas', k, w));
+        });
+        c.append(head, dl, mk(el('blockquote', 'gt-quote', p.quote), 'personas', 'quote', w));
+        return c;
+      }));
+    } else if (failedAny(['personas'])) failBox(pBox);
+
+    const jr = get('journey');
+    const table = document.getElementById('jr-table');
+    if (jr) {
+      fillTable(table, jr, [
+        { f: 'stage' }, { f: 'touchpoint', cls: 'gt-mid' }, { f: 'persona', cls: 'gt-hide-sm' }, { f: 'now', cls: 'gt-wide' }, { f: 'fix', cls: 'gt-wide' },
+        { cls: 'gt-hide-sm', render: (r, td) => { td.textContent = r.findings; } },
+      ], 'stage');
+    }
+    drawSentiment(jr);
+  }
+
+  function drawSentiment(rows) {
+    const box = document.getElementById('jr-chart');
+    if (!box) return;
+    if (!rows) { if (failedAny(['journey'])) failBox(box); return; }
+    if (!box.clientWidth) return;
+    ready(box);
+    box.replaceChildren();
+    const W = box.clientWidth;
+    const H = 240;
+    const svg = d3.select(box).append('svg').attr('width', '100%').attr('viewBox', `0 0 ${W} ${H}`).attr('role', 'img').attr('aria-label', 'Expected shopper sentiment across ten journey stages');
+    const yLabels = [{ v: 2, t: 'Delighted' }, { v: 0, t: 'Neutral' }, { v: -2, t: 'Frustrated' }];
+    const probe = svg.append('g').attr('font-size', 12);
+    const yW = Math.max(...yLabels.map((d) => probe.append('text').text(d.t).node().getComputedTextLength()));
+    probe.remove();
+    const m = { t: 14, r: 14, b: 38, l: yW + 12 };
+    const x = d3.scalePoint(rows.map((r) => r.stage), [m.l, W - m.r]).padding(0.4);
+    const y = d3.scaleLinear([-2, 2], [H - m.b, m.t]);
+    svg.append('g').selectAll('line').data([-2, -1, 0, 1, 2]).join('line')
+      .attr('x1', m.l).attr('x2', W - m.r).attr('y1', (d) => y(d)).attr('y2', (d) => y(d))
+      .attr('stroke', (d) => (d === 0 ? 'var(--cds-chart-axis)' : 'var(--cds-chart-grid)')).attr('stroke-width', 1);
+    svg.append('g').attr('font-size', 12).selectAll('text').data(yLabels).join('text')
+      .attr('x', m.l - 8).attr('y', (d) => y(d.v)).attr('dy', '0.32em').attr('text-anchor', 'end')
+      .attr('fill', 'var(--color-fg-muted)').text((d) => d.t);
+    const xprobe = svg.append('g').attr('font-size', 12);
+    const maxLabel = Math.max(...rows.map((r) => xprobe.append('text').text(r.stage).node().getComputedTextLength()));
+    xprobe.remove();
+    const step = x.step();
+    const useNum = maxLabel + 6 > step;
+    svg.append('g').attr('font-size', 12).selectAll('text').data(rows).join('text')
+      .attr('x', (d) => x(d.stage)).attr('y', H - m.b + 20).attr('text-anchor', 'middle')
+      .attr('fill', 'var(--color-fg-muted)').text((d) => (useNum ? String(d.order) : d.stage));
+    svg.append('path').datum(rows)
+      .attr('d', d3.line().x((d) => x(d.stage)).y((d) => y(d.sentiment)))
+      .attr('fill', 'none').attr('stroke', dash.colors[0]).attr('stroke-width', 2).attr('stroke-linecap', 'round').attr('stroke-linejoin', 'round');
+    const tip = el('div', 'gt-tip');
+    tip.hidden = true;
+    box.appendChild(tip);
+    svg.append('g').selectAll('circle').data(rows).join('circle')
+      .attr('cx', (d) => x(d.stage)).attr('cy', (d) => y(d.sentiment)).attr('r', 5)
+      .attr('fill', (d) => (d.sentiment <= -2 ? 'var(--color-bad)' : d.sentiment < 0 ? 'var(--color-warn)' : dash.colors[0]))
+      .attr('stroke', 'var(--color-panel)').attr('stroke-width', 2)
+      .attr('data-source', 'journey').attr('data-field', 'sentiment').attr('data-where', (d) => `stage=${enc(d.stage)}`)
+      .on('pointerenter', (ev, d) => {
+        tip.replaceChildren(el('b', '', `${d.order}. ${d.stage}`), el('span', '', d.now));
+        tip.hidden = false;
+        const px = x(d.stage) * (box.clientWidth / W);
+        const left = Math.min(Math.max(px - 120, 0), box.clientWidth - 260);
+        tip.style.left = `${Math.max(left, 0)}px`;
+        tip.style.top = `${y(d.sentiment) + 12}px`;
+      })
+      .on('pointerleave', () => { tip.hidden = true; });
+    if (useNum) {
+      const n = box.parentElement.querySelector('.gt-num-note') || el('p', 'gt-note gt-num-note', 'Numbers follow the stages in the touchpoint map below.');
+      box.after(n);
+    }
+  }
+
+  // ---------- findings ----------
+  const fState = { sort: 'severity', dir: -1 };
+  function drawFindings() {
+    const f = get('findings');
+    const hBox = document.getElementById('fd-heur');
+    const h = get('heuristics');
+    if (h) {
+      ready(hBox);
+      const max = Math.max(...h.map((r) => r.n));
+      hBox.replaceChildren(...h.map((r) => {
+        const row = el('div', 'gt-bar-row');
+        const w = `heuristic=${enc(r.heuristic)}`;
+        const track = el('div', 'gt-track');
+        const fill = el('div', 'gt-fill');
+        fill.style.width = `${(100 * r.n) / max}%`;
+        fill.style.background = sevColor(r.worst);
+        track.appendChild(fill);
+        row.append(mk(el('div', 'gt-bar-label', r.heuristic), 'heuristics', 'heuristic', w), track, mk(el('div', 'gt-bar-val', show(r.n)), 'heuristics', 'n', w));
+        return row;
+      }));
+    } else if (failedAny(['heuristics', 'findings'])) failBox(hBox);
+
+    const cBox = document.getElementById('fd-conf');
+    const cf = get('confidence');
+    if (cf) {
+      ready(cBox);
+      const max = Math.max(...cf.map((r) => r.n));
+      cBox.replaceChildren(...cf.map((r) => {
+        const row = el('div', 'gt-bar-row');
+        const w = `confidence=${enc(r.confidence)}`;
+        const track = el('div', 'gt-track');
+        const fill = el('div', 'gt-fill');
+        fill.style.width = `${(100 * r.n) / max}%`;
+        fill.style.background = r.confidence === 'Verified' ? dash.colors[0] : 'var(--cds-chart-muted)';
+        track.appendChild(fill);
+        row.append(mk(el('div', 'gt-bar-label', r.confidence), 'confidence', 'confidence', w), track, mk(el('div', 'gt-bar-val', show(r.n)), 'confidence', 'n', w));
+        return row;
+      }));
+    } else if (failedAny(['confidence', 'findings'])) failBox(cBox);
+
+    if (!f) return;
+    const areaSel = document.getElementById('fd-area');
+    if (areaSel.options.length === 1) {
+      [...new Set(f.map((x) => x.area))].sort().forEach((a) => areaSel.add(new Option(a, a)));
+    }
+    const sev = document.getElementById('fd-sev').value;
+    const area = areaSel.value;
+    const q = document.getElementById('fd-q').value.trim().toLowerCase();
+    let rows = f.filter((x) => (!sev || String(x.severity) === sev) && (!area || x.area === area)
+      && (!q || [x.id, x.title, x.evidence, x.fix, x.area, x.service].join(' ').toLowerCase().includes(q)));
+    const k = fState.sort;
+    rows = rows.slice().sort((a, b) => {
+      const va = k === 'severity' ? Number(a.severity) : String(a[k]);
+      const vb = k === 'severity' ? Number(b.severity) : String(b[k]);
+      const c = va < vb ? -1 : va > vb ? 1 : 0;
+      return c * fState.dir || String(a.id).localeCompare(String(b.id));
+    });
+    document.getElementById('fd-count').textContent = `${rows.length} of ${f.length}`;
+    fillTable(document.getElementById('fd-table'), rows, [
+      { render: (r, td) => { const a = el('a', '', r.id); a.href = r.url; a.target = '_blank'; a.rel = 'noopener'; td.appendChild(a); } },
+      { f: 'title', cls: 'gt-mid' },
+      { render: (r, td) => td.appendChild(sevPill(r.severity, r.severity_label)) },
+      { f: 'area', cls: 'gt-hide-sm' },
+      { f: 'evidence', cls: 'gt-wide' },
+      { f: 'fix', cls: 'gt-wide' },
+      { f: 'service', cls: 'gt-hide-sm' },
+      { f: 'confidence', cls: 'gt-hide-sm' },
+    ], 'id');
+    document.querySelectorAll('#fd-table th').forEach((th) => {
+      const b = th.querySelector('button');
+      if (b) th.setAttribute('aria-sort', b.dataset.sort === fState.sort ? (fState.dir > 0 ? 'ascending' : 'descending') : 'none');
+    });
+  }
+
+  // ---------- scorecard ----------
+  function drawScorecard() {
+    const as = get('area_scores');
+    if (as) {
+      fillTable(document.getElementById('sc-areas'), as.slice().sort((a, b) => a.order - b.order), [
+        { f: 'area' }, { f: 'weight', cls: 'gt-num' },
+        { render: (r, td) => { td.className = 'gt-num'; td.textContent = show(r.score); td.style.color = scoreColor(r.score); } },
+        { f: 'evidenced', cls: 'gt-num' }, { f: 'checks', cls: 'gt-num' },
+      ], 'area');
+    }
+    const ch = get('checks');
+    if (!ch) return;
+    const areaSel = document.getElementById('sc-area');
+    if (areaSel.options.length === 1) [...new Set(ch.map((x) => x.area))].forEach((a) => areaSel.add(new Option(a, a)));
+    const a = areaSel.value;
+    const st = document.getElementById('sc-status').value;
+    const rows = ch.filter((x) => (!a || x.area === a) && (!st || x.status === st));
+    document.getElementById('sc-count').textContent = `${rows.length} of ${ch.length}`;
+    const dot = { Pass: 'ok', Partial: '3', Fail: '4', 'Not verified': '2' };
+    fillTable(document.getElementById('sc-checks'), rows, [
+      { f: 'id' }, { f: 'area', cls: 'gt-hide-sm' }, { f: 'check', cls: 'gt-mid' }, { f: 'weight', cls: 'gt-num' },
+      { render: (r, td) => td.appendChild(el('span', `gt-pill gt-dot-${dot[r.status]}`, r.status)) },
+      { f: 'evidence', cls: 'gt-wide' }, { f: 'finding', cls: 'gt-hide-sm' },
+    ], 'id');
+  }
+
+  // ---------- UI ----------
+  function drawUI() {
+    const u = get('ui');
+    if (u) {
+      const order = { High: 0, Medium: 1, Low: 2 };
+      fillTable(document.getElementById('ui-table'), u.slice().sort((a, b) => order[a.priority_label] - order[b.priority_label]), [
+        { f: 'component', cls: 'gt-mid' }, { f: 'observed', cls: 'gt-wide gt-hide-sm' }, { f: 'issue', cls: 'gt-mid' }, { f: 'standard', cls: 'gt-wide' },
+        { render: (r, td) => td.appendChild(el('span', `gt-pill gt-dot-${r.priority_label === 'High' ? 4 : r.priority_label === 'Medium' ? 3 : 2}`, r.priority_label)) },
+        { f: 'status', cls: 'gt-hide-sm' },
+      ], 'component');
+    }
+    const ce = get('card_example');
+    const chips = document.getElementById('pc-chips');
+    if (ce && chips) {
+      const p = ce.find((c) => c.id === 'proposed');
+      chips.replaceChildren(...String(p.chips || '').split('|').map((t) => el('span', '', t)));
+    }
+  }
+
+  // ---------- benchmark ----------
+  function drawBenchmark() {
+    const comp = get('competitors');
+    if (comp) {
+      const dot = { Behind: '4', Par: '2', Ahead: 'ok', Opportunity: '3' };
+      fillTable(document.getElementById('bm-comp'), comp, [
+        { f: 'criterion' },
+        { render: (r, td) => td.appendChild(el('span', `gt-pill gt-dot-${dot[r.position] || '2'}`, r.position)) },
+        { f: 'golden_tech', cls: 'gt-mid gt-gt-col' }, { f: 'extra', cls: 'gt-mid' }, { f: 'jarir', cls: 'gt-mid' },
+        { f: 'amazon', cls: 'gt-mid gt-hide-sm' }, { f: 'noon', cls: 'gt-mid gt-hide-sm' },
+      ], 'criterion');
+    }
+
+    const pBox = document.getElementById('bm-prices');
+    const pr = get('prices');
+    const gap = get('price_gap');
+    if (pr && gap) {
+      ready(pBox);
+      const kids = [];
+      gap.forEach((g) => {
+        const w = `product=${enc(g.product)}`;
+        const head = el('div', 'gt-bar-label');
+        head.style.marginTop = kids.length ? 'var(--cds-gap-sm)' : '0';
+        const t = mk(el('strong', '', g.product), 'price_gap', 'product', w);
+        const s = el('small');
+        s.append('Gap vs cheapest: ', mk(el('span', g.gap_pct > 0 ? 'gt-bad' : 'gt-ok', show(g.gap_pct)), 'price_gap', 'gap_pct', w), '% (', mk(el('span', '', g.lowest_store), 'price_gap', 'lowest_store', w), ')');
+        head.append(t, s);
+        kids.push(head);
+        const rows = pr.filter((r) => r.product === g.product);
+        const max = Math.max(...rows.map((r) => r.price));
+        rows.forEach((r) => {
+          const row = el('div', 'gt-bar-row');
+          const ww = `product=${enc(r.product)}&store=${enc(r.store)}`;
+          const track = el('div', 'gt-track');
+          const fill = el('div', 'gt-fill');
+          fill.style.width = `${(100 * r.price) / max}%`;
+          fill.style.background = r.store === 'Golden Tech' ? dash.colors[0] : 'var(--cds-chart-muted)';
+          track.appendChild(fill);
+          const val = mk(el('div', 'gt-bar-val', show(r.price)), 'prices', 'price', ww);
+          val.style.minWidth = '4.5rem';
+          row.style.gridTemplateColumns = 'minmax(6rem, 9rem) 1fr 4.5rem';
+          row.append(mk(el('div', 'gt-bar-label', r.store), 'prices', 'store', ww), track, val);
+          kids.push(row);
+        });
+      });
+      pBox.replaceChildren(...kids);
+    } else if (failedAny(['prices', 'price_gap'])) failBox(pBox);
+
+    const cBox = document.getElementById('bm-conflicts');
+    const pc = get('price_conflicts');
+    const sp = get('price_spread');
+    if (pc && sp) {
+      ready(cBox);
+      const kids = [];
+      sp.forEach((g) => {
+        const w = `product=${enc(g.product)}`;
+        const head = el('div', 'gt-bar-label');
+        head.style.marginTop = kids.length ? 'var(--cds-gap-sm)' : '0';
+        const s = el('small');
+        s.append('Spread: SAR ', mk(el('span', 'gt-bad', show(g.spread)), 'price_spread', 'spread', w), ' across ', mk(el('span', '', show(g.pages)), 'price_spread', 'pages', w), ' pages');
+        head.append(mk(el('strong', '', g.product), 'price_spread', 'product', w), s);
+        kids.push(head);
+        const rows = pc.filter((r) => r.product === g.product);
+        rows.forEach((r) => {
+          const row = el('div', 'gt-bar-row');
+          row.style.gridTemplateColumns = 'minmax(6rem, 10rem) 1fr 4.5rem';
+          const ww = `product=${enc(r.product)}&where=${enc(r.where)}`;
+          const track = el('div', 'gt-track');
+          const fill = el('div', 'gt-fill');
+          fill.style.width = `${(100 * r.price) / g.high}%`;
+          fill.style.background = r.price === g.high || r.price === g.low ? 'var(--color-bad)' : 'var(--cds-chart-muted)';
+          track.appendChild(fill);
+          row.append(mk(el('div', 'gt-bar-label', r.where), 'price_conflicts', 'where', ww), track, mk(el('div', 'gt-bar-val', show(r.price)), 'price_conflicts', 'price', ww));
+          kids.push(row);
+        });
+      });
+      cBox.replaceChildren(...kids);
+    } else if (failedAny(['price_conflicts', 'price_spread'])) failBox(cBox);
+
+    const bm = get('benchmarks');
+    if (bm) {
+      fillTable(document.getElementById('bm-bay'), bm, [
+        { render: (r, td) => { td.textContent = r.value; td.style.fontFamily = 'var(--font-anthropic-serif)'; td.style.fontSize = 'var(--cds-font-size-heading)'; td.style.whiteSpace = 'nowrap'; } },
+        { render: (r, td) => { const a = el('a', '', r.metric); a.href = r.url; a.target = '_blank'; a.rel = 'noopener'; td.appendChild(a); td.className = 'gt-mid'; } },
+        { f: 'relevance', cls: 'gt-mid' }, { f: 'topic', cls: 'gt-hide-sm' },
+      ], 'metric');
+    }
+  }
+
+  // ---------- roadmap ----------
+  function drawRoadmap() {
+    const mBox = document.getElementById('rm-matrix');
+    const f = get('findings');
+    if (f) {
+      ready(mBox);
+      const kids = [];
+      const impL = { 3: 'High impact', 2: 'Medium', 1: 'Low' };
+      const tags = { '3-1': 'Start here', '3-3': 'Plan as projects', '1-1': 'Batch together', '1-3': 'Later' };
+      [3, 2, 1].forEach((imp) => {
+        kids.push(el('div', 'gt-ylab', impL[imp]));
+        [1, 2, 3].forEach((eff) => {
+          const cell = el('div', `gt-cell${imp === 3 && eff === 1 ? ' gt-hot' : ''}`);
+          const tg = tags[`${imp}-${eff}`];
+          if (tg) cell.append(el('span', 'gt-cell-tag', tg));
+          f.filter((x) => Number(x.impact) === imp && Number(x.effort) === eff)
+            .sort((a, b) => b.severity - a.severity)
+            .forEach((x) => {
+              const b = el('button', `gt-chip gt-dot-${x.severity}`);
+              b.type = 'button';
+              b.setAttribute('aria-label', `${x.id}: ${x.title}`);
+              b.appendChild(mk(el('span', '', x.id), 'findings', 'id', `id=${enc(x.id)}`));
+              b.addEventListener('click', () => openFinding(x.id));
+              cell.appendChild(b);
+            });
+          kids.push(cell);
+        });
+      });
+      kids.push(el('div'));
+      ['Low effort', 'Medium effort', 'High effort'].forEach((t) => kids.push(el('div', 'gt-xlab', t)));
+      mBox.replaceChildren(...kids);
+    } else if (failedAny(['findings'])) failBox(mBox);
+
+    const gBox = document.getElementById('rm-gantt');
+    const sv = get('services');
+    if (sv) {
+      ready(gBox);
+      const maxW = Math.max(...sv.map((s) => s.start_week + s.weeks));
+      const colors = { 'Quick wins': dash.colors[0], Core: dash.colors[1], Growth: dash.colors[2] };
+      const rows = sv.slice().sort((a, b) => PHASES.indexOf(a.phase) - PHASES.indexOf(b.phase) || a.start_week - b.start_week);
+      const kids = rows.map((s) => {
+        const w = `service=${enc(s.service)}`;
+        const row = el('div', 'gt-g-row');
+        const lab = el('div', 'gt-g-label');
+        lab.append(mk(el('span', '', s.service), 'services', 'service', w), el('br'));
+        const sm = el('small');
+        sm.append(mk(el('span', '', show(s.weeks)), 'services', 'weeks', w), ' weeks from week ', mk(el('span', '', show(s.start_week)), 'services', 'start_week', w));
+        lab.append(sm);
+        const track = el('div', 'gt-g-track');
+        const bar = el('div', 'gt-g-bar');
+        bar.style.left = `${(100 * s.start_week) / maxW}%`;
+        bar.style.width = `${(100 * s.weeks) / maxW}%`;
+        bar.style.background = colors[s.phase];
+        track.appendChild(bar);
+        row.append(lab, track);
+        return row;
+      });
+      const axis = el('div', 'gt-g-row');
+      const at = el('div', 'gt-g-axis');
+      const stepW = gBox.clientWidth < 520 ? 8 : 4;
+      for (let t = 0; t <= maxW; t += stepW) {
+        const sp = el('span', '', t === 0 ? 'Week 0' : String(t));
+        sp.style.left = `${(100 * t) / maxW}%`;
+        if (t === 0) sp.style.transform = 'none';
+        at.appendChild(sp);
+      }
+      axis.append(el('div'), at);
+      gBox.replaceChildren(...kids, axis);
+      const lg = document.getElementById('rm-legend');
+      lg.replaceChildren(...PHASES.map((p) => { const s = el('span'); const i = el('i'); i.style.background = colors[p]; s.append(i, p); return s; }));
+      fillTable(document.getElementById('rm-services'), rows, [
+        { f: 'service', cls: 'gt-mid' }, { f: 'phase' }, { f: 'scope', cls: 'gt-wide' }, { f: 'fixes', cls: 'gt-hide-sm' },
+        { f: 'weeks', cls: 'gt-num' }, { f: 'outcome', cls: 'gt-mid' },
+      ], 'service');
+    } else if (failedAny(['services'])) failBox(gBox);
+  }
+
+  // ---------- method ----------
+  function drawMethod() {
+    const box = document.getElementById('mt-open');
+    const ch = get('checks');
+    if (ch) {
+      ready(box);
+      box.replaceChildren(...ch.filter((c) => c.status === 'Not verified').map((c) => {
+        const li = el('li');
+        const w = `id=${enc(c.id)}`;
+        li.append(mk(el('span', 'gt-id', c.id), 'checks', 'id', w), mk(el('span', 'gt-li-title', c.check), 'checks', 'check', w), mk(el('span', 'gt-li-sub', c.area), 'checks', 'area', w));
+        return li;
+      }));
+    } else if (failedAny(['checks'])) failBox(box);
+  }
+
+  // ---------- pages ----------
+  const PAGES = ['overview', 'journey', 'findings', 'scorecard', 'ui', 'benchmark', 'roadmap', 'method'];
+  const DRAW = { overview: drawOverview, journey: drawJourney, findings: drawFindings, scorecard: drawScorecard, ui: drawUI, benchmark: drawBenchmark, roadmap: drawRoadmap, method: drawMethod };
+  let current = 'overview';
+  const wired = new Set(['overview']);
+
+  function wire(id) {
+    if (id === 'findings') {
+      ['fd-sev', 'fd-area'].forEach((x) => document.getElementById(x).addEventListener('change', drawFindings));
+      document.getElementById('fd-q').addEventListener('input', drawFindings);
+      document.querySelectorAll('#fd-table th button').forEach((b) => b.addEventListener('click', () => {
+        if (fState.sort === b.dataset.sort) fState.dir *= -1; else { fState.sort = b.dataset.sort; fState.dir = b.dataset.sort === 'severity' ? -1 : 1; }
+        drawFindings();
+      }));
+    }
+    if (id === 'scorecard') {
+      ['sc-area', 'sc-status'].forEach((x) => document.getElementById(x).addEventListener('change', drawScorecard));
+    }
+  }
+
+  function ensure(id) {
+    if (document.getElementById(id)) return;
+    const tpl = document.getElementById(`tpl-${id}`);
+    document.getElementById('gt-pages').appendChild(tpl.content.cloneNode(true));
+    wire(id);
+    wired.add(id);
+  }
+
+  function showPage(id, link) {
+    if (!PAGES.includes(id)) id = 'overview';
+    ensure(id);
+    current = id;
+    document.querySelectorAll('.gt-tab').forEach((b) => b.setAttribute('aria-selected', String(b.dataset.tab === id)));
+    PAGES.forEach((p) => { const s = document.getElementById(p); if (s) s.hidden = p !== id; });
+    if (link !== false) dash.setLink(id);
+    drawAll();
+  }
+
+  function openFinding(id) {
+    showPage('findings');
+    document.getElementById('fd-sev').value = '';
+    document.getElementById('fd-area').value = '';
+    document.getElementById('fd-q').value = id;
+    drawFindings();
+    document.getElementById('card-findings').scrollIntoView({ block: 'start' });
+  }
+
+  function drawAll() {
+    fillMarks(document.getElementById('gt'));
+    const fn = DRAW[current];
+    if (fn) fn();
+  }
+
+  document.querySelectorAll('.gt-tab').forEach((b) => b.addEventListener('click', () => showPage(b.dataset.tab)));
+  document.querySelector('.gt-tabs').addEventListener('keydown', (ev) => {
+    if (ev.key !== 'ArrowRight' && ev.key !== 'ArrowLeft') return;
+    const i = PAGES.indexOf(current) + (ev.key === 'ArrowRight' ? 1 : -1);
+    const next = PAGES[(i + PAGES.length) % PAGES.length];
+    showPage(next);
+    document.querySelector(`.gt-tab[data-tab="${next}"]`).focus();
+  });
+
+  dash.onData(drawAll);
+  const start = location.hash.slice(1);
+  if (PAGES.includes(start) && start !== 'overview') showPage(start, false);
+})();
+</script>

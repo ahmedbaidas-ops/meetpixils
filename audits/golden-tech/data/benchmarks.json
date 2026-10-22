@@ -1,0 +1,107 @@
+[
+ {
+  "metric": "Average cart abandonment rate",
+  "value": "70.22%",
+  "relevance": "Across 50 studies",
+  "url": "https://baymard.com/lists/cart-abandonment-rate",
+  "topic": "Checkout"
+ },
+ {
+  "metric": "Abandon because extra costs were too high",
+  "value": "40%",
+  "relevance": "Golden Tech: three delivery-fee rules, +20 SAR COD",
+  "url": "https://baymard.com/lists/cart-abandonment-rate",
+  "topic": "Checkout"
+ },
+ {
+  "metric": "Abandon because delivery was too slow",
+  "value": "20%",
+  "relevance": "Golden Tech Terms: 3–7 working days in Riyadh",
+  "url": "https://baymard.com/lists/cart-abandonment-rate",
+  "topic": "Delivery"
+ },
+ {
+  "metric": "Abandon because the site forced account creation",
+  "value": "18%",
+  "relevance": "Golden Tech requires registration plus SMS code",
+  "url": "https://baymard.com/lists/cart-abandonment-rate",
+  "topic": "Checkout"
+ },
+ {
+  "metric": "Abandon over the returns policy",
+  "value": "13%",
+  "relevance": "Golden Tech: 7 days, defects only",
+  "url": "https://baymard.com/lists/cart-abandonment-rate",
+  "topic": "Returns"
+ },
+ {
+  "metric": "Abandon because the total wasn't visible upfront",
+  "value": "12%",
+  "relevance": "Golden Tech: fee depends on which page you read",
+  "url": "https://baymard.com/lists/cart-abandonment-rate",
+  "topic": "Checkout"
+ },
+ {
+  "metric": "Conversion lift available from better checkout design",
+  "value": "35.26%",
+  "relevance": "Baymard's potential figure for large sites",
+  "url": "https://baymard.com/research/checkout-usability",
+  "topic": "Checkout"
+ },
+ {
+  "metric": "Sites showing a delivery speed instead of a date",
+  "value": "41%",
+  "relevance": "Golden Tech shows ranges of days",
+  "url": "https://baymard.com/research-articles/shipping-speed-vs-delivery-date",
+  "topic": "Product page"
+ },
+ {
+  "metric": "Product pages with no estimated total near the buy button",
+  "value": "67%",
+  "relevance": "Golden Tech shows no delivery cost on the product page",
+  "url": "https://baymard.com/research-articles/current-state-ecommerce-product-page-ux",
+  "topic": "Product page"
+ },
+ {
+  "metric": "Sites missing one of the four key sort options",
+  "value": "69%",
+  "relevance": "Golden Tech has no price sort",
+  "url": "https://baymard.com/research-articles/current-state-product-list-and-filtering",
+  "topic": "Listings"
+ },
+ {
+  "metric": "Spec-driven sites without a comparison tool",
+  "value": "17%",
+  "relevance": "Golden Tech has one (default Magento)",
+  "url": "https://baymard.com/blog/provide-comparison-features",
+  "topic": "Product page"
+ },
+ {
+  "metric": "Test users who used comparison on spec-driven sites",
+  "value": "67%",
+  "relevance": "Worth upgrading to a differences-only view",
+  "url": "https://baymard.com/blog/user-friendly-comparison-tools",
+  "topic": "Product page"
+ },
+ {
+  "metric": "Spec sheets rated poor or mediocre",
+  "value": "64%",
+  "relevance": "Golden Tech: flat label-value lines, no key-spec summary",
+  "url": "https://baymard.com/blog/product-spec-sheet-ux-design",
+  "topic": "Product page"
+ },
+ {
+  "metric": "Large sites failing WCAG 2.1 AA",
+  "value": "94%",
+  "relevance": "Golden Tech: not yet tested live",
+  "url": "https://baymard.com/research-articles/accessibility-benchmark-launch",
+  "topic": "Accessibility"
+ },
+ {
+  "metric": "Share of KSA retail payments that were electronic in 2025",
+  "value": "85%",
+  "relevance": "Up from 79% in 2024, led by mada (SAMA)",
+  "url": "https://www.sama.gov.sa/en-US/MediaCenter/News/pages/news-1139.aspx",
+  "topic": "KSA"
+ }
+]

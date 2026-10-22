@@ -1,0 +1,56 @@
+[
+ {
+  "area": "Homepage & landing",
+  "weight": 8,
+  "order": 1,
+  "scope": "First impression, offers and where paid traffic lands"
+ },
+ {
+  "area": "Navigation & IA",
+  "weight": 10,
+  "order": 2,
+  "scope": "Menus, category structure and paths to the right product"
+ },
+ {
+  "area": "Search",
+  "weight": 8,
+  "order": 3,
+  "scope": "On-site search quality and search hygiene"
+ },
+ {
+  "area": "Category pages",
+  "weight": 12,
+  "order": 4,
+  "scope": "Listings, filters, sorting and product cards"
+ },
+ {
+  "area": "Product page",
+  "weight": 18,
+  "order": 5,
+  "scope": "Specs, price, delivery, warranty, reviews and buying confidence"
+ },
+ {
+  "area": "Cart & checkout",
+  "weight": 16,
+  "order": 6,
+  "scope": "Account, address, payment and order placement"
+ },
+ {
+  "area": "Delivery, returns & payments",
+  "weight": 12,
+  "order": 7,
+  "scope": "The promises a shopper weighs before paying"
+ },
+ {
+  "area": "Trust & support",
+  "weight": 8,
+  "order": 8,
+  "scope": "Proof of legitimacy and help when something goes wrong"
+ },
+ {
+  "area": "Content & localisation",
+  "weight": 8,
+  "order": 9,
+  "scope": "Arabic and English quality, page titles and hygiene"
+ }
+]
