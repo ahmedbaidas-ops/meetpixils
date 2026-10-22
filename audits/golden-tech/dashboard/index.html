@@ -209,6 +209,16 @@
 .gt-btnrow figcaption { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); line-height: 1.35; }
 .gt-today-btn { flex: 1; text-align: center; background: #161616; color: #fff; border-radius: 6px; padding: .45rem .8rem; font-size: var(--cds-font-size-caption); }
 
+.gt-evgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr)); gap: var(--cds-gap-md); }
+.gt-ev { display: flex; flex-direction: column; gap: .45rem; min-width: 0; }
+.gt-ev-zoom { position: relative; aspect-ratio: 4 / 3; max-width: 100%; border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); background-color: #fff; background-repeat: no-repeat; overflow: hidden; }
+.gt-ev-zoom .gt-pin { pointer-events: none; }
+.gt-ev-ring { position: absolute; transform: translate(-50%, -50%); width: 4.5rem; height: 4.5rem; border-radius: 50%; border: 3px solid var(--color-bad); pointer-events: none; }
+.gt-ev-label { font-size: var(--cds-font-size-caption); line-height: 1.45; }
+.gt-ev-foot { display: flex; flex-wrap: wrap; gap: .4rem; align-items: center; }
+.gt-linkbtn { all: unset; cursor: pointer; font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); text-decoration: underline; }
+.gt-linkbtn:focus-visible { outline: 2px solid var(--color-fg); outline-offset: 2px; }
+
 .gt-failed { display: flex; align-items: center; justify-content: center; gap: .5rem; color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); min-height: 4rem; }
 .gt-failed::before { content: ""; width: .375rem; height: .375rem; border-radius: 50%; background: var(--color-bad); }
 [data-dash-source-state=empty] { color: transparent; }
@@ -373,6 +383,11 @@
 
   <template id="tpl-findings">
     <section class="gt-page" id="findings" role="tabpanel" aria-label="Pain points">
+      <div class="gt-card" id="card-evidence">
+        <h2>Evidence screenshots</h2>
+        <p class="gt-note">Zoomed from the live Arabic homepage (desktop, 22 Oct 2026). Select a finding ID to filter the table, or open the full screenshot.</p>
+        <div class="gt-evgrid dash-skeleton" id="fd-evidence" data-source="pins"></div>
+      </div>
       <div class="gt-grid">
         <div class="gt-card" id="card-heur">
           <h2>Issues by usability heuristic</h2>
@@ -1133,6 +1148,55 @@
         return row;
       }));
     } else if (failedAny(['confidence', 'findings'])) failBox(cBox);
+
+    const evBox = document.getElementById('fd-evidence');
+    const pins = get('pins');
+    if (pins && evBox && window.GT_SHOTS) {
+      ready(evBox);
+      const Z = 2.6;
+      const RATIO = 1729 / 906;
+      evBox.replaceChildren(...pins.filter((p) => window.GT_SHOTS[p.shot]).map((p) => {
+        const w = `id=${enc(p.id)}`;
+        const tile = el('figure', 'gt-ev');
+        tile.style.margin = '0';
+        const zoom = el('div', 'gt-ev-zoom');
+        const x = p.x / 100;
+        const y = p.y / 100;
+        const imgH = Z * RATIO;
+        const H = 0.75;
+        const px = Math.min(1, Math.max(0, (x * Z - 0.5) / (Z - 1)));
+        const py = Math.min(1, Math.max(0, (y * imgH - H / 2) / (imgH - H)));
+        zoom.style.backgroundImage = `url("${window.GT_SHOTS[p.shot]}")`;
+        zoom.style.backgroundSize = `${Z * 100}% auto`;
+        zoom.style.backgroundPosition = `${px * 100}% ${py * 100}%`;
+        zoom.setAttribute('role', 'img');
+        zoom.setAttribute('aria-label', `Zoomed screenshot: ${p.label}`);
+        const cx = x * Z + px * (1 - Z);
+        const cy = (y * imgH + py * (H - imgH)) / H;
+        const ring = el('span', 'gt-ev-ring');
+        ring.style.left = `${cx * 100}%`;
+        ring.style.top = `${cy * 100}%`;
+        zoom.appendChild(ring);
+        const cap = el('figcaption', 'gt-ev-label');
+        cap.append(mk(el('span', 'gt-pinno', p.id), 'pins', 'id', w), ' ', mk(el('span', '', p.label), 'pins', 'label', w));
+        cap.firstChild.style.display = 'inline-grid';
+        cap.firstChild.style.width = '1.3rem';
+        cap.firstChild.style.height = '1.3rem';
+        cap.firstChild.style.borderRadius = '50%';
+        cap.firstChild.style.background = 'var(--color-bad)';
+        cap.firstChild.style.color = '#fff';
+        cap.firstChild.style.placeItems = 'center';
+        cap.firstChild.style.fontSize = '.7rem';
+        const foot = el('div', 'gt-ev-foot');
+        if (p.finding) foot.append(findingChips(p.finding));
+        const full = el('button', 'gt-linkbtn', 'Full screenshot');
+        full.type = 'button';
+        full.addEventListener('click', () => { showPage('ui'); const c = document.getElementById('card-shots'); if (c) c.scrollIntoView({ block: 'start' }); });
+        foot.append(full);
+        tile.append(zoom, cap, foot);
+        return tile;
+      }));
+    } else if (evBox && failedAny(['pins'])) failBox(evBox);
 
     if (!f) return;
     const areaSel = document.getElementById('fd-area');
