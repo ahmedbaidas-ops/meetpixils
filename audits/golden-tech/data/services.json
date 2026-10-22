@@ -1,26 +1,35 @@
 [
  {
+  "service": "Validation sprint",
+  "scope": "Phone and Safari capture, moderated tests with 5–8 Saudi shoppers, analytics and heatmap setup",
+  "fixes": "All 'Verify live' items",
+  "phase": "Quick wins",
+  "start_week": 0,
+  "weeks": 2,
+  "outcome": "Confirmed scores and baseline metrics"
+ },
+ {
   "service": "Policy & trust rewrite",
-  "scope": "One delivery, returns, refund and warranty policy in Arabic and English; trust bar; SBC badge; legal entity cleanup",
-  "fixes": "F01, F02, F06, F07, F29",
+  "scope": "One delivery, returns, refund and warranty policy in Arabic and English; entity name; SBC certificate link",
+  "fixes": "F16, F24, F25, F26, F30",
   "phase": "Quick wins",
   "start_week": 0,
   "weeks": 3,
   "outcome": "Fewer 'extra costs' and 'returns policy' abandons"
  },
  {
-  "service": "Catalogue & price QA",
-  "scope": "Single price source for both languages, sanity rules, title schema, spec validation, retire old SKUs",
-  "fixes": "F03, F05, F21, F24, F34",
+  "service": "Checkout optimisation",
+  "scope": "Cart summary that adds up, clear SMS-code step, Short Address field, named BNPL options, COD and Apple Pay check, one instalment message",
+  "fixes": "F27, F31, F32, F34, F35",
   "phase": "Quick wins",
-  "start_week": 0,
+  "start_week": 1,
   "weeks": 4,
-  "outcome": "Zero price mismatches across pages"
+  "outcome": "Checkout completion rate"
  },
  {
   "service": "SEO & content hygiene",
-  "scope": "Remove test pages, noindex search, fix hreflang/canonicals, rewrite titles",
-  "fixes": "F25, F26, F27",
+  "scope": "Remove test pages, noindex search, fix hreflang and canonicals, rewrite titles",
+  "fixes": "F02, F07, F12",
   "phase": "Quick wins",
   "start_week": 1,
   "weeks": 3,
@@ -29,7 +38,7 @@
  {
   "service": "Campaign landing pages",
   "scope": "Intent-matched landing pages for each Google Ads campaign",
-  "fixes": "F14",
+  "fixes": "F01",
   "phase": "Quick wins",
   "start_week": 1,
   "weeks": 3,
@@ -37,62 +46,62 @@
  },
  {
   "service": "Bilingual UX writing",
-  "scope": "Microcopy and legal copy pass, Arabic as source",
-  "fixes": "F08, F16, F28, F36",
+  "scope": "Proofread banners, footer, widgets and legal copy; FAQ fix; Arabic as source",
+  "fixes": "F04, F06, F20, F29, F33, F42",
   "phase": "Quick wins",
   "start_week": 2,
   "weeks": 4,
   "outcome": "Native-quality copy in both languages"
  },
  {
-  "service": "Checkout optimisation",
-  "scope": "Guest checkout, late OTP, Apple Pay, instalment widget, short-address field, pickup, fees shown upfront",
-  "fixes": "F04, F10, F11, F12, F13, F39",
+  "service": "Catalogue & price QA",
+  "scope": "Price-parity checks, title schema, spec validation, retire old SKUs",
+  "fixes": "F13, F21, F22, F23",
+  "phase": "Core",
+  "start_week": 4,
+  "weeks": 4,
+  "outcome": "Zero price or spec mismatches"
+ },
+ {
+  "service": "Design system & UI kit",
+  "scope": "Tokenised, RTL-first library: one button, card, price, badge, form and delivery block",
+  "fixes": "F39, F40, F41",
   "phase": "Core",
   "start_week": 4,
   "weeks": 6,
-  "outcome": "Checkout completion rate"
+  "outcome": "One consistent UI; faster releases"
  },
  {
   "service": "Product page redesign",
-  "scope": "Key-spec summary, dated delivery, warranty row, bundles, protection plan, review module",
-  "fixes": "F22, F23",
+  "scope": "Real photos and gallery, delivery date and cost, focused buy box, review module, bundles",
+  "fixes": "F14, F17, F18, F19",
   "phase": "Core",
-  "start_week": 5,
+  "start_week": 6,
   "weeks": 6,
   "outcome": "Add-to-cart rate and order value"
  },
  {
-  "service": "Category & search UX",
-  "scope": "Faceted filters, full sort, spec chips, search tuning with model-number match",
-  "fixes": "F19, F20",
+  "service": "Navigation & IA redesign",
+  "scope": "Card sort and tree test; shop-by-need menu; fixed category grid; one offers hub",
+  "fixes": "F03, F05, F08, F09",
   "phase": "Core",
   "start_week": 5,
   "weeks": 5,
-  "outcome": "Search-to-order and filter use"
+  "outcome": "Findability (tree-test success)"
  },
  {
-  "service": "Navigation & IA redesign",
-  "scope": "Card sort + tree test with Saudi shoppers; shop-by-need menu; one offers hub",
-  "fixes": "F15, F17, F18",
-  "phase": "Core",
-  "start_week": 4,
-  "weeks": 5,
-  "outcome": "Findability (tree-test success rate)"
- },
- {
-  "service": "Design system & UI kit",
-  "scope": "Tokenised, RTL-first component library for buttons, cards, price, badges, forms",
-  "fixes": "F35, F37",
+  "service": "Category & search UX",
+  "scope": "Applied-filter chips, combined monitor specs, private recent searches, typo and Arabic synonyms",
+  "fixes": "F11",
   "phase": "Core",
   "start_week": 6,
-  "weeks": 6,
-  "outcome": "Consistent UI; faster releases"
+  "weeks": 4,
+  "outcome": "Search-to-order rate"
  },
  {
   "service": "Retention & CRM",
-  "scope": "WhatsApp Business, order tracking, review requests, loyalty refresh",
-  "fixes": "F22, F30, F31, F38",
+  "scope": "WhatsApp Business, guest order tracking, review requests, loyalty refresh",
+  "fixes": "F18, F36, F37, F38",
   "phase": "Growth",
   "start_week": 10,
   "weeks": 6,
@@ -100,8 +109,8 @@
  },
  {
   "service": "Service design",
-  "scope": "Store-owned warranty concierge and returns portal",
-  "fixes": "F09, F06",
+  "scope": "Store-run warranty desk and online returns portal",
+  "fixes": "F28, F25",
   "phase": "Growth",
   "start_week": 10,
   "weeks": 6,
@@ -110,7 +119,7 @@
  {
   "service": "B2B quote portal",
   "scope": "Business hub: quotes, bulk pricing, VAT invoices, PO",
-  "fixes": "F32",
+  "fixes": "F10",
   "phase": "Growth",
   "start_week": 12,
   "weeks": 6,
@@ -119,19 +128,10 @@
  {
   "service": "PC builder",
   "scope": "Guided gaming-PC builder with compatibility check and instalment pricing",
-  "fixes": "F33",
+  "fixes": "F15",
   "phase": "Growth",
   "start_week": 14,
   "weeks": 8,
   "outcome": "Differentiation vs eXtra, Jarir, Amazon, noon"
- },
- {
-  "service": "Validation sprint",
-  "scope": "Live audit capture, moderated tests with 5–8 Saudi shoppers, analytics and heatmap setup",
-  "fixes": "All 'Verify live' items",
-  "phase": "Quick wins",
-  "start_week": 0,
-  "weeks": 2,
-  "outcome": "Confirmed scores and baseline metrics"
  }
 ]

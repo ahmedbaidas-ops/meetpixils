@@ -1,0 +1,110 @@
+[
+ {
+  "step": 1,
+  "screen": "Land on the homepage",
+  "path": "/ar/",
+  "did": "Arrived from a Google ad; 18th-anniversary hero, deal of the day, eight category tiles, brand row.",
+  "works": "Search, departments menu and a strong deal (iMac -22%) visible without scrolling.",
+  "friction": "The ad opens the homepage, not the product searched for; category tiles move between visits; 'PC GAMING Beyond pergormance.' banner.",
+  "severity": 3,
+  "severity_label": "Major",
+  "benchmark": "Send each ad to the page that matches the search.",
+  "findings": "F01, F03, F04"
+ },
+ {
+  "step": 2,
+  "screen": "Search for a GPU",
+  "path": "/ar/ search: 'rtx 5070'",
+  "did": "Typed a GPU model into the header search.",
+  "works": "Instant results with images, prices and discounts, a 'PC Gaming > NVIDIA RTX' suggestion and 'view all (100+)'.",
+  "friction": "'Recent searches' showed someone else's quote request: 'Please For Pc , Qty 2: DELL PC PRO QVT1260 …'.",
+  "severity": 2,
+  "severity_label": "Minor",
+  "benchmark": "Baymard: only 19% of sites get autocomplete fully right. Golden Tech is ahead here.",
+  "findings": "F11, F10"
+ },
+ {
+  "step": 3,
+  "screen": "Browse gaming PCs",
+  "path": "/en/pc-gaming.html",
+  "did": "Opened PC Gaming, sorted by price.",
+  "works": "A 'What are you looking for?' finder (Processor, Memory, Storage, Graphic Card), nine filters, sort by price, four spec lines per card.",
+  "friction": "Most builds use the same case image; long titles repeat the spec lines; black Add to Cart here, gold on the homepage.",
+  "severity": 2,
+  "severity_label": "Minor",
+  "benchmark": "Baymard: 69% of sites miss a key sort option and 51% lack essential filters. Golden Tech is ahead.",
+  "findings": "F13, F14, F39"
+ },
+ {
+  "step": 4,
+  "screen": "Evaluate a product",
+  "path": "/en/pc-gaming-intel-core-i5-14400f-cpu-rtx-3050-6gb-gpu-p01-24.html",
+  "did": "Opened the RTX 3050 build (4,699 SAR, was 6,599).",
+  "works": "Clear title and price, 24-month Golden Tech warranty, Tamara/Tabby 4 × 1,174.75, a 14-row spec table, sticky Add to Cart bar.",
+  "friction": "'Delivery in Riyadh: 24 hours' contradicts the Terms; no delivery cost or date; 'There are no ratings.'; three instalment boxes and two promos crowd the buy box; navy Buy Now outweighs gold Add to Cart; one rendered image.",
+  "severity": 3,
+  "severity_label": "Major",
+  "benchmark": "Baymard: 67% of product pages show no estimated total near the buy button; 41% show speed, not a date.",
+  "findings": "F16, F17, F18, F19, F14"
+ },
+ {
+  "step": 5,
+  "screen": "Review the cart",
+  "path": "/en/checkout/cart/",
+  "did": "Added the PC to the cart.",
+  "works": "Free-shipping progress bar ('You've earned free shipping!'), Order Total 4,699, gold Checkout button.",
+  "friction": "Subtotal 4,086 (before VAT) sits next to a 4,699 item; 'Total Savings -1,900' looks like a deduction; quantity needs 'Update Shopping Cart'; '4699.00' formatting.",
+  "severity": 3,
+  "severity_label": "Major",
+  "benchmark": "Baymard: 12% abandon when they can't see the total upfront; 40% over unexpected extra costs.",
+  "findings": "F31, F41, F42"
+ },
+ {
+  "step": 6,
+  "screen": "Enter delivery details",
+  "path": "/en/checkout/#shipping",
+  "did": "Typed email, address and mobile number.",
+  "works": "Guest checkout ('You can create an account after checkout'), map location picker, store pickup option, building number and postal code.",
+  "friction": "Red 'Please verify your phone number first.' before any action; the dark 'Send Otp' button looks disabled, so the auditor couldn't tell if it was active; no Short Address field.",
+  "severity": 3,
+  "severity_label": "Major",
+  "benchmark": "Baymard: average checkout has 23.48 form elements, ideal 12–14. Carriers must reject parcels without a valid National Address since Jan 2026.",
+  "findings": "F32, F34"
+ },
+ {
+  "step": 7,
+  "screen": "Choose payment",
+  "path": "/en/checkout/#shipping",
+  "did": "Reviewed payment options and the order summary.",
+  "works": "mada and cards, Tabby, Tamara and card instalments; discount-code field; order summary.",
+  "friction": "Tabby and Tamara both read 'Pay 4 interest-free payments'; cash on delivery advertised but not offered; no Apple Pay in Chrome; 'Place Order' in a blue used nowhere else.",
+  "severity": 2,
+  "severity_label": "Minor",
+  "benchmark": "Baymard: 9% abandon for too few payment methods.",
+  "findings": "F27, F35, F39"
+ },
+ {
+  "step": 8,
+  "screen": "Sign in (returning shopper)",
+  "path": "/en/customer/account/login",
+  "did": "Opened the sign-in page.",
+  "works": "Simple email and password with show-password toggle and 'Forgot Your Password?'.",
+  "friction": "Checkout identifies shoppers by phone, sign-in by email; gold 'Create an account' link is faint; FAQ still says an account is required.",
+  "severity": 2,
+  "severity_label": "Minor",
+  "benchmark": "Baymard: forced account creation causes 18% of abandonments. Golden Tech doesn't force it but says it does.",
+  "findings": "F33, F40"
+ },
+ {
+  "step": 9,
+  "screen": "After purchase: policies",
+  "path": "/en/terms-and-conditions",
+  "did": "Read delivery, returns, refund and warranty terms.",
+  "works": "Two-year warranty, complaints link, CR and VAT numbers in the footer.",
+  "friction": "Delivery fee and time contradict the cart and product page; 7-day defects-only returns; refunds 1–5 vs 3–30 days; no WhatsApp.",
+  "severity": 4,
+  "severity_label": "Critical",
+  "benchmark": "Baymard: 13% abandon over the returns policy. eXtra allows 14 days online; Amazon.sa and noon 15 days.",
+  "findings": "F16, F24, F25, F26, F36"
+ }
+]

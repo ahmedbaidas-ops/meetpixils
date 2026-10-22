@@ -1,526 +1,666 @@
 [
  {
-  "id": "C01",
+  "id": "C001",
   "area": "Homepage & landing",
   "check": "States what the store sells and why buy here",
   "weight": 2,
   "status": "Partial",
   "points": 0.5,
-  "evidence": "Title 'Home of Laptop & Computers in KSA'; meta copy in broken English",
-  "finding": "F28"
+  "evidence": "Rotating brand and promo heroes; the only value line is a tiny 'Free shipping / Secure payment' bar",
+  "finding": "F06"
  },
  {
-  "id": "C02",
+  "id": "C002",
   "area": "Homepage & landing",
   "check": "Category and brand entry points",
   "weight": 2,
   "status": "Pass",
   "points": 1,
-  "evidence": "New Arrivals, Shop by brand, PC Gaming tiers linked",
+  "evidence": "Eight category tiles, a brand row and a 15-item departments menu",
   "finding": ""
  },
  {
-  "id": "C03",
+  "id": "C003",
+  "area": "Homepage & landing",
+  "check": "Category shortcuts stay in place",
+  "weight": 1,
+  "status": "Fail",
+  "points": 0,
+  "evidence": "Tile order changed across three loads",
+  "finding": "F03"
+ },
+ {
+  "id": "C004",
   "area": "Homepage & landing",
   "check": "One clear destination for offers",
   "weight": 2,
-  "status": "Fail",
-  "points": 0,
-  "evidence": "8+ offer pages, duplicate titles",
-  "finding": "F15"
+  "status": "Partial",
+  "points": 0.5,
+  "evidence": "One 'Golden Offers' nav link, but 8+ offer pages indexed",
+  "finding": "F05"
  },
  {
-  "id": "C04",
+  "id": "C005",
   "area": "Homepage & landing",
   "check": "Featured deals are credible",
   "weight": 1,
-  "status": "Partial",
-  "points": 0.5,
-  "evidence": "Deal of the day at -4%",
-  "finding": "F16"
+  "status": "Pass",
+  "points": 1,
+  "evidence": "Deal of the day: iMac -22%, Alienware monitor -36%",
+  "finding": ""
  },
  {
-  "id": "C05",
+  "id": "C006",
   "area": "Homepage & landing",
   "check": "Paid traffic lands on an intent-matched page",
   "weight": 2,
   "status": "Fail",
   "points": 0,
   "evidence": "Google Ads click opens the homepage",
-  "finding": "F14"
+  "finding": "F01"
  },
  {
-  "id": "C06",
+  "id": "C007",
   "area": "Homepage & landing",
-  "check": "No public test or duplicate homepages",
+  "check": "No public test or demo pages",
   "weight": 1,
   "status": "Fail",
   "points": 0,
-  "evidence": "'Golden EN Home Page Demo' indexed",
-  "finding": "F25"
+  "evidence": "'Golden EN Home Page Demo' and 'Category Test' are live",
+  "finding": "F02"
  },
  {
-  "id": "C07",
+  "id": "C008",
   "area": "Homepage & landing",
-  "check": "Above-the-fold hierarchy on mobile",
+  "check": "Banner copy proofread",
+  "weight": 1,
+  "status": "Fail",
+  "points": 0,
+  "evidence": "'PC GAMING Beyond pergormance.'",
+  "finding": "F04"
+ },
+ {
+  "id": "C009",
+  "area": "Homepage & landing",
+  "check": "Desktop above-the-fold clarity",
   "weight": 2,
-  "status": "Not verified",
-  "points": null,
-  "evidence": "Needs a live screenshot",
+  "status": "Pass",
+  "points": 1,
+  "evidence": "Search, departments, hero, deal of the day and category tiles visible",
   "finding": ""
  },
  {
-  "id": "C08",
+  "id": "C010",
+  "area": "Homepage & landing",
+  "check": "Phone above-the-fold clarity",
+  "weight": 2,
+  "status": "Not verified",
+  "points": null,
+  "evidence": "Needs phone screenshots",
+  "finding": ""
+ },
+ {
+  "id": "C011",
   "area": "Navigation & IA",
   "check": "Top level organised by product type",
   "weight": 2,
   "status": "Pass",
   "points": 1,
-  "evidence": "Laptops, Desktops, PC Gaming, Monitors, Apple, Accessories, Printers",
+  "evidence": "Departments menu lists laptops, desktops, tablets, monitors, gaming PCs and more",
   "finding": ""
  },
  {
-  "id": "C09",
+  "id": "C012",
   "area": "Navigation & IA",
-  "check": "Paths by need or budget (study, gaming, work, create)",
+  "check": "Departments organised one way",
+  "weight": 1,
+  "status": "Partial",
+  "points": 0.5,
+  "evidence": "Brands (Apple, Microsoft, Promate) mixed with product types",
+  "finding": "F08"
+ },
+ {
+  "id": "C013",
+  "area": "Navigation & IA",
+  "check": "Paths by need or budget",
   "weight": 2,
   "status": "Partial",
   "points": 0.5,
-  "evidence": "Gaming and Business exist; no student, creator or price-band paths",
-  "finding": "F17"
+  "evidence": "PC Gaming finder and business laptops; no study, creator or price-band paths",
+  "finding": "F08"
  },
  {
-  "id": "C10",
+  "id": "C014",
   "area": "Navigation & IA",
   "check": "Category labels match their contents",
   "weight": 2,
   "status": "Fail",
   "points": 0,
-  "evidence": "'Gaming' lists peripherals",
-  "finding": "F18"
+  "evidence": "'Gaming' lists peripherals; 'Intel Core i5' tile shows Core Ultra",
+  "finding": "F09"
  },
  {
-  "id": "C11",
+  "id": "C015",
   "area": "Navigation & IA",
-  "check": "No dead-end or single-product categories",
+  "check": "No dead-end categories",
   "weight": 1,
   "status": "Fail",
   "points": 0,
   "evidence": "Servers holds one product",
-  "finding": "F18"
+  "finding": "F09"
  },
  {
-  "id": "C12",
+  "id": "C016",
   "area": "Navigation & IA",
   "check": "One canonical path per category",
   "weight": 1,
   "status": "Fail",
   "points": 0,
   "evidence": "Duplicate Microsoft and PC Gaming paths",
-  "finding": "F18"
+  "finding": "F09"
  },
  {
-  "id": "C13",
+  "id": "C017",
   "area": "Navigation & IA",
-  "check": "Consistent shop-by-brand",
+  "check": "Breadcrumbs",
   "weight": 1,
   "status": "Partial",
   "points": 0.5,
-  "evidence": "Exists, but under three URL patterns",
-  "finding": "F18"
+  "evidence": "Present; 'PC Gaming » PC Gaming' repeats",
+  "finding": "F09"
  },
  {
-  "id": "C14",
+  "id": "C018",
   "area": "Navigation & IA",
   "check": "Business / bulk-buying path",
   "weight": 2,
   "status": "Fail",
   "points": 0,
-  "evidence": "No quote or corporate page",
-  "finding": "F32"
+  "evidence": "No quote page; only an 'Is company?' tick box at checkout",
+  "finding": "F10"
  },
  {
-  "id": "C15",
+  "id": "C019",
   "area": "Navigation & IA",
-  "check": "Mobile menu usability",
+  "check": "Phone menu usability",
   "weight": 2,
   "status": "Not verified",
   "points": null,
-  "evidence": "Needs a live session",
+  "evidence": "Needs phone screenshots",
   "finding": ""
  },
  {
-  "id": "C16",
+  "id": "C020",
+  "area": "Search",
+  "check": "Instant results with products, prices and categories",
+  "weight": 3,
+  "status": "Pass",
+  "points": 1,
+  "evidence": "'rtx 5070' shows six products with prices, a category suggestion and 'view all (100+)'",
+  "finding": ""
+ },
+ {
+  "id": "C021",
+  "area": "Search",
+  "check": "Spec terms match the right products",
+  "weight": 2,
+  "status": "Pass",
+  "points": 1,
+  "evidence": "Every 'rtx 5070' result is an RTX 5070 or 5070 Ti machine",
+  "finding": ""
+ },
+ {
+  "id": "C022",
+  "area": "Search",
+  "check": "Recent searches private to the shopper",
+  "weight": 1,
+  "status": "Fail",
+  "points": 0,
+  "evidence": "Shows a quote request the auditor didn't type",
+  "finding": "F11"
+ },
+ {
+  "id": "C023",
   "area": "Search",
   "check": "Search result pages kept out of Google",
   "weight": 1,
   "status": "Fail",
   "points": 0,
   "evidence": "/catalogsearch/result/ indexed",
-  "finding": "F26"
+  "finding": "F12"
  },
  {
-  "id": "C17",
+  "id": "C024",
   "area": "Search",
   "check": "Retired products send shoppers to the successor",
-  "weight": 2,
+  "weight": 1,
   "status": "Partial",
   "points": 0.5,
   "evidence": "Retired URL lands on generic search results",
-  "finding": "F26"
+  "finding": "F12"
  },
  {
-  "id": "C18",
-  "area": "Search",
-  "check": "Autocomplete with products and categories",
-  "weight": 3,
-  "status": "Not verified",
-  "points": null,
-  "evidence": "Needs a live session",
-  "finding": ""
- },
- {
-  "id": "C19",
-  "area": "Search",
-  "check": "Model-number and part-number matching",
-  "weight": 3,
-  "status": "Not verified",
-  "points": null,
-  "evidence": "Needs a live session",
-  "finding": ""
- },
- {
-  "id": "C20",
+  "id": "C025",
   "area": "Search",
   "check": "Typo and Arabic↔English tolerance (لابتوب / laptop)",
   "weight": 2,
   "status": "Not verified",
   "points": null,
-  "evidence": "Needs a live session",
+  "evidence": "Not tested",
   "finding": ""
  },
  {
-  "id": "C21",
+  "id": "C026",
+  "area": "Search",
+  "check": "Exact model-number search (e.g. G614PR)",
+  "weight": 2,
+  "status": "Not verified",
+  "points": null,
+  "evidence": "Not tested",
+  "finding": ""
+ },
+ {
+  "id": "C027",
   "area": "Category pages",
-  "check": "Filters for key specs (CPU, GPU, RAM, storage)",
+  "check": "Filters for key specs",
   "weight": 3,
   "status": "Pass",
   "points": 1,
-  "evidence": "Processor, RAM, storage, graphics and display filters on gaming listings",
+  "evidence": "Brand, Processor, Motherboard, Memory, Storage, Graphic Card, OS, Color, Price",
   "finding": ""
  },
  {
-  "id": "C22",
+  "id": "C028",
   "area": "Category pages",
-  "check": "Spec filters can be combined",
+  "check": "Guided finder for spec shoppers",
   "weight": 2,
-  "status": "Fail",
-  "points": 0,
-  "evidence": "Refresh rate, panel and resolution are separate pages",
-  "finding": "F19"
+  "status": "Pass",
+  "points": 1,
+  "evidence": "'What are you looking for?' Processor / Memory / Storage / Graphic Card",
+  "finding": ""
  },
  {
-  "id": "C23",
+  "id": "C029",
+  "area": "Category pages",
+  "check": "Spec values combinable across pages",
+  "weight": 2,
+  "status": "Partial",
+  "points": 0.5,
+  "evidence": "PC filters combine; monitor refresh rate and panel are separate pages",
+  "finding": ""
+ },
+ {
+  "id": "C030",
   "area": "Category pages",
   "check": "Useful price filter",
-  "weight": 2,
-  "status": "Fail",
-  "points": 0,
-  "evidence": "Two buckets: 0–10,000 and 10,000–20,000",
-  "finding": "F19"
- },
- {
-  "id": "C24",
-  "area": "Category pages",
-  "check": "Sort by price, rating, newest and best-selling",
-  "weight": 3,
-  "status": "Fail",
-  "points": 0,
-  "evidence": "Only Position, Best Sellers, Most Viewed, wishlist count found",
-  "finding": "F20"
- },
- {
-  "id": "C25",
-  "area": "Category pages",
-  "check": "Cards show price, saving and VAT status",
-  "weight": 2,
-  "status": "Pass",
-  "points": 1,
-  "evidence": "Special / regular price, % badge, 'Tax included'",
-  "finding": ""
- },
- {
-  "id": "C26",
-  "area": "Category pages",
-  "check": "Scannable card titles with key specs",
-  "weight": 2,
-  "status": "Fail",
-  "points": 0,
-  "evidence": "115–140 character spec strings",
-  "finding": "F21"
- },
- {
-  "id": "C27",
-  "area": "Category pages",
-  "check": "Stock status and out-of-stock handling",
   "weight": 1,
   "status": "Partial",
   "points": 0.5,
-  "evidence": "'Not available' shown; out-of-stock items mixed into results",
+  "evidence": "Price filter present; indexed buckets were 0–10,000 and 10,000–20,000",
   "finding": ""
  },
  {
-  "id": "C28",
+  "id": "C031",
+  "area": "Category pages",
+  "check": "Sort by price and best-selling",
+  "weight": 3,
+  "status": "Pass",
+  "points": 1,
+  "evidence": "'Sort By: Price: low to high'; Best Sellers and Most Viewed",
+  "finding": ""
+ },
+ {
+  "id": "C032",
+  "area": "Category pages",
+  "check": "Cards show key specs",
+  "weight": 2,
+  "status": "Pass",
+  "points": 1,
+  "evidence": "Four spec lines with icons: CPU, RAM, storage, GPU",
+  "finding": ""
+ },
+ {
+  "id": "C033",
+  "area": "Category pages",
+  "check": "Scannable card titles",
+  "weight": 1,
+  "status": "Fail",
+  "points": 0,
+  "evidence": "Two-line truncated spec strings repeat the spec lines",
+  "finding": "F13"
+ },
+ {
+  "id": "C034",
+  "area": "Category pages",
+  "check": "Price, saving and VAT on cards",
+  "weight": 2,
+  "status": "Pass",
+  "points": 1,
+  "evidence": "Price, was-price, % chip, 'Tax included', 'Save'",
+  "finding": ""
+ },
+ {
+  "id": "C035",
   "area": "Category pages",
   "check": "Ratings on cards",
   "weight": 1,
   "status": "Partial",
   "points": 0.5,
-  "evidence": "Shown, but 0–2 reviews per product",
-  "finding": "F22"
+  "evidence": "Shown on a few cards (5.0, 4.5)",
+  "finding": "F18"
  },
  {
-  "id": "C29",
+  "id": "C036",
+  "area": "Category pages",
+  "check": "Distinct product images",
+  "weight": 2,
+  "status": "Fail",
+  "points": 0,
+  "evidence": "Most builds share one case render",
+  "finding": "F14"
+ },
+ {
+  "id": "C037",
   "area": "Category pages",
   "check": "Compare and wishlist from the listing",
   "weight": 1,
-  "status": "Pass",
-  "points": 1,
-  "evidence": "'Wish List / Compare' on cards",
+  "status": "Partial",
+  "points": 0.5,
+  "evidence": "On homepage cards; not visible on category cards",
   "finding": ""
  },
  {
-  "id": "C30",
+  "id": "C038",
   "area": "Product page",
-  "check": "Structured spec sheet",
+  "check": "Structured spec table",
   "weight": 3,
   "status": "Pass",
   "points": 1,
-  "evidence": "'Label: value' attribute lines (warranty, model number, display)",
+  "evidence": "14 striped rows naming component brands (Patriot Viper DDR5, ASUS Dual RTX 3050, Gigabyte H610M)",
   "finding": ""
  },
  {
-  "id": "C31",
+  "id": "C039",
   "area": "Product page",
-  "check": "Price shown with VAT status",
+  "check": "Price with VAT status and Riyal symbol",
   "weight": 2,
   "status": "Pass",
   "points": 1,
-  "evidence": "'Tax included' / 'شاملة الضريبة'",
+  "evidence": "'SAR 4,699 SAR 6,599 · Tax included · Save 1900' with the new Riyal symbol",
   "finding": ""
  },
  {
-  "id": "C32",
+  "id": "C040",
   "area": "Product page",
-  "check": "Price matches listings and the other language",
+  "check": "Price matches listing and cart",
   "weight": 3,
-  "status": "Fail",
-  "points": 0,
-  "evidence": "EN 6,899 vs AR 5,299 for the same SKU",
-  "finding": "F03"
+  "status": "Pass",
+  "points": 1,
+  "evidence": "4,699 on listing, product page and cart (RTX 3050 build)",
+  "finding": "F23"
  },
  {
-  "id": "C33",
+  "id": "C041",
   "area": "Product page",
   "check": "Delivery promise matches the policy",
   "weight": 3,
   "status": "Fail",
   "points": 0,
-  "evidence": "'24 hours Riyadh' vs '3 to 7 working days'",
-  "finding": "F02"
+  "evidence": "'Riyadh: 24 hours' vs Terms '3 to 7 working days'",
+  "finding": "F16"
  },
  {
-  "id": "C34",
+  "id": "C042",
   "area": "Product page",
   "check": "Delivery shown as a date",
   "weight": 2,
   "status": "Fail",
   "points": 0,
   "evidence": "Shown as a range of days",
-  "finding": "F23"
+  "finding": "F17"
  },
  {
-  "id": "C35",
+  "id": "C043",
   "area": "Product page",
-  "check": "Warranty length and provider stated",
+  "check": "Delivery cost on the product page",
+  "weight": 2,
+  "status": "Fail",
+  "points": 0,
+  "evidence": "Not shown",
+  "finding": "F17"
+ },
+ {
+  "id": "C044",
+  "area": "Product page",
+  "check": "Warranty length and provider",
   "weight": 2,
   "status": "Pass",
   "points": 1,
-  "evidence": "'24 Months Warranty by Samsung / Apple / Golden Tech'",
+  "evidence": "'24 Months Warranty by Golden Tech' bar",
   "finding": ""
  },
  {
-  "id": "C36",
+  "id": "C045",
   "area": "Product page",
   "check": "Instalment price shown",
   "weight": 2,
-  "status": "Partial",
-  "points": 0.5,
-  "evidence": "Tabby / Tamara tables, but fee wording conflicts",
-  "finding": "F10"
+  "status": "Pass",
+  "points": 1,
+  "evidence": "Tamara and Tabby: 4 payments of 1,174.75",
+  "finding": ""
  },
  {
-  "id": "C37",
+  "id": "C046",
+  "area": "Product page",
+  "check": "Focused buy box with one primary action",
+  "weight": 2,
+  "status": "Fail",
+  "points": 0,
+  "evidence": "Three instalment boxes, two promos, Add to Cart and Buy Now compete",
+  "finding": "F19"
+ },
+ {
+  "id": "C047",
   "area": "Product page",
   "check": "Customer reviews",
   "weight": 3,
   "status": "Fail",
   "points": 0,
-  "evidence": "0–2 reviews per product",
-  "finding": "F22"
+  "evidence": "'There are no ratings.'",
+  "finding": "F18"
  },
  {
-  "id": "C38",
+  "id": "C048",
   "area": "Product page",
-  "check": "Stock status",
+  "check": "Real photos and a gallery",
+  "weight": 2,
+  "status": "Fail",
+  "points": 0,
+  "evidence": "One rendered spec image",
+  "finding": "F14"
+ },
+ {
+  "id": "C049",
+  "area": "Product page",
+  "check": "Sticky add-to-cart on scroll",
   "weight": 1,
   "status": "Pass",
   "points": 1,
-  "evidence": "'In stock' / 'Not available'",
+  "evidence": "Bar with thumbnail, title, price and Add to Cart",
   "finding": ""
  },
  {
-  "id": "C39",
+  "id": "C050",
   "area": "Product page",
   "check": "Specs accurate and consistent",
   "weight": 2,
   "status": "Partial",
   "points": 0.5,
-  "evidence": "4K vs FHD conflict; wrong model in URL",
-  "finding": "F24"
+  "evidence": "4K vs FHD conflict; wrong model in a URL",
+  "finding": "F21"
  },
  {
-  "id": "C40",
+  "id": "C051",
   "area": "Product page",
-  "check": "Image gallery, zoom and in-scale images",
-  "weight": 2,
-  "status": "Not verified",
-  "points": null,
-  "evidence": "Needs a live session",
-  "finding": ""
+  "check": "Gift and promo terms clear",
+  "weight": 1,
+  "status": "Fail",
+  "points": 0,
+  "evidence": "'Free Gift' with no item names or terms",
+  "finding": "F20"
  },
  {
-  "id": "C41",
+  "id": "C052",
   "area": "Product page",
-  "check": "Accessory cross-sell and protection plans",
+  "check": "Compatible accessories and bundles",
   "weight": 1,
   "status": "Not verified",
   "points": null,
-  "evidence": "None found in the index",
-  "finding": "F23"
+  "evidence": "None visible in the screenshots",
+  "finding": "F17"
  },
  {
-  "id": "C42",
+  "id": "C053",
   "area": "Cart & checkout",
   "check": "Guest checkout",
   "weight": 3,
-  "status": "Fail",
-  "points": 0,
-  "evidence": "Registration required",
-  "finding": "F04"
+  "status": "Pass",
+  "points": 1,
+  "evidence": "'You can create an account after checkout.'",
+  "finding": ""
  },
  {
-  "id": "C43",
+  "id": "C054",
   "area": "Cart & checkout",
-  "check": "Phone verification placed late in the flow",
+  "check": "Phone verification clear and late in the flow",
   "weight": 2,
   "status": "Fail",
   "points": 0,
-  "evidence": "SMS code at sign-up, before buying",
-  "finding": "F04"
+  "evidence": "'Please verify your phone number first.' + ambiguous 'Send Otp'",
+  "finding": "F32"
  },
  {
-  "id": "C44",
+  "id": "C055",
   "area": "Cart & checkout",
-  "check": "Total cost known before checkout",
+  "check": "Cart summary adds up clearly",
   "weight": 3,
   "status": "Fail",
   "points": 0,
-  "evidence": "Three delivery-fee rules",
-  "finding": "F01"
+  "evidence": "Subtotal 4,086 beside a 4,699 item; 'Total Savings -1,900'",
+  "finding": "F31"
  },
  {
-  "id": "C45",
+  "id": "C056",
+  "area": "Cart & checkout",
+  "check": "Free-shipping status in the cart",
+  "weight": 1,
+  "status": "Pass",
+  "points": 1,
+  "evidence": "Progress bar: 'You've earned free shipping!'",
+  "finding": ""
+ },
+ {
+  "id": "C057",
+  "area": "Cart & checkout",
+  "check": "Delivery cost known before checkout",
+  "weight": 2,
+  "status": "Partial",
+  "points": 0.5,
+  "evidence": "Cart shows 0 SAR; product page shows none",
+  "finding": "F17"
+ },
+ {
+  "id": "C058",
   "area": "Cart & checkout",
   "check": "mada and cards",
   "weight": 2,
   "status": "Pass",
   "points": 1,
-  "evidence": "Visa, Mastercard, mada with no extra fee",
+  "evidence": "'Mada bank Card / Credit card'",
   "finding": ""
  },
  {
-  "id": "C46",
+  "id": "C059",
   "area": "Cart & checkout",
-  "check": "Apple Pay / wallet",
+  "check": "Apple Pay at checkout",
   "weight": 2,
-  "status": "Fail",
-  "points": 0,
-  "evidence": "Not on the payment methods page",
-  "finding": "F11"
+  "status": "Not verified",
+  "points": null,
+  "evidence": "Not listed in Chrome; test in Safari",
+  "finding": "F35"
  },
  {
-  "id": "C47",
+  "id": "C060",
   "area": "Cart & checkout",
   "check": "Buy now, pay later at checkout",
   "weight": 2,
   "status": "Pass",
   "points": 1,
-  "evidence": "Tabby merchant page; Tamara tables on products",
+  "evidence": "Tabby, Tamara and card instalments",
   "finding": ""
  },
  {
-  "id": "C48",
+  "id": "C061",
   "area": "Cart & checkout",
-  "check": "Cash on delivery with fee shown upfront",
+  "check": "Cash on delivery as advertised",
+  "weight": 1,
+  "status": "Fail",
+  "points": 0,
+  "evidence": "Footer advertises COD; checkout doesn't list it",
+  "finding": "F35"
+ },
+ {
+  "id": "C062",
+  "area": "Cart & checkout",
+  "check": "Store pickup",
+  "weight": 2,
+  "status": "Pass",
+  "points": 1,
+  "evidence": "'Pickup from store' shipping method",
+  "finding": ""
+ },
+ {
+  "id": "C063",
+  "area": "Cart & checkout",
+  "check": "National Address capture",
+  "weight": 2,
+  "status": "Partial",
+  "points": 0.5,
+  "evidence": "Map picker, building number and postal code; no Short Address field",
+  "finding": "F34"
+ },
+ {
+  "id": "C064",
+  "area": "Cart & checkout",
+  "check": "Form length near Baymard's ideal",
   "weight": 1,
   "status": "Partial",
   "points": 0.5,
-  "evidence": "COD +20 SAR, disclosed only in the Terms",
-  "finding": "F12"
+  "evidence": "About ten fields plus map and SMS code",
+  "finding": ""
  },
  {
-  "id": "C49",
+  "id": "C065",
   "area": "Cart & checkout",
-  "check": "Showroom pickup option",
-  "weight": 2,
-  "status": "Partial",
-  "points": 0.5,
-  "evidence": "'Click and Collect' in FAQ; no checkout option found",
-  "finding": "F13"
- },
- {
-  "id": "C50",
-  "area": "Cart & checkout",
-  "check": "National Address (short address) capture",
-  "weight": 2,
-  "status": "Not verified",
-  "points": null,
-  "evidence": "No field found in the index",
-  "finding": "F39"
- },
- {
-  "id": "C51",
-  "area": "Cart & checkout",
-  "check": "Order review before payment",
+  "check": "Order summary beside payment",
   "weight": 1,
   "status": "Pass",
   "points": 1,
-  "evidence": "FAQ: review step before completing the purchase",
+  "evidence": "Order Summary with totals and discount code",
   "finding": ""
  },
  {
-  "id": "C52",
+  "id": "C066",
   "area": "Cart & checkout",
-  "check": "Inline validation and clear errors",
+  "check": "Clear errors and inline validation",
   "weight": 2,
-  "status": "Not verified",
-  "points": null,
-  "evidence": "Needs a live session",
-  "finding": ""
+  "status": "Partial",
+  "points": 0.5,
+  "evidence": "Phone error appears before the shopper acts; others untested",
+  "finding": "F32"
  },
  {
-  "id": "C53",
+  "id": "C067",
   "area": "Delivery, returns & payments",
   "check": "Delivers to all regions of KSA",
   "weight": 1,
@@ -530,177 +670,187 @@
   "finding": ""
  },
  {
-  "id": "C54",
+  "id": "C068",
   "area": "Delivery, returns & payments",
   "check": "One delivery fee rule",
   "weight": 3,
   "status": "Fail",
   "points": 0,
-  "evidence": "20 SAR / 10 SAR under 200 / free",
-  "finding": "F01"
+  "evidence": "20 SAR / 10 SAR under 200 / free in the cart",
+  "finding": "F24"
  },
  {
-  "id": "C55",
+  "id": "C069",
   "area": "Delivery, returns & payments",
   "check": "One delivery time promise",
   "weight": 3,
   "status": "Fail",
   "points": 0,
-  "evidence": "Same-day to 10 working days",
-  "finding": "F02"
+  "evidence": "24 hours to 10 working days depending on the page",
+  "finding": "F16"
  },
  {
-  "id": "C56",
+  "id": "C070",
   "area": "Delivery, returns & payments",
-  "check": "Competitive speed in Riyadh (1–2 days)",
+  "check": "Competitive speed in Riyadh",
   "weight": 2,
   "status": "Partial",
   "points": 0.5,
-  "evidence": "'24 hours' on products, '3–7 working days' in Terms",
-  "finding": "F02"
+  "evidence": "'24 hours' on product pages; Terms say 3–7 working days",
+  "finding": "F16"
  },
  {
-  "id": "C57",
+  "id": "C071",
   "area": "Delivery, returns & payments",
-  "check": "Change-of-mind return window of 14+ days",
+  "check": "Change-of-mind returns of 14+ days",
   "weight": 2,
   "status": "Fail",
   "points": 0,
   "evidence": "7 days, defects only",
-  "finding": "F06"
+  "finding": "F25"
  },
  {
-  "id": "C58",
+  "id": "C072",
   "area": "Delivery, returns & payments",
   "check": "Accessories and instalment orders returnable",
   "weight": 1,
   "status": "Fail",
   "points": 0,
   "evidence": "Both excluded",
-  "finding": "F06"
+  "finding": "F25"
  },
  {
-  "id": "C59",
+  "id": "C073",
   "area": "Delivery, returns & payments",
   "check": "Refund timing stated once",
   "weight": 1,
   "status": "Fail",
   "points": 0,
   "evidence": "1–5 vs 3–30 days",
-  "finding": "F07"
+  "finding": "F26"
  },
  {
-  "id": "C60",
+  "id": "C074",
   "area": "Delivery, returns & payments",
   "check": "Self-service returns and cancellation",
   "weight": 2,
   "status": "Fail",
   "points": 0,
-  "evidence": "Phone or email only; 59 SAR cancel fee after shipping",
-  "finding": "F31"
+  "evidence": "Phone or email only",
+  "finding": "F37"
  },
  {
-  "id": "C61",
+  "id": "C075",
   "area": "Delivery, returns & payments",
   "check": "Payment options breadth",
   "weight": 2,
   "status": "Pass",
   "points": 1,
-  "evidence": "mada, cards, card instalments, Tabby/Tamara, COD",
+  "evidence": "mada, cards, Tabby, Tamara, card instalments",
   "finding": ""
  },
  {
-  "id": "C62",
+  "id": "C076",
   "area": "Delivery, returns & payments",
   "check": "Payment page lists every option",
   "weight": 1,
   "status": "Fail",
   "points": 0,
-  "evidence": "BNPL providers missing",
-  "finding": "F10"
+  "evidence": "BNPL and Apple Pay missing",
+  "finding": "F27"
  },
  {
-  "id": "C63",
+  "id": "C077",
   "area": "Delivery, returns & payments",
   "check": "Warranty length stated",
   "weight": 1,
   "status": "Pass",
   "points": 1,
-  "evidence": "Two years via the brand agent",
+  "evidence": "Two years",
   "finding": ""
  },
  {
-  "id": "C64",
+  "id": "C078",
   "area": "Delivery, returns & payments",
   "check": "Store owns the warranty claim",
   "weight": 2,
-  "status": "Fail",
-  "points": 0,
-  "evidence": "'not considered the responsibility of The Golden Technology'",
-  "finding": "F09"
+  "status": "Partial",
+  "points": 0.5,
+  "evidence": "Yes for store-built PCs; brand agent for the rest",
+  "finding": "F28"
  },
  {
-  "id": "C65",
+  "id": "C079",
   "area": "Trust & support",
   "check": "CR and VAT numbers shown",
   "weight": 2,
   "status": "Pass",
   "points": 1,
-  "evidence": "CR 1010276436, VAT 311258900400003 in the footer",
+  "evidence": "'C. R. No. 1010276436. VAT ID 311258900400003' in the footer",
   "finding": ""
  },
  {
-  "id": "C66",
+  "id": "C080",
   "area": "Trust & support",
-  "check": "Business Platform (SBC) authentication shown",
+  "check": "Saudi Business Center authentication",
   "weight": 2,
-  "status": "Not verified",
-  "points": null,
-  "evidence": "No badge found in the index",
-  "finding": "F29"
+  "status": "Partial",
+  "points": 0.5,
+  "evidence": "SBC logo in the footer; link to certificate not tested",
+  "finding": "F30"
  },
  {
-  "id": "C67",
+  "id": "C081",
   "area": "Trust & support",
-  "check": "Showroom address and opening hours",
+  "check": "VAT and payment badges",
   "weight": 1,
   "status": "Pass",
   "points": 1,
-  "evidence": "Olaya computer market, Sat–Thu 9am–10pm",
+  "evidence": "mada, Mastercard, Visa, Aramex COD, VAT badge",
   "finding": ""
  },
  {
-  "id": "C68",
+  "id": "C082",
+  "area": "Trust & support",
+  "check": "Showroom address and hours",
+  "weight": 1,
+  "status": "Pass",
+  "points": 1,
+  "evidence": "Computer market, Olaya; Sat–Thu 9am–10pm",
+  "finding": ""
+ },
+ {
+  "id": "C083",
   "area": "Trust & support",
   "check": "Contact details consistent",
   "weight": 1,
   "status": "Fail",
   "points": 0,
   "evidence": "Two sets of landline hours, two emails",
-  "finding": "F30"
+  "finding": "F36"
  },
  {
-  "id": "C69",
+  "id": "C084",
   "area": "Trust & support",
   "check": "WhatsApp or live chat",
   "weight": 2,
   "status": "Fail",
   "points": 0,
-  "evidence": "None on the site",
-  "finding": "F30"
+  "evidence": "None on any page tested",
+  "finding": "F36"
  },
  {
-  "id": "C70",
+  "id": "C085",
   "area": "Trust & support",
-  "check": "On-site review volume",
+  "check": "On-site reviews",
   "weight": 2,
   "status": "Fail",
   "points": 0,
-  "evidence": "0–2 reviews per product",
-  "finding": "F22"
+  "evidence": "'There are no ratings.'",
+  "finding": "F18"
  },
  {
-  "id": "C71",
+  "id": "C086",
   "area": "Trust & support",
   "check": "Off-site reputation",
   "weight": 1,
@@ -710,87 +860,97 @@
   "finding": ""
  },
  {
-  "id": "C72",
+  "id": "C087",
   "area": "Trust & support",
   "check": "Professional legal copy and one entity name",
   "weight": 2,
   "status": "Fail",
   "points": 0,
   "evidence": "'Technology gold'; 'foundation' vs 'Trading Company'",
-  "finding": "F08"
+  "finding": "F29"
  },
  {
-  "id": "C73",
+  "id": "C088",
   "area": "Trust & support",
   "check": "Named brand authorisations",
   "weight": 1,
   "status": "Fail",
   "points": 0,
   "evidence": "'authorized distributors' with no brand named",
-  "finding": "F29"
+  "finding": "F30"
  },
  {
-  "id": "C74",
+  "id": "C089",
   "area": "Trust & support",
   "check": "Order tracking",
   "weight": 2,
-  "status": "Not verified",
-  "points": null,
-  "evidence": "No tracking page found in the index",
-  "finding": "F31"
+  "status": "Partial",
+  "points": 0.5,
+  "evidence": "'Orders' link for account holders; guest lookup untested",
+  "finding": "F37"
  },
  {
-  "id": "C75",
+  "id": "C090",
+  "area": "Trust & support",
+  "check": "Complaints channel",
+  "weight": 1,
+  "status": "Pass",
+  "points": 1,
+  "evidence": "'Complaint and Suggestions' in the footer",
+  "finding": ""
+ },
+ {
+  "id": "C091",
   "area": "Content & localisation",
   "check": "Full Arabic store",
   "weight": 2,
   "status": "Pass",
   "points": 1,
-  "evidence": "Complete /ar/ store view",
+  "evidence": "Complete /ar/ store, right-to-left",
   "finding": ""
  },
  {
-  "id": "C76",
+  "id": "C092",
   "area": "Content & localisation",
-  "check": "English and Arabic kept separate (hreflang, titles)",
+  "check": "English and Arabic kept separate",
   "weight": 2,
   "status": "Fail",
   "points": 0,
-  "evidence": "Arabic titles on /en/ URLs; Arabic posts under /en/blog/",
-  "finding": "F27"
+  "evidence": "Arabic titles on /en/ URLs; English-only banners on /ar/",
+  "finding": "F07"
  },
  {
-  "id": "C77",
+  "id": "C093",
   "area": "Content & localisation",
   "check": "Native-quality English",
   "weight": 2,
   "status": "Fail",
   "points": 0,
-  "evidence": "'Shop best Gaming laptop with in KSA'",
-  "finding": "F28"
+  "evidence": "'Usefull links', 'Warrnty', 'pergormance', '1174.75or'",
+  "finding": "F04"
  },
  {
-  "id": "C78",
+  "id": "C094",
   "area": "Content & localisation",
   "check": "Consistent brand and product naming",
   "weight": 1,
   "status": "Fail",
   "points": 0,
   "evidence": "Store named four ways; 'Asus' vs 'اسوس'",
-  "finding": "F27"
+  "finding": "F07"
  },
  {
-  "id": "C79",
+  "id": "C095",
   "area": "Content & localisation",
   "check": "Customer-facing page titles; no test pages",
   "weight": 2,
   "status": "Fail",
   "points": 0,
   "evidence": "'FAQ EN', 'Category Test'",
-  "finding": "F25"
+  "finding": "F02"
  },
  {
-  "id": "C80",
+  "id": "C096",
   "area": "Content & localisation",
   "check": "VAT label in both languages",
   "weight": 1,
@@ -800,7 +960,17 @@
   "finding": ""
  },
  {
-  "id": "C81",
+  "id": "C097",
+  "area": "Content & localisation",
+  "check": "New Saudi Riyal symbol",
+  "weight": 1,
+  "status": "Pass",
+  "points": 1,
+  "evidence": "Used on Arabic and English prices",
+  "finding": ""
+ },
+ {
+  "id": "C098",
   "area": "Content & localisation",
   "check": "Buying guides",
   "weight": 1,
@@ -810,13 +980,123 @@
   "finding": ""
  },
  {
-  "id": "C82",
+  "id": "C099",
   "area": "Content & localisation",
-  "check": "New Saudi Riyal symbol",
+  "check": "Up-to-date legal footer",
+  "weight": 1,
+  "status": "Fail",
+  "points": 0,
+  "evidence": "'© 2025'",
+  "finding": "F04"
+ },
+ {
+  "id": "C100",
+  "area": "UI & design system",
+  "check": "One style for the primary action",
+  "weight": 3,
+  "status": "Fail",
+  "points": 0,
+  "evidence": "Gold, black, navy, slate and blue",
+  "finding": "F39"
+ },
+ {
+  "id": "C101",
+  "area": "UI & design system",
+  "check": "Accent colour reserved for actions",
+  "weight": 2,
+  "status": "Fail",
+  "points": 0,
+  "evidence": "Gold on tabs, bars, headers and buttons alike",
+  "finding": "F40"
+ },
+ {
+  "id": "C102",
+  "area": "UI & design system",
+  "check": "Readable contrast on gold elements",
+  "weight": 2,
+  "status": "Fail",
+  "points": 0,
+  "evidence": "Gold 'Create an account' link on white is faint (to be measured)",
+  "finding": "F40"
+ },
+ {
+  "id": "C103",
+  "area": "UI & design system",
+  "check": "One product-card component",
+  "weight": 2,
+  "status": "Partial",
+  "points": 0.5,
+  "evidence": "Homepage and category cards differ (gold vs black button, spec lines)",
+  "finding": "F39"
+ },
+ {
+  "id": "C104",
+  "area": "UI & design system",
+  "check": "One price component",
+  "weight": 2,
+  "status": "Partial",
+  "points": 0.5,
+  "evidence": "Same structure on most pages; '4699.00' in the cart",
+  "finding": "F41"
+ },
+ {
+  "id": "C105",
+  "area": "UI & design system",
+  "check": "Clear type hierarchy",
+  "weight": 2,
+  "status": "Partial",
+  "points": 0.5,
+  "evidence": "Product page clear; card titles small and truncated",
+  "finding": "F13"
+ },
+ {
+  "id": "C106",
+  "area": "UI & design system",
+  "check": "Right-to-left layout mirrored",
+  "weight": 2,
+  "status": "Pass",
+  "points": 1,
+  "evidence": "Arabic header, menu, carousels and cards mirror correctly",
+  "finding": ""
+ },
+ {
+  "id": "C107",
+  "area": "UI & design system",
+  "check": "Clear active and disabled states",
+  "weight": 2,
+  "status": "Fail",
+  "points": 0,
+  "evidence": "'Send Otp' looks disabled",
+  "finding": "F32"
+ },
+ {
+  "id": "C108",
+  "area": "UI & design system",
+  "check": "Current icons and brand marks",
+  "weight": 1,
+  "status": "Partial",
+  "points": 0.5,
+  "evidence": "Twitter bird after the rebrand to X",
+  "finding": "F42"
+ },
+ {
+  "id": "C109",
+  "area": "UI & design system",
+  "check": "Tap targets on phone",
+  "weight": 3,
+  "status": "Not verified",
+  "points": null,
+  "evidence": "Needs phone screenshots",
+  "finding": ""
+ },
+ {
+  "id": "C110",
+  "area": "UI & design system",
+  "check": "Visible keyboard focus",
   "weight": 1,
   "status": "Not verified",
   "points": null,
-  "evidence": "Not found in the index",
-  "finding": "F37"
+  "evidence": "Not tested",
+  "finding": ""
  }
 ]

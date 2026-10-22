@@ -1,0 +1,74 @@
+[
+ {
+  "id": "S01",
+  "title": "Instant search",
+  "detail": "Products, prices, discounts and a category suggestion appear as you type, with 'view all (100+)'.",
+  "area": "Search"
+ },
+ {
+  "id": "S02",
+  "title": "PC finder",
+  "detail": "'What are you looking for?' narrows gaming PCs by processor, memory, storage and graphics card.",
+  "area": "Category pages"
+ },
+ {
+  "id": "S03",
+  "title": "Spec-rich listings",
+  "detail": "Nine filters including motherboard and OS, sort by price, and CPU/RAM/storage/GPU lines on every card.",
+  "area": "Category pages"
+ },
+ {
+  "id": "S04",
+  "title": "Detailed spec table",
+  "detail": "Striped rows naming component brands (Patriot Viper DDR5, ASUS Dual RTX 3050, Gigabyte H610M, Xigmatek 700W).",
+  "area": "Product page"
+ },
+ {
+  "id": "S05",
+  "title": "Sticky buy bar",
+  "detail": "Thumbnail, title, price and Add to Cart stay in view while reading specs.",
+  "area": "Product page"
+ },
+ {
+  "id": "S06",
+  "title": "Warranty up front",
+  "detail": "'24 Months Warranty by Golden Tech' is the first thing under the price.",
+  "area": "Product page"
+ },
+ {
+  "id": "S07",
+  "title": "Guest checkout and pickup",
+  "detail": "'You can create an account after checkout', a map location picker and 'Pickup from store'.",
+  "area": "Cart & checkout"
+ },
+ {
+  "id": "S08",
+  "title": "Free-shipping progress",
+  "detail": "The cart celebrates free shipping with a progress bar.",
+  "area": "Cart & checkout"
+ },
+ {
+  "id": "S09",
+  "title": "Local payments",
+  "detail": "mada, Visa, Mastercard, Tabby, Tamara and card instalments; a 5% mada offer.",
+  "area": "Delivery, returns & payments"
+ },
+ {
+  "id": "S10",
+  "title": "Compliance basics",
+  "detail": "CR, VAT number, VAT badge and Saudi Business Center logo in the footer; the new Riyal symbol on every price.",
+  "area": "Trust & support"
+ },
+ {
+  "id": "S11",
+  "title": "Full Arabic store",
+  "detail": "A complete right-to-left store view with correctly mirrored header, menus and carousels.",
+  "area": "Content & localisation"
+ },
+ {
+  "id": "S12",
+  "title": "Off-site reputation",
+  "detail": "4.5–4.8 ratings on arabplaces, Cybo and magicpin from hundreds of reviews.",
+  "area": "Trust & support"
+ }
+]

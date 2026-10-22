@@ -15,7 +15,7 @@
   "area": "Search",
   "weight": 8,
   "order": 3,
-  "scope": "On-site search quality and search hygiene"
+  "scope": "Instant search, relevance and search hygiene"
  },
  {
   "area": "Category pages",
@@ -33,7 +33,7 @@
   "area": "Cart & checkout",
   "weight": 16,
   "order": 6,
-  "scope": "Account, address, payment and order placement"
+  "scope": "Cart, account, address, payment and order placement"
  },
  {
   "area": "Delivery, returns & payments",
@@ -52,5 +52,11 @@
   "weight": 8,
   "order": 9,
   "scope": "Arabic and English quality, page titles and hygiene"
+ },
+ {
+  "area": "UI & design system",
+  "weight": 8,
+  "order": 10,
+  "scope": "Buttons, colour, type, components and right-to-left layout"
  }
 ]

@@ -1,13 +1,101 @@
 [
- {"criterion":"Delivery promise","golden_tech":"Riyadh 3–7 working days, elsewhere 7–10 (Terms); '24 hours Riyadh' on product pages","extra":"Metro 1–3 working days; same-day in 4 cities","jarir":"Same-day in showroom cities if ordered before 5pm","amazon":"Prime free same-day before 12pm (Riyadh, Jeddah)","noon":"Express next-day; 15-min noon Minutes in Riyadh","position":"Behind"},
- {"criterion":"Free-shipping rule","golden_tech":"Three answers: 20 SAR flat / free ≥200 SAR / 'free to all cities'","extra":"Threshold (≈99 SAR, unconfirmed)","jarir":"Unresolved on site","amazon":"Free ≥100 SAR","noon":"Free ≥200 SAR; ≥50 SAR with noon One","position":"Behind"},
- {"criterion":"Buy now, pay later","golden_tech":"Tabby/Tamara on product pages; missing from payment-methods page","extra":"Tabby, Tamara","jarir":"Tabby 10x, Tamara 9x","amazon":"Tabby 4/6, Tamara up to 12","noon":"Tabby, Tamara","position":"Par"},
- {"criterion":"Apple Pay","golden_tech":"Not found","extra":"Listed","jarir":"Third-party only","amazon":"Not found","noon":"Select countries","position":"Behind"},
- {"criterion":"Return window","golden_tech":"7 days, defects only; accessories and instalment orders excluded","extra":"14 days online","jarir":"3-day return / 7-day exchange","amazon":"15 days","noon":"15 days (sealed, tagged items)","position":"Behind"},
- {"criterion":"Guest checkout","golden_tech":"No: account + SMS OTP required","extra":"Not checked","jarir":"Not checked","amazon":"No (account)","noon":"No (account)","position":"Par"},
- {"criterion":"Store pickup","golden_tech":"Mentioned in FAQ, no checkout option found","extra":"Free, within 1 hour","jarir":"Free 'Collect from Showroom'","amazon":"Not found","noon":"Not found","position":"Behind"},
- {"criterion":"PC configurator","golden_tech":"No (pre-builts by Intel tier)","extra":"Not found","jarir":"No","amazon":"No","noon":"No","position":"Opportunity"},
- {"criterion":"Compare tool","golden_tech":"Yes (Magento default)","extra":"Not found","jarir":"Yes (app)","amazon":"Not found","noon":"Not found","position":"Ahead"},
- {"criterion":"Shopping app","golden_tech":"Not found","extra":"Yes (3.4★)","jarir":"Yes (4.8★ iOS)","amazon":"Yes","noon":"Yes","position":"Behind"},
- {"criterion":"On-site reviews","golden_tech":"Almost none (1–2 reviews on a few PCs)","extra":"Yes","jarir":"Yes","amazon":"Yes, at scale","noon":"Yes","position":"Behind"}
+ {
+  "criterion": "Delivery promise",
+  "golden_tech": "'Riyadh: 24 hours, other cities 3–6 business days' on product page and checkout; Terms say 3–7 working days",
+  "extra": "Metro 1–3 working days; same-day in 4 cities",
+  "jarir": "Same-day in showroom cities if ordered before 5pm",
+  "amazon": "Prime free same-day before 12pm (Riyadh, Jeddah)",
+  "noon": "Express next-day; 15-min noon Minutes in Riyadh",
+  "position": "Behind"
+ },
+ {
+  "criterion": "Free-shipping rule",
+  "golden_tech": "Free on a 4,699 SAR order (cart progress bar); Terms say 20 SAR per order, FAQ 10 SAR under 200",
+  "extra": "Threshold (≈99 SAR, unconfirmed)",
+  "jarir": "Unresolved on site",
+  "amazon": "Free ≥100 SAR",
+  "noon": "Free ≥200 SAR; ≥50 SAR with noon One",
+  "position": "Behind"
+ },
+ {
+  "criterion": "Buy now, pay later",
+  "golden_tech": "Tabby, Tamara and card instalments at checkout; missing from the payment-methods page",
+  "extra": "Tabby, Tamara",
+  "jarir": "Tabby 10x, Tamara 9x",
+  "amazon": "Tabby 4/6, Tamara up to 12",
+  "noon": "Tabby, Tamara",
+  "position": "Par"
+ },
+ {
+  "criterion": "Apple Pay",
+  "golden_tech": "Logo in banners; not listed at checkout in Chrome (Safari untested)",
+  "extra": "Listed",
+  "jarir": "Third-party only",
+  "amazon": "Not found",
+  "noon": "Select countries",
+  "position": "Check"
+ },
+ {
+  "criterion": "Return window",
+  "golden_tech": "7 days, defects only; accessories and instalment orders excluded",
+  "extra": "14 days online",
+  "jarir": "3-day return / 7-day exchange",
+  "amazon": "15 days",
+  "noon": "15 days (sealed, tagged items)",
+  "position": "Behind"
+ },
+ {
+  "criterion": "Guest checkout",
+  "golden_tech": "Yes, with a mandatory SMS code",
+  "extra": "Not checked",
+  "jarir": "Not checked",
+  "amazon": "No (account)",
+  "noon": "No (account)",
+  "position": "Ahead"
+ },
+ {
+  "criterion": "Store pickup",
+  "golden_tech": "Yes: 'Pickup from store' at checkout",
+  "extra": "Free, within 1 hour",
+  "jarir": "Free 'Collect from Showroom'",
+  "amazon": "Not found",
+  "noon": "Not found",
+  "position": "Par"
+ },
+ {
+  "criterion": "PC configurator",
+  "golden_tech": "Finder by CPU, RAM, storage and GPU; no build-your-own",
+  "extra": "Not found",
+  "jarir": "No",
+  "amazon": "No",
+  "noon": "No",
+  "position": "Opportunity"
+ },
+ {
+  "criterion": "Compare tool",
+  "golden_tech": "Yes (Magento default)",
+  "extra": "Not found",
+  "jarir": "Yes (app)",
+  "amazon": "Not found",
+  "noon": "Not found",
+  "position": "Ahead"
+ },
+ {
+  "criterion": "Shopping app",
+  "golden_tech": "Not found",
+  "extra": "Yes (3.4★)",
+  "jarir": "Yes (4.8★ iOS)",
+  "amazon": "Yes",
+  "noon": "Yes",
+  "position": "Behind"
+ },
+ {
+  "criterion": "On-site reviews",
+  "golden_tech": "Review module live; 'There are no ratings.'",
+  "extra": "Yes",
+  "jarir": "Yes",
+  "amazon": "Yes, at scale",
+  "noon": "Yes",
+  "position": "Behind"
+ }
 ]

@@ -1,0 +1,50 @@
+[
+ {
+  "id": "1",
+  "shot": "home_top",
+  "x": 50,
+  "y": 27.5,
+  "label": "Category tiles change order between visits",
+  "finding": "F03"
+ },
+ {
+  "id": "2",
+  "shot": "home_top",
+  "x": 50,
+  "y": 39.2,
+  "label": "Three instalment promises in one row: 3–24 months, up to 12 months, 5% with mada",
+  "finding": "F27"
+ },
+ {
+  "id": "3",
+  "shot": "home_top",
+  "x": 10.3,
+  "y": 60.5,
+  "label": "Every card has a full-width gold button, the same gold as titles and tabs",
+  "finding": "F40"
+ },
+ {
+  "id": "4",
+  "shot": "home_top",
+  "x": 87.9,
+  "y": 85,
+  "label": "MacBook Air M4 at 4,199 SAR; Jarir 3,999, eXtra 3,824",
+  "finding": ""
+ },
+ {
+  "id": "5",
+  "shot": "home_bottom",
+  "x": 66.6,
+  "y": 37.7,
+  "label": "Banner typo: 'PC GAMING Beyond pergormance.'",
+  "finding": "F04"
+ },
+ {
+  "id": "6",
+  "shot": "home_bottom",
+  "x": 6.5,
+  "y": 97.5,
+  "label": "CR, VAT and Saudi Business Center marks are present but tiny",
+  "finding": "F30"
+ }
+]

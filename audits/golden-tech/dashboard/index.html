@@ -166,6 +166,49 @@
 .gt-method ol, .gt-method ul { margin: 0; padding-inline-start: 1.2rem; font-size: var(--cds-font-size-caption); line-height: 1.55; display: grid; gap: .35rem; }
 .gt-bands { display: flex; flex-wrap: wrap; gap: var(--cds-gap-xs); }
 
+/* user flow */
+.gt-flow { display: flex; gap: 0; overflow-x: auto; padding-bottom: var(--cds-pad-xs); }
+.gt-flow-step { flex: 1 0 7.5rem; display: flex; flex-direction: column; align-items: center; gap: .35rem; position: relative; padding: 0 .25rem; background: none; border: 0; font: inherit; color: inherit; cursor: pointer; }
+.gt-flow-step::before { content: ""; position: absolute; top: 1rem; left: 0; right: 0; height: 2px; background: var(--color-border-line); z-index: 0; }
+.gt-flow-step:first-child::before { left: 50%; }
+.gt-flow-step:last-child::before { right: 50%; }
+.gt-flow-dot { position: relative; z-index: 1; width: 2rem; height: 2rem; border-radius: 50%; display: grid; place-items: center; font-size: var(--cds-font-size-caption); font-weight: var(--cds-font-weight-medium); color: var(--color-bg); background: var(--gt-dot, var(--cds-chart-muted)); font-variant-numeric: tabular-nums; }
+.gt-flow-name { font-size: var(--cds-font-size-caption); text-align: center; line-height: 1.25; }
+.gt-steps { display: flex; flex-direction: column; gap: var(--cds-gap-md); }
+.gt-step { display: grid; grid-template-columns: 2.5rem 1fr; gap: var(--cds-gap-md); }
+.gt-step-num { width: 2rem; height: 2rem; border-radius: 50%; display: grid; place-items: center; font-size: var(--cds-font-size-caption); font-weight: var(--cds-font-weight-medium); color: var(--color-bg); background: var(--gt-dot, var(--cds-chart-muted)); }
+.gt-step-body { display: flex; flex-direction: column; gap: var(--cds-gap-sm); min-width: 0; }
+.gt-step-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--cds-gap-sm); }
+.gt-step-head h3 { font-size: var(--cds-font-size-heading); font-weight: var(--cds-font-weight-medium); margin: 0; }
+.gt-path { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); overflow-wrap: anywhere; }
+.gt-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr)); gap: var(--cds-gap-sm); }
+.gt-col { border-radius: var(--cds-radius); padding: var(--cds-pad-sm) var(--cds-pad-md); font-size: var(--cds-font-size-caption); line-height: 1.5; border: 1px solid var(--color-border-line); }
+.gt-col b { display: block; font-weight: var(--cds-font-weight-medium); margin-bottom: .2rem; }
+.gt-col-ok { border-inline-start: 3px solid var(--color-ok); }
+.gt-col-bad { border-inline-start: 3px solid var(--color-bad); }
+.gt-col-ref { border-inline-start: 3px solid var(--cds-chart-muted); color: var(--color-fg-muted); }
+.gt-chips { display: flex; flex-wrap: wrap; gap: 4px; align-items: center; }
+/* strengths */
+.gt-strengths { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr)); gap: var(--cds-gap-sm) var(--cds-gap-md); }
+.gt-strengths li { display: grid; grid-template-columns: auto 1fr; gap: .1rem .5rem; font-size: var(--cds-font-size-caption); line-height: 1.45; }
+.gt-strengths li::before { content: "✓"; color: var(--color-ok); font-weight: 700; grid-row: span 2; }
+.gt-strengths strong { font-weight: var(--cds-font-weight-medium); font-size: var(--cds-font-size-body); }
+/* evidence shots */
+.gt-shots { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr)); gap: var(--cds-gap-md); align-items: start; }
+.gt-shot { display: flex; flex-direction: column; gap: var(--cds-gap-sm); min-width: 0; }
+.gt-shot-frame { position: relative; border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); overflow: hidden; max-width: 100%; }
+.gt-shot-frame img { display: block; width: 100%; height: auto; }
+.gt-pin { position: absolute; transform: translate(-50%, -50%); width: 1.6rem; height: 1.6rem; border-radius: 50%; background: var(--color-bad); color: #fff; border: 2px solid #fff; box-shadow: 0 1px 4px rgba(0,0,0,.35); font: inherit; font-size: var(--cds-font-size-caption); font-weight: 700; display: grid; place-items: center; cursor: pointer; padding: 0; }
+.gt-pinlist { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: .4rem; font-size: var(--cds-font-size-caption); }
+.gt-pinlist li { display: grid; grid-template-columns: 1.6rem 1fr auto; gap: .5rem; align-items: start; }
+.gt-pinlist .gt-pinno { width: 1.4rem; height: 1.4rem; border-radius: 50%; background: var(--color-bad); color: #fff; display: grid; place-items: center; font-weight: 700; font-size: .7rem; }
+
+.gt-btnrow { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 9rem), 1fr)); gap: var(--cds-gap-md); }
+.gt-btnrow figure { margin: 0; display: flex; flex-direction: column; gap: .4rem; }
+.gt-sw { display: grid; place-items: center; height: 2.6rem; border-radius: 6px; font-size: var(--cds-font-size-caption); font-weight: 600; }
+.gt-btnrow figcaption { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); line-height: 1.35; }
+.gt-today-btn { flex: 1; text-align: center; background: #161616; color: #fff; border-radius: 6px; padding: .45rem .8rem; font-size: var(--cds-font-size-caption); }
+
 .gt-failed { display: flex; align-items: center; justify-content: center; gap: .5rem; color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); min-height: 4rem; }
 .gt-failed::before { content: ""; width: .375rem; height: .375rem; border-radius: 50%; background: var(--color-bad); }
 [data-dash-source-state=empty] { color: transparent; }
@@ -184,20 +227,22 @@
 
 <div class="gt" id="gt">
   <header class="gt-head" id="top">
-    <p class="gt-eyebrow">goldentech.com.sa · UX &amp; UI audit · Prepared by Pixilated Studio</p>
+    <p class="gt-eyebrow">goldentech.com.sa · E-commerce UX &amp; UI audit · Prepared by Pixilated Studio · October 2026</p>
     <h1 class="gt-title">Golden Tech UX audit</h1>
     <p class="gt-takeaway" id="takeaway">
       Golden Tech scores <b class="gt-v dash-skeleton" data-source="overall" data-field="score" data-row="0">—</b> out of 100, rated
       <b class="gt-v dash-skeleton" data-source="overall" data-field="band" data-row="0">—</b>.
-      The catalogue is broad and the spec filters work, but shoppers get different answers on price, delivery fee and delivery time depending on the page,
-      returns are limited to defects, and checkout makes them register before they can pay. All
-      <b class="gt-v dash-skeleton" data-source="severity_counts" data-field="n" data-where="severity=4">—</b> critical issues sit in those promises, the same areas behind Baymard's top reasons for abandoned carts.
+      The shopping engine is stronger than the promises around it: search, filters, specs, guest checkout and store pickup work well.
+      What lets shoppers down is what they're told: delivery and returns terms contradict the product page, the cart total is hard to read,
+      checkout stalls on an unclear SMS-code step, and primary buttons come in five different styles. The
+      <b class="gt-v dash-skeleton" data-source="severity_counts" data-field="n" data-where="severity=4">—</b> critical issues are delivery and returns promises, the same areas behind Baymard's top reasons for abandoned carts.
     </p>
-    <p class="gt-caveat">Provisional: built from the store's indexed pages, policies and competitor pages. The visual layer and a live checkout walk are pending (see Method).</p>
+    <p class="gt-caveat">Evidence: a live desktop walkthrough in Arabic and English (homepage to checkout, 22 Oct 2026), the store's policy pages, and competitor and Baymard benchmarks. Phone layout and Safari payment are still to test.</p>
   </header>
 
   <nav class="gt-tabs" role="tablist" aria-label="Audit sections">
     <button class="gt-tab" role="tab" data-tab="overview" aria-controls="overview" aria-selected="true">Overview</button>
+    <button class="gt-tab" role="tab" data-tab="flow" aria-controls="flow" aria-selected="false">User flow</button>
     <button class="gt-tab" role="tab" data-tab="journey" aria-controls="journey" aria-selected="false">Buyers &amp; journey</button>
     <button class="gt-tab" role="tab" data-tab="findings" aria-controls="findings" aria-selected="false">Pain points</button>
     <button class="gt-tab" role="tab" data-tab="scorecard" aria-controls="scorecard" aria-selected="false">Scorecard</button>
@@ -229,13 +274,18 @@
           <div class="gt-kpi-row"><span class="gt-kpi-num gt-warn gt-v dash-skeleton" data-source="severity_counts" data-field="n" data-where="severity=3">—</span></div>
           <span class="gt-kpi-sub">Slow shoppers down or cost trust</span>
         </div>
+        <div class="gt-kpi" id="kpi-strengths">
+          <span class="gt-kpi-label">Strengths to keep</span>
+          <div class="gt-kpi-row"><span class="gt-kpi-num gt-ok gt-v dash-skeleton" data-source="strength_count" data-field="n" data-row="0">—</span></div>
+          <span class="gt-kpi-sub">Patterns already at or above benchmark</span>
+        </div>
         <div class="gt-kpi" id="kpi-checkout">
           <span class="gt-kpi-label">Delivery, returns &amp; payments</span>
           <div class="gt-kpi-row">
-            <span class="gt-kpi-num gt-v dash-skeleton" data-source="area_scores" data-field="score" data-where="area=Delivery%2C returns %26 payments">—</span>
+            <span class="gt-kpi-num gt-bad gt-v dash-skeleton" data-source="area_scores" data-field="score" data-where="area=Delivery%2C returns %26 payments">—</span>
             <span class="gt-kpi-unit">/ 100</span>
           </div>
-          <span class="gt-kpi-sub">The promises shoppers weigh before paying</span>
+          <span class="gt-kpi-sub">The lowest-scoring area</span>
         </div>
       </div>
 
@@ -255,18 +305,39 @@
 
       <div class="gt-grid">
         <div class="gt-card" id="card-critical">
-          <h2>Critical pain points</h2>
-          <p class="gt-note">What a shopper hits, and the fix.</p>
+          <h2>Biggest pain points</h2>
+          <p class="gt-note">Critical and high-impact major issues: what a shopper hits, and the fix. Select an ID for the evidence.</p>
           <ul class="gt-list dash-skeleton" id="ov-critical"></ul>
         </div>
-        <div class="gt-card" id="card-proposal">
-          <h2>What Pixilated proposes</h2>
-          <p class="gt-note">Three phases. Quick wins fix the broken promises before any redesign.</p>
-          <div id="ov-phases" class="dash-skeleton"></div>
+        <div class="gt-card" id="card-strengths">
+          <h2>What already works</h2>
+          <p class="gt-note">Keep these through any redesign.</p>
+          <ul class="gt-strengths dash-skeleton" id="ov-strengths"></ul>
         </div>
+      </div>
+      <div class="gt-card" id="card-proposal">
+        <h2>What Pixilated proposes</h2>
+        <p class="gt-note">Three phases. Quick wins fix the broken promises before any redesign.</p>
+        <div id="ov-phases" class="dash-skeleton"></div>
       </div>
     </section>
   </div>
+
+  <template id="tpl-flow">
+    <section class="gt-page" id="flow" role="tabpanel" aria-label="User flow">
+      <div>
+        <h2 class="gt-section-title">How a shopper moves through the store</h2>
+        <p class="gt-intro">A first-time buyer looking for a gaming PC under 5,000 SAR, walked live on desktop in Arabic and English: from the ad click to the payment step, then the policies they'd read before paying. Each step shows what works, where it breaks, and the benchmark.</p>
+      </div>
+      <div class="gt-card" id="card-flowmap">
+        <h2>Path and friction</h2>
+        <p class="gt-note">Colour is the worst issue at each step. Select a step to jump to it.</p>
+        <div class="gt-flow dash-skeleton" id="fl-map" data-source="walkthrough"></div>
+        <div class="gt-legend" aria-hidden="true"><span><i style="background:var(--gt-sev4)"></i>Critical</span><span><i style="background:var(--gt-sev3)"></i>Major</span><span><i style="background:var(--gt-sev2)"></i>Minor</span></div>
+      </div>
+      <div class="gt-steps dash-skeleton" id="fl-steps"></div>
+    </section>
+  </template>
 
   <template id="tpl-journey">
     <section class="gt-page" id="journey" role="tabpanel" aria-label="Buyers and journey">
@@ -335,6 +406,7 @@
               <th data-field="fix">Fix</th>
               <th data-field="service" class="gt-hide-sm">Pixilated service</th>
               <th data-field="confidence" class="gt-hide-sm">Confidence</th>
+              <th data-field="source" class="gt-hide-sm">Evidence from</th>
             </tr></thead>
             <tbody></tbody>
           </table>
@@ -393,14 +465,27 @@
     <section class="gt-page" id="ui" role="tabpanel" aria-label="UI and design system">
       <div>
         <h2 class="gt-section-title">UI and design system</h2>
-        <p class="gt-intro">What the components say and do today, judged from their text and structure, and the standard a Saudi tech retailer should meet.</p>
+        <p class="gt-intro">How the components look and behave today, from the live desktop walkthrough in Arabic and English, and the standard a Saudi tech retailer should build to.</p>
       </div>
-      <div class="gt-callout" id="ui-pending">
-        <strong>Visual layer pending.</strong> Colours, type scale, contrast, spacing and tap sizes can't be read from indexed text. Rows marked "Needs screenshot" are confirmed in the live capture (desktop and phone, Arabic and English) before this goes to the client.
+      <div class="gt-card" id="card-shots">
+        <h2>Evidence from the live homepage</h2>
+        <p class="gt-note">Arabic homepage, desktop, 22 Oct 2026. Select a pin for its finding.</p>
+        <div class="gt-shots dash-skeleton" id="ui-shots" data-source="pins"></div>
+      </div>
+      <div class="gt-card" id="card-buttons">
+        <h2>Five styles for one job</h2>
+        <p class="gt-note">Every primary purchase action found in the walkthrough. Colours approximated from screenshots.</p>
+        <div class="gt-btnrow">
+          <figure><span class="gt-sw" lang="ar" dir="rtl" style="background:#F2C14E;color:#1d1d1d">أضف الى السلة</span><figcaption>Homepage cards, product page, cart Checkout</figcaption></figure>
+          <figure><span class="gt-sw" style="background:#161616;color:#ffffff">Add to Cart</span><figcaption>Category cards, Sign In, cart buttons</figcaption></figure>
+          <figure><span class="gt-sw" style="background:#1F2A4D;color:#ffffff">Buy Now</span><figcaption>Product page, beside Add to Cart</figcaption></figure>
+          <figure><span class="gt-sw" style="background:#353A47;color:#ffffff">Send Otp</span><figcaption>Checkout phone step; reads as disabled</figcaption></figure>
+          <figure><span class="gt-sw" style="background:#1B5BFF;color:#ffffff">Place Order</span><figcaption>Checkout; colour used nowhere else</figcaption></figure>
+        </div>
       </div>
       <div class="gt-card" id="card-mock">
         <h2>Product card: today vs proposed</h2>
-        <p class="gt-note">Same product, same price. Today's text is quoted from the live listing; the proposed card is illustrative.</p>
+        <p class="gt-note">Same product, same price. Today's text is quoted from the live category page; the proposed card is illustrative.</p>
         <div class="gt-mock">
           <div class="gt-pc" id="pc-today">
             <span class="gt-pc-tag">Today</span>
@@ -408,7 +493,7 @@
             <span class="gt-pc-title-today gt-v dash-skeleton" data-source="card_example" data-field="title" data-where="id=today">—</span>
             <span class="gt-pc-legacy gt-v dash-skeleton" data-source="card_example" data-field="price_text" data-where="id=today">—</span>
             <span class="gt-pc-line gt-v" data-source="card_example" data-field="delivery" data-where="id=today">—</span>
-            <div class="gt-pc-cta"><span class="gt-equal">Wish List</span><span class="gt-equal">Compare</span></div>
+            <div class="gt-pc-cta"><span class="gt-today-btn">Add to Cart</span></div>
           </div>
           <div class="gt-pc" id="pc-proposed">
             <span class="gt-pc-tag">Proposed</span>
@@ -548,6 +633,7 @@
         <div class="gt-card">
           <h2>How this audit was done</h2>
           <ol>
+            <li><strong>Live walkthrough.</strong> A first-time purchase walked on desktop Chrome in Arabic and English: homepage, search, category, product page, cart, checkout and sign-in (22 Oct 2026). The store's firewall blocks automated cloud browsers, so screens were captured by hand.</li>
             <li><strong>Pattern research.</strong> Baymard Institute benchmarks (checkout, product page, listings, search, mobile, accessibility, electronics), NN/g guidance and the practices of Amazon, eXtra, Jarir and noon.</li>
             <li><strong>Buyer and journey mapping.</strong> Four buyer types and ten stages from discovery to repeat purchase, walked as a cognitive walkthrough.</li>
             <li><strong>Heuristic evaluation.</strong> Each finding rated on Nielsen's 0–4 severity scale and tagged to one of the 10 heuristics.</li>
@@ -572,8 +658,9 @@
         <div class="gt-card">
           <h2>Limits of this version</h2>
           <ul>
-            <li>No live session yet. The cloud environment couldn't reach the store, so evidence comes from the store's pages as indexed by search engines.</li>
-            <li>Index snapshots differ in date. Price conflicts may be partly timing; each is marked "Verify live".</li>
+            <li>Desktop only. Phone layout, tap targets and Safari (Apple Pay) are still to test.</li>
+            <li>Policy pages and some catalogue findings come from search-engine copies, which differ in date; those are marked "Indexed page" and, where doubtful, "Verify live".</li>
+            <li>The live walkthrough corrected three earlier findings: guest checkout exists, store pickup exists, and price sorting and the new Riyal symbol are in place.</li>
             <li>One evaluator. NN/g recommends three to five for a full heuristic evaluation.</li>
             <li>Visual design (colour, type, spacing, contrast) is not scored yet.</li>
             <li>Personas and sentiment are expert estimates, to be validated with shoppers.</li>
@@ -589,6 +676,8 @@
   </template>
 </div>
 
+<script src="shot_home_top.js"></script>
+<script src="shot_home_bottom.js"></script>
 <script>
 (() => {
   const SEV_LABEL = ['', 'Cosmetic', 'Minor', 'Major', 'Critical'];
@@ -637,7 +726,7 @@
     inputs: ['findings', 'areas'],
     title: 'Findings per area',
     description: 'Findings counted per area and severity.',
-    fn: (findings, areas) => areas.map((a) => a.area).concat(['UI & design system']).map((name) => {
+    fn: (findings, areas) => [...new Set(areas.map((a) => a.area).concat(findings.map((f) => f.area)))].map((name) => {
       const f = findings.filter((x) => x.area === name);
       const n = (s) => f.filter((x) => Number(x.severity) === s).length;
       return { area: name, critical: n(4), major: n(3), minor: n(2), cosmetic: n(1), total: f.length };
@@ -689,6 +778,13 @@
       const lo = Math.min(...v);
       return { product: p, high: hi, low: lo, spread: hi - lo, pages: v.length };
     }),
+  });
+
+  dash.calc('strength_count', {
+    inputs: ['strengths'],
+    title: 'Strengths found',
+    description: 'Number of patterns already at or above benchmark.',
+    fn: (strengths) => [{ n: strengths.length }],
   });
 
   dash.calc('card_monthly', {
@@ -808,9 +904,11 @@
     const f = get('findings');
     if (f) {
       ready(critBox);
-      critBox.replaceChildren(...f.filter((x) => Number(x.severity) === 4).map((x) => {
+      const top = f.filter((x) => Number(x.severity) === 4 || (Number(x.severity) === 3 && Number(x.impact) === 3))
+        .sort((a, b) => b.severity - a.severity || b.impact - a.impact);
+      critBox.replaceChildren(...top.map((x) => {
         const li = el('li');
-        const id = el('button', 'gt-chip gt-dot-4');
+        const id = el('button', `gt-chip gt-dot-${x.severity}`);
         id.type = 'button';
         id.appendChild(mk(el('span', '', x.id), 'findings', 'id', `id=${enc(x.id)}`));
         id.addEventListener('click', () => openFinding(x.id));
@@ -818,6 +916,18 @@
         return li;
       }));
     } else if (failedAny(['findings'])) failBox(critBox);
+
+    const stBox = document.getElementById('ov-strengths');
+    const st = get('strengths');
+    if (st) {
+      ready(stBox);
+      stBox.replaceChildren(...st.map((x) => {
+        const li = el('li');
+        const w = `id=${enc(x.id)}`;
+        li.append(mk(el('strong', '', x.title), 'strengths', 'title', w), mk(el('span', '', x.detail), 'strengths', 'detail', w));
+        return li;
+      }));
+    } else if (failedAny(['strengths'])) failBox(stBox);
 
     const phBox = document.getElementById('ov-phases');
     const sv = get('services');
@@ -838,6 +948,58 @@
       });
       phBox.replaceChildren(ul);
     } else if (failedAny(['services'])) failBox(phBox);
+  }
+
+  // ---------- user flow ----------
+  function findingChips(text) {
+    const wrap = el('span', 'gt-chips');
+    String(text || '').split(',').map((t) => t.trim()).filter(Boolean).forEach((id) => {
+      const b = el('button', 'gt-chip', id);
+      b.type = 'button';
+      b.addEventListener('click', () => openFinding(id));
+      wrap.appendChild(b);
+    });
+    return wrap;
+  }
+
+  function drawFlow() {
+    const map = document.getElementById('fl-map');
+    const box = document.getElementById('fl-steps');
+    const w = get('walkthrough');
+    if (!w) { if (failedAny(['walkthrough'])) { failBox(map); failBox(box); } return; }
+    ready(map); ready(box);
+    map.replaceChildren(...w.map((s) => {
+      const b = el('button', `gt-flow-step gt-dot-${s.severity}`);
+      b.type = 'button';
+      b.setAttribute('aria-label', `Step ${s.step}: ${s.screen}, worst issue ${s.severity_label}`);
+      b.append(mk(el('span', 'gt-flow-dot', String(s.step)), 'walkthrough', 'step', `step=${s.step}`), mk(el('span', 'gt-flow-name', s.screen), 'walkthrough', 'screen', `step=${s.step}`));
+      b.addEventListener('click', () => { const t = document.getElementById(`step-${s.step}`); if (t) t.scrollIntoView({ block: 'start' }); });
+      return b;
+    }));
+    box.replaceChildren(...w.map((s) => {
+      const where = `step=${s.step}`;
+      const card = el('article', `gt-card gt-step gt-dot-${s.severity}`);
+      card.id = `step-${s.step}`;
+      card.style.display = 'grid';
+      card.append(mk(el('span', 'gt-step-num', String(s.step)), 'walkthrough', 'step', where));
+      const body = el('div', 'gt-step-body');
+      const head = el('div', 'gt-step-head');
+      head.append(mk(el('h3', '', s.screen), 'walkthrough', 'screen', where));
+      const pill = el('span', `gt-pill gt-dot-${s.severity}`);
+      pill.appendChild(mk(el('span', '', s.severity_label), 'walkthrough', 'severity_label', where));
+      head.append(pill);
+      body.append(head, mk(el('span', 'gt-path', s.path), 'walkthrough', 'path', where), mk(el('p', 'gt-note', s.did), 'walkthrough', 'did', where));
+      const cols = el('div', 'gt-cols');
+      const c1 = el('div', 'gt-col gt-col-ok'); c1.append(el('b', '', 'What works'), mk(el('span', '', s.works), 'walkthrough', 'works', where));
+      const c2 = el('div', 'gt-col gt-col-bad'); c2.append(el('b', '', 'Friction'), mk(el('span', '', s.friction), 'walkthrough', 'friction', where));
+      const c3 = el('div', 'gt-col gt-col-ref'); c3.append(el('b', '', 'Benchmark'), mk(el('span', '', s.benchmark), 'walkthrough', 'benchmark', where));
+      cols.append(c1, c2, c3);
+      const fx = el('div', 'gt-chips');
+      fx.append(el('span', 'gt-note', 'Findings: '), findingChips(s.findings));
+      body.append(cols, fx);
+      card.append(body);
+      return card;
+    }));
   }
 
   // ---------- journey ----------
@@ -981,7 +1143,7 @@
     const area = areaSel.value;
     const q = document.getElementById('fd-q').value.trim().toLowerCase();
     let rows = f.filter((x) => (!sev || String(x.severity) === sev) && (!area || x.area === area)
-      && (!q || [x.id, x.title, x.evidence, x.fix, x.area, x.service].join(' ').toLowerCase().includes(q)));
+      && (!q || (/^f\d+$/.test(q) ? x.id.toLowerCase() === q : [x.id, x.title, x.evidence, x.fix, x.area, x.service].join(' ').toLowerCase().includes(q))));
     const k = fState.sort;
     rows = rows.slice().sort((a, b) => {
       const va = k === 'severity' ? Number(a.severity) : String(a[k]);
@@ -999,6 +1161,7 @@
       { f: 'fix', cls: 'gt-wide' },
       { f: 'service', cls: 'gt-hide-sm' },
       { f: 'confidence', cls: 'gt-hide-sm' },
+      { f: 'source', cls: 'gt-hide-sm' },
     ], 'id');
     document.querySelectorAll('#fd-table th').forEach((th) => {
       const b = th.querySelector('button');
@@ -1043,6 +1206,40 @@
         { f: 'status', cls: 'gt-hide-sm' },
       ], 'component');
     }
+    const sBox = document.getElementById('ui-shots');
+    const pins = get('pins');
+    if (pins && sBox && window.GT_SHOTS) {
+      ready(sBox);
+      const shots = [['home_top', 'Top half: header, hero, categories, payment banners, laptop and Apple rails'], ['home_bottom', 'Bottom half: monitor and PC rails, builds, footer']];
+      sBox.replaceChildren(...shots.filter(([k]) => window.GT_SHOTS[k]).map(([k, cap]) => {
+        const fig = el('figure', 'gt-shot');
+        fig.style.margin = '0';
+        const frame = el('div', 'gt-shot-frame');
+        const img = el('img');
+        img.src = window.GT_SHOTS[k];
+        img.alt = `Golden Tech Arabic homepage, ${cap}`;
+        img.loading = 'lazy';
+        frame.appendChild(img);
+        const list = el('ol', 'gt-pinlist');
+        pins.filter((p) => p.shot === k).forEach((p) => {
+          const w = `id=${enc(p.id)}`;
+          const pin = el('button', 'gt-pin', p.id);
+          pin.type = 'button';
+          pin.style.left = `${p.x}%`;
+          pin.style.top = `${p.y}%`;
+          pin.setAttribute('aria-label', `Pin ${p.id}: ${p.label}`);
+          if (p.finding) pin.addEventListener('click', () => openFinding(p.finding));
+          frame.appendChild(pin);
+          const li = el('li');
+          li.append(mk(el('span', 'gt-pinno', p.id), 'pins', 'id', w), mk(el('span', '', p.label), 'pins', 'label', w));
+          li.append(p.finding ? findingChips(p.finding) : el('span'));
+          list.appendChild(li);
+        });
+        fig.append(frame, el('figcaption', 'gt-note', cap), list);
+        return fig;
+      }));
+    } else if (sBox && failedAny(['pins'])) failBox(sBox);
+
     const ce = get('card_example');
     const chips = document.getElementById('pc-chips');
     if (ce && chips) {
@@ -1233,8 +1430,8 @@
   }
 
   // ---------- pages ----------
-  const PAGES = ['overview', 'journey', 'findings', 'scorecard', 'ui', 'benchmark', 'roadmap', 'method'];
-  const DRAW = { overview: drawOverview, journey: drawJourney, findings: drawFindings, scorecard: drawScorecard, ui: drawUI, benchmark: drawBenchmark, roadmap: drawRoadmap, method: drawMethod };
+  const PAGES = ['overview', 'flow', 'journey', 'findings', 'scorecard', 'ui', 'benchmark', 'roadmap', 'method'];
+  const DRAW = { overview: drawOverview, flow: drawFlow, journey: drawJourney, findings: drawFindings, scorecard: drawScorecard, ui: drawUI, benchmark: drawBenchmark, roadmap: drawRoadmap, method: drawMethod };
   let current = 'overview';
   const wired = new Set(['overview']);
 

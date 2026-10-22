@@ -9,7 +9,7 @@
  {
   "metric": "Abandon because extra costs were too high",
   "value": "40%",
-  "relevance": "Golden Tech: three delivery-fee rules, +20 SAR COD",
+  "relevance": "Golden Tech: cart is free-shipping; Terms still say 20 SAR + 20 SAR COD",
   "url": "https://baymard.com/lists/cart-abandonment-rate",
   "topic": "Checkout"
  },
@@ -23,7 +23,7 @@
  {
   "metric": "Abandon because the site forced account creation",
   "value": "18%",
-  "relevance": "Golden Tech requires registration plus SMS code",
+  "relevance": "Golden Tech allows guest checkout, but its FAQ says registration is required",
   "url": "https://baymard.com/lists/cart-abandonment-rate",
   "topic": "Checkout"
  },
@@ -35,9 +35,16 @@
   "topic": "Returns"
  },
  {
+  "metric": "Abandon because there weren't enough payment methods",
+  "value": "9%",
+  "relevance": "Golden Tech: cash on delivery advertised but not offered; Apple Pay untested in Safari",
+  "url": "https://baymard.com/lists/cart-abandonment-rate",
+  "topic": "Checkout"
+ },
+ {
   "metric": "Abandon because the total wasn't visible upfront",
   "value": "12%",
-  "relevance": "Golden Tech: fee depends on which page you read",
+  "relevance": "Golden Tech: cart subtotal shown before VAT next to VAT-inclusive prices",
   "url": "https://baymard.com/lists/cart-abandonment-rate",
   "topic": "Checkout"
  },
@@ -65,7 +72,7 @@
  {
   "metric": "Sites missing one of the four key sort options",
   "value": "69%",
-  "relevance": "Golden Tech has no price sort",
+  "relevance": "Golden Tech sorts by price and best-selling; newest and rating not seen",
   "url": "https://baymard.com/research-articles/current-state-product-list-and-filtering",
   "topic": "Listings"
  },

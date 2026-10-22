@@ -2,24 +2,25 @@
  {
   "id": "today",
   "label": "Today",
-  "title": "Laptop Asus ROG Strix G614PR Gaming AMD Ryzen 9-8940HX Processor, 32GB Ram, 1TB SSD M.2, NVIDIA GeForce RTX 5070 Ti 12GB,16-inch Display",
-  "price": 9799,
-  "was": 10999,
-  "price_text": "Special Price 9799 Regular Price 10999 -11% Tax included",
-  "delivery": "Riyadh 24 hours, other cities 3-6 business days",
-  "warranty": "24-month ASUS warranty",
-  "url": "https://goldentech.com.sa/en/laptop-asus-rog-strix-g16-g614pr-gaming-golden-technology.html"
+  "title": "PC Gaming Intel Core i5-14400F Processor, 16GB Ram, 1TB SSD M.2, RTX 3050 6GB GPU, Windows 11 Professional - Black",
+  "price": 4699,
+  "was": 6599,
+  "price_text": "4,699 6,599 -29% Tax included Save 1900",
+  "delivery": "Delivery in Riyadh: 24 hours, other cities: 3-6 business days.",
+  "warranty": "24 Months Warranty by Golden Tech",
+  "url": "https://goldentech.com.sa/en/pc-gaming-intel-core-i5-14400f-cpu-rtx-3050-6gb-gpu-p01-24.html",
+  "chips": ""
  },
  {
   "id": "proposed",
   "label": "Proposed",
-  "title": "ASUS ROG Strix G16 (G614PR)",
-  "price": 9799,
-  "was": 10999,
+  "title": "Golden Tech Gaming PC · RTX 3050",
+  "price": 4699,
+  "was": 6599,
   "price_text": "",
-  "delivery": "Riyadh: tomorrow if ordered by 4pm",
-  "warranty": "2-year ASUS warranty, claims handled by Golden Tech",
-  "url": "https://goldentech.com.sa/en/laptop-asus-rog-strix-g16-g614pr-gaming-golden-technology.html",
-  "chips": "Ryzen 9 8940HX|RTX 5070 Ti 12GB|32GB RAM|1TB SSD|16\" 165Hz"
+  "delivery": "Riyadh: arrives tomorrow if ordered by 4pm · Free delivery",
+  "warranty": "2-year Golden Tech warranty, claims handled in-store",
+  "url": "https://goldentech.com.sa/en/pc-gaming-intel-core-i5-14400f-cpu-rtx-3050-6gb-gpu-p01-24.html",
+  "chips": "Core i5-14400F|RTX 3050 6GB|16GB DDR5|1TB SSD|Windows 11 Pro"
  }
 ]

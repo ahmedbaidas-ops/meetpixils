@@ -7,47 +7,47 @@
   "sentiment": 0,
   "now": "Ads open the homepage; the shopper's search intent is lost",
   "fix": "Campaign landing pages that match the ad",
-  "findings": "F14"
+  "findings": "F01"
  },
  {
   "order": 2,
   "stage": "Land",
   "touchpoint": "Homepage",
   "persona": "All",
-  "sentiment": -1,
-  "now": "Eight offer pages compete; broken English; a demo homepage is public",
-  "fix": "One offers hub, native copy, remove test pages",
-  "findings": "F15, F25, F28"
+  "sentiment": 0,
+  "now": "Clear search and a strong deal, but moving category tiles, a banner typo and test pages in Google",
+  "fix": "Fixed category grid, proofreading, remove test pages",
+  "findings": "F03, F04, F02"
  },
  {
   "order": 3,
   "stage": "Find",
   "touchpoint": "Menu and search",
   "persona": "Reem, Abdullah",
-  "sentiment": -1,
-  "now": "Menu is brand-first; no 'for study' or 'for business' paths; search pages leak into Google",
-  "fix": "Shop-by-need menu, business hub, search tuning",
-  "findings": "F17, F18, F32, F26"
+  "sentiment": 0,
+  "now": "Instant search is good; the menu is brand-first; no business path; others' searches visible",
+  "fix": "Shop-by-need menu, business hub, private recent searches",
+  "findings": "F08, F10, F11"
  },
  {
   "order": 4,
   "stage": "Browse",
   "touchpoint": "Category listing",
   "persona": "Faisal, Sara",
-  "sentiment": 0,
-  "now": "Good spec filters, but no price sort and spec pages can't be combined",
-  "fix": "Faceted filters, full sort set, spec chips on cards",
-  "findings": "F19, F20, F21"
+  "sentiment": 1,
+  "now": "Finder, filters, price sort and spec lines work well; identical images",
+  "fix": "Real photos and shorter titles",
+  "findings": "F13, F14"
  },
  {
   "order": 5,
   "stage": "Evaluate",
   "touchpoint": "Product page",
   "persona": "All",
-  "sentiment": -1,
-  "now": "Prices differ by page and language; 0–2 reviews; delivery shown as a range",
-  "fix": "Price QA, review engine, dated delivery",
-  "findings": "F03, F22, F23, F24"
+  "sentiment": 0,
+  "now": "Good specs and warranty; no reviews, no delivery date or cost, crowded buy box",
+  "fix": "Review engine, delivery block, focused buy box",
+  "findings": "F16, F17, F18, F19"
  },
  {
   "order": 6,
@@ -55,19 +55,19 @@
   "touchpoint": "Price check vs Jarir, eXtra, Amazon",
   "persona": "Sara, Faisal",
   "sentiment": -2,
-  "now": "Three delivery fees, 7-day defects-only returns, instalment fees unclear",
-  "fix": "One policy page set, instalment widget, 14-day returns",
-  "findings": "F01, F02, F06, F10"
+  "now": "Policies contradict the product page; 7-day defects-only returns; instalment terms vary",
+  "fix": "One policy set, one instalment message, 14-day returns",
+  "findings": "F24, F25, F27"
  },
  {
   "order": 7,
   "stage": "Checkout",
-  "touchpoint": "Cart, account and payment",
+  "touchpoint": "Cart, details and payment",
   "persona": "All",
-  "sentiment": -2,
-  "now": "Must register and verify by SMS first; no Apple Pay; no address lookup",
-  "fix": "Guest checkout, Apple Pay, short-address field, pickup option",
-  "findings": "F04, F11, F13, F39"
+  "sentiment": -1,
+  "now": "Guest checkout and pickup exist, but the cart sum confuses and the SMS-code step stalls",
+  "fix": "Clear cart summary, clear SMS step, Short Address field",
+  "findings": "F31, F32, F34, F35"
  },
  {
   "order": 8,
@@ -75,19 +75,19 @@
   "touchpoint": "Delivery",
   "persona": "All",
   "sentiment": -1,
-  "now": "No tracking page; cancellation by phone only, 59 SAR after dispatch",
+  "now": "No guest tracking; cancellation by phone only, 59 SAR after dispatch",
   "fix": "Order status page and WhatsApp updates",
-  "findings": "F31"
+  "findings": "F37"
  },
  {
   "order": 9,
   "stage": "Own & support",
   "touchpoint": "Warranty and repairs",
   "persona": "Faisal, Abdullah",
-  "sentiment": -2,
-  "now": "Warranty page says the store is not responsible; 79 SAR courier fee",
-  "fix": "Store-owned warranty concierge",
-  "findings": "F09, F08"
+  "sentiment": -1,
+  "now": "Store warranty on own builds; brand agent for the rest; 79 SAR courier fee",
+  "fix": "Store-run warranty desk",
+  "findings": "F28, F29"
  },
  {
   "order": 10,
@@ -95,8 +95,8 @@
   "touchpoint": "Returns, loyalty, accessories",
   "persona": "Reem, Sara",
   "sentiment": -1,
-  "now": "Accessories can't be returned; loyalty is 1% with no stated expiry",
-  "fix": "Returns portal, accessory bundles, clearer loyalty",
-  "findings": "F06, F38"
+  "now": "Accessories can't be returned; loyalty is 1% with no stated expiry; no review requests",
+  "fix": "Returns portal, accessory bundles, review requests",
+  "findings": "F25, F38, F18"
  }
 ]
