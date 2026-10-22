@@ -340,3 +340,12 @@ These were planned but never ran, because the shared search budget ran out. Each
   - footer badges (SBC/Maroof, VAT certificate, payment logos)
   - currency symbol on EN prices
   - whether the new Riyal sign ⃁ is used
+
+## 9. Live probe from the audit environment (22 Oct 2026)
+
+- After the environment allowed goldentech.com.sa, both `curl` and headless Chromium (Playwright) received **HTTP 403 "Sorry, you have been blocked"** from Cloudflare (Ray ID a4e7a33b8e8c5d04, IAD data centre). The block is a firewall rule on the client, not a JS challenge. No bypass was attempted. A live walkthrough has to run from a normal network (e.g. the auditor's laptop in KSA).
+- The response's HTTP 103 Early Hints exposed the front-end stack [verified]:
+  - **Magento 2**, theme **`Sm/venuse`** (SM Venuse, a commercial Magento theme): `/static/version1791448477/frontend/Sm/venuse/en_US/…`
+  - **Aramex** shipping with Aramex location/address validators: `Aramex_ApiLocationValidator/js/location_validator.min.js`, `Aramex_Shipping/js/location_validator.min.js`. Some address validation likely exists at checkout; F39 (National Address) still needs a live check.
+  - **Amasty AJAX cart**: `js/rebind-amcart.min.js`, matching the `amnoroute` search parameter (Amasty extensions).
+  - Static assets are served from merged/minified bundles (`_cache/merged/…min.css`, `styles-l.min.css`).
